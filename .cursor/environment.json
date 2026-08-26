@@ -1,0 +1,7 @@
+{
+  // repositoryDependencies: additional repositories that must be included in the
+  // access token generated for Cloud Agent runs, so the agent can clone them.
+  "repositoryDependencies": [
+    "origin.cursor.com/git/jacob-acosta/plumb-scribe"
+  ]
+}
