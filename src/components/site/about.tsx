@@ -14,7 +14,7 @@ export function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
-            <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">
+            <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
               About JJJ Plumbing
             </span>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
@@ -43,7 +43,7 @@ export function About() {
                 key={label}
                 className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
               >
-                <Icon className="mx-auto size-7 text-brand-orange" />
+                <Icon className="mx-auto size-7 text-brand-blue" />
                 <p className="mt-3 text-2xl font-extrabold text-brand-navy">
                   {value}
                 </p>

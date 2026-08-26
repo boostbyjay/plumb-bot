@@ -14,7 +14,7 @@ function Stars({ rating }: { rating: number }) {
           className={cn(
             "size-4",
             i < rating
-              ? "fill-brand-amber text-brand-amber"
+              ? "fill-brand-accent text-brand-accent"
               : "fill-slate-200 text-slate-200",
           )}
         />
@@ -46,7 +46,7 @@ export function Testimonials() {
     <section id="reviews" className="bg-brand-navy py-16 text-white sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-amber">
+          <span className="text-sm font-bold uppercase tracking-wide text-brand-accent">
             Customer Reviews
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
@@ -56,7 +56,7 @@ export function Testimonials() {
 
         <div className="relative mt-12">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8 sm:p-10">
-            <Quote className="size-8 text-brand-amber/70" />
+            <Quote className="size-8 text-brand-accent/70" />
             <p className="mt-4 text-lg leading-relaxed text-slate-100 sm:text-xl">
               &ldquo;{current.quote}&rdquo;
             </p>
@@ -88,7 +88,7 @@ export function Testimonials() {
                   onClick={() => setIndex(i)}
                   className={cn(
                     "size-2 rounded-full transition-all",
-                    i === index ? "w-6 bg-brand-amber" : "bg-white/25",
+                    i === index ? "w-6 bg-brand-accent" : "bg-white/25",
                   )}
                 />
               ))}

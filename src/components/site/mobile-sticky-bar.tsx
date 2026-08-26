@@ -27,7 +27,7 @@ export function MobileStickyBar() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="flex flex-1 items-center justify-center gap-2 bg-brand-amber py-3.5 text-sm font-bold text-brand-navy-dark active:bg-amber-400"
+          className="flex flex-1 items-center justify-center gap-2 bg-brand-accent py-3.5 text-sm font-bold text-brand-navy-dark active:bg-sky-300"
         >
           <ClipboardList className="size-4" />
           Request Quote

@@ -9,7 +9,7 @@ export function Estimate() {
         <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
           <div className="grid lg:grid-cols-5">
             <div className="bg-brand-navy p-8 text-white lg:col-span-2 sm:p-10">
-              <span className="text-sm font-bold uppercase tracking-wide text-brand-amber">
+              <span className="text-sm font-bold uppercase tracking-wide text-brand-accent">
                 Free Estimate
               </span>
               <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl">
@@ -26,7 +26,7 @@ export function Estimate() {
                 </p>
                 <a
                   href={siteConfig.phoneHref}
-                  className="mt-2 flex items-center gap-2 text-lg font-bold text-brand-amber hover:text-amber-300"
+                  className="mt-2 flex items-center gap-2 text-lg font-bold text-brand-accent hover:text-sky-200"
                 >
                   <Phone className="size-5" />
                   {siteConfig.phone}

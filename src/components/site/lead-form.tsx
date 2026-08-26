@@ -191,7 +191,7 @@ export function LeadForm({
         type="submit"
         size="lg"
         disabled={status === "submitting"}
-        className="mt-1 w-full bg-brand-amber text-brand-navy-dark hover:bg-amber-400 font-bold"
+        className="mt-1 w-full bg-brand-accent text-brand-navy-dark hover:bg-sky-300 font-bold"
       >
         {status === "submitting" ? (
           <>

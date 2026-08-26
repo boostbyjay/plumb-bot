@@ -22,7 +22,7 @@ export function Services() {
     <section id="services" className="bg-slate-50 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">
+          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
             What We Do
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
@@ -41,9 +41,9 @@ export function Services() {
               <div
                 key={service.id}
                 id={service.id === "commercial" ? undefined : service.id}
-                className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-amber/50 hover:shadow-xl"
+                className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-xl"
               >
-                <div className="flex size-12 items-center justify-center rounded-xl bg-brand-navy text-white transition-colors group-hover:bg-brand-amber group-hover:text-brand-navy-dark">
+                <div className="flex size-12 items-center justify-center rounded-xl bg-brand-navy text-white transition-colors group-hover:bg-brand-accent group-hover:text-brand-navy-dark">
                   <Icon className="size-6" />
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-brand-navy">
@@ -58,7 +58,7 @@ export function Services() {
                       key={bullet}
                       className="flex items-start gap-2 text-sm text-slate-600"
                     >
-                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-orange" />
+                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-blue" />
                       {bullet}
                     </li>
                   ))}
@@ -69,14 +69,14 @@ export function Services() {
 
           <a
             href="#estimate"
-            className="flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-brand-amber/50 bg-brand-navy p-6 text-center text-white transition-colors hover:bg-brand-navy-light"
+            className="flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-brand-accent/50 bg-brand-navy p-6 text-center text-white transition-colors hover:bg-brand-navy-light"
           >
             <p className="text-lg font-bold">Not sure what you need?</p>
             <p className="text-sm text-slate-300">
               Tell us what&apos;s going on and we&apos;ll recommend the right
               fix, upfront and in plain English.
             </p>
-            <span className="mt-2 rounded-full bg-brand-amber px-5 py-2 text-sm font-bold text-brand-navy-dark">
+            <span className="mt-2 rounded-full bg-brand-accent px-5 py-2 text-sm font-bold text-brand-navy-dark">
               Get a Free Estimate
             </span>
           </a>

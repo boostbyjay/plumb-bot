@@ -25,7 +25,7 @@ export function Hero() {
       />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-28">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-amber/40 bg-brand-amber/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-amber">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-accent/40 bg-brand-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-accent">
             25 Years Serving the San Gabriel Valley &amp; LA County
           </span>
           <h1 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-[3.25rem]">
@@ -42,7 +42,7 @@ export function Hero() {
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
               size="lg"
-              className="h-12 bg-brand-amber px-7 text-base font-bold text-brand-navy-dark hover:bg-amber-400"
+              className="h-12 bg-brand-accent px-7 text-base font-bold text-brand-navy-dark hover:bg-sky-300"
             >
               <Phone className="size-5" />
               Call {siteConfig.phone}
@@ -61,7 +61,7 @@ export function Hero() {
           <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
             {trustBadges.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-start gap-2.5">
-                <Icon className="mt-0.5 size-5 shrink-0 text-brand-amber" />
+                <Icon className="mt-0.5 size-5 shrink-0 text-brand-accent" />
                 <dt className="text-sm font-medium text-slate-200">
                   {label}
                 </dt>
@@ -73,8 +73,8 @@ export function Hero() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm sm:p-8">
             <div className="flex items-center gap-3 border-b border-white/10 pb-5">
-              <div className="flex size-11 items-center justify-center rounded-full bg-brand-amber/15">
-                <Clock className="size-5 text-brand-amber" />
+              <div className="flex size-11 items-center justify-center rounded-full bg-brand-accent/15">
+                <Clock className="size-5 text-brand-accent" />
               </div>
               <div>
                 <p className="font-bold">Same-Day Dispatch</p>
@@ -91,7 +91,7 @@ export function Hero() {
                 "25 years serving local families & businesses",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-slate-200">
-                  <BadgeCheck className="mt-0.5 size-4 shrink-0 text-brand-amber" />
+                  <BadgeCheck className="mt-0.5 size-4 shrink-0 text-brand-accent" />
                   {item}
                 </li>
               ))}

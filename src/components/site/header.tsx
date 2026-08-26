@@ -29,7 +29,7 @@ export function Header() {
           </p>
           <a
             href={siteConfig.phoneHref}
-            className="hidden items-center gap-1.5 font-semibold text-brand-amber hover:text-amber-300 sm:flex"
+            className="hidden items-center gap-1.5 font-semibold text-brand-accent hover:text-sky-200 sm:flex"
           >
             <Phone className="size-3.5" />
             {siteConfig.phone}
@@ -40,13 +40,13 @@ export function Header() {
       <div className="border-b border-slate-800 bg-brand-navy text-white shadow-lg">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:py-3">
           <Link href="#top" className="flex shrink-0 items-center gap-2">
-            <div className="relative h-10 w-[9.5rem] sm:h-12 sm:w-[11rem] overflow-hidden rounded-md bg-white/95 px-1.5 py-1">
+            <div className="inline-flex items-center rounded-md bg-white/95 px-2.5 py-1.5">
               <Image
                 src="/jjj-plumbing-logo.png"
                 alt="JJJ Plumbing logo"
-                fill
-                sizes="180px"
-                className="object-contain"
+                width={1172}
+                height={453}
+                className="h-7 w-auto sm:h-8"
                 priority
               />
             </div>
@@ -57,7 +57,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-200 transition-colors hover:text-brand-amber"
+                className="text-sm font-medium text-slate-200 transition-colors hover:text-brand-accent"
               >
                 {link.label}
               </a>
@@ -66,13 +66,13 @@ export function Header() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <div className="flex items-center gap-1.5 text-xs text-slate-300">
-              <ShieldCheck className="size-4 text-brand-amber" />
+              <ShieldCheck className="size-4 text-brand-accent" />
               {siteConfig.license}
             </div>
             <Button
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
-              className="bg-brand-amber text-brand-navy-dark hover:bg-amber-400 font-semibold"
+              className="bg-brand-accent text-brand-navy-dark hover:bg-sky-300 font-semibold"
             >
               <Phone className="size-4" />
               Call Now
@@ -107,19 +107,19 @@ export function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-md px-3 py-3 text-base font-medium text-slate-200 hover:bg-white/10 hover:text-brand-amber"
+                    className="rounded-md px-3 py-3 text-base font-medium text-slate-200 hover:bg-white/10 hover:text-brand-accent"
                   >
                     {link.label}
                   </a>
                 ))}
                 <div className="mt-4 flex items-center gap-1.5 px-3 text-xs text-slate-400">
-                  <ShieldCheck className="size-4 text-brand-amber" />
+                  <ShieldCheck className="size-4 text-brand-accent" />
                   {siteConfig.license}
                 </div>
                 <Button
                   render={<a href={siteConfig.phoneHref} />}
                   nativeButton={false}
-                  className="mt-3 mx-3 bg-brand-amber text-brand-navy-dark hover:bg-amber-400 font-semibold"
+                  className="mt-3 mx-3 bg-brand-accent text-brand-navy-dark hover:bg-sky-300 font-semibold"
                 >
                   <Phone className="size-4" />
                   Call {siteConfig.phone}

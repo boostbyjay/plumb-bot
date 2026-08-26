@@ -11,7 +11,7 @@ export function Faq() {
     <section id="faq" className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">
+          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
             Common Questions
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">

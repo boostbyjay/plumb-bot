@@ -17,13 +17,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="relative h-11 w-40 overflow-hidden rounded-md bg-white/95 px-1.5 py-1">
+            <div className="inline-flex items-center rounded-md bg-white/95 px-2.5 py-1.5">
               <Image
                 src="/jjj-plumbing-logo.png"
                 alt="JJJ Plumbing logo"
-                fill
-                sizes="160px"
-                className="object-contain"
+                width={1172}
+                height={453}
+                className="h-8 w-auto"
               />
             </div>
             <p className="mt-4 text-sm text-slate-400">
@@ -31,7 +31,7 @@ export function Footer() {
               Angeles County for {siteConfig.yearsInBusiness} years.
             </p>
             <div className="mt-4 flex items-center gap-1.5 text-xs text-slate-400">
-              <ShieldCheck className="size-4 text-brand-amber" />
+              <ShieldCheck className="size-4 text-brand-accent" />
               {siteConfig.license}
             </div>
           </div>
@@ -45,7 +45,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-brand-amber"
+                    className="text-sm text-slate-400 hover:text-brand-accent"
                   >
                     {link.label}
                   </a>
@@ -54,7 +54,7 @@ export function Footer() {
               <li>
                 <a
                   href="#faq"
-                  className="text-sm text-slate-400 hover:text-brand-amber"
+                  className="text-sm text-slate-400 hover:text-brand-accent"
                 >
                   FAQ
                 </a>
@@ -70,7 +70,7 @@ export function Footer() {
               <li>
                 <a
                   href={siteConfig.phoneHref}
-                  className="flex items-center gap-2 hover:text-brand-amber"
+                  className="flex items-center gap-2 hover:text-brand-accent"
                 >
                   <Phone className="size-4" />
                   {siteConfig.phone}
@@ -81,7 +81,7 @@ export function Footer() {
                 {siteConfig.region}
               </li>
               <li>{siteConfig.hours.standard}</li>
-              <li className="font-semibold text-brand-amber">
+              <li className="font-semibold text-brand-accent">
                 {siteConfig.hours.emergency}
               </li>
             </ul>
@@ -97,7 +97,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="flex size-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand-amber hover:text-brand-navy-dark"
+                className="flex size-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand-accent hover:text-brand-navy-dark"
               >
                 <FacebookIcon className="size-4" />
               </a>
@@ -106,7 +106,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Google Reviews"
-                className="flex size-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand-amber hover:text-brand-navy-dark"
+                className="flex size-9 items-center justify-center rounded-full bg-white/10 hover:bg-brand-accent hover:text-brand-navy-dark"
               >
                 <Star className="size-4" />
               </a>

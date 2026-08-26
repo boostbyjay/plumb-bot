@@ -7,7 +7,7 @@ export function ServiceAreas() {
     <section id="service-areas" className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-orange">
+          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
             Where We Work
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
@@ -25,7 +25,7 @@ export function ServiceAreas() {
               key={city}
               className="flex items-center gap-2 text-sm text-slate-700"
             >
-              <MapPin className="size-4 shrink-0 text-brand-orange" />
+              <MapPin className="size-4 shrink-0 text-brand-blue" />
               {city}
             </div>
           ))}
