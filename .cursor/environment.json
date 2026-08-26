@@ -1,0 +1,15 @@
+{
+  // repositoryDependencies: additional repositories that must be included in the
+  // access token generated for Cloud Agent runs, so the agent can clone them.
+  //
+  // ACTION REQUIRED: replace the placeholder below with your real second repository.
+  //   - Origin-hosted (this repo is hosted on origin.cursor.com):
+  //       "origin.cursor.com/git/<owner>/<repo>"
+  //   - GitHub-hosted:
+  //       "github.com/<owner>/<repo>"
+  //
+  // Example: "origin.cursor.com/git/jacob-acosta/plumb-scribe"
+  "repositoryDependencies": [
+    "origin.cursor.com/git/jacob-acosta/REPLACE_WITH_SECOND_REPO"
+  ]
+}
