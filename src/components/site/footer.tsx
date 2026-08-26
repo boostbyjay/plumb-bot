@@ -19,7 +19,7 @@ export function Footer() {
           <div>
             <div className="inline-flex items-center rounded-md bg-white/95 px-2.5 py-1.5">
               <Image
-                src="/jjj-plumbing-logo.png"
+                src="/jjj-plumbing-logo-v2.png"
                 alt="JJJ Plumbing logo"
                 width={1300}
                 height={484}

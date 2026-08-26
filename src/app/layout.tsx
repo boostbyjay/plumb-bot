@@ -39,7 +39,7 @@ function StructuredData() {
     "@context": "https://schema.org",
     "@type": "PlumbingContractor",
     name: siteConfig.legalName,
-    image: `${siteConfig.siteUrl}/jjj-plumbing-logo.png`,
+    image: `${siteConfig.siteUrl}/jjj-plumbing-logo-v2.png`,
     "@id": siteConfig.siteUrl,
     url: siteConfig.siteUrl,
     telephone: siteConfig.phone,
