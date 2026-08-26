@@ -21,8 +21,8 @@ export function Footer() {
               <Image
                 src="/jjj-plumbing-logo.png"
                 alt="JJJ Plumbing logo"
-                width={1172}
-                height={453}
+                width={1300}
+                height={484}
                 className="h-8 w-auto"
               />
             </div>

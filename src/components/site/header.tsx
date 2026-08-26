@@ -44,8 +44,8 @@ export function Header() {
               <Image
                 src="/jjj-plumbing-logo.png"
                 alt="JJJ Plumbing logo"
-                width={1172}
-                height={453}
+                width={1300}
+                height={484}
                 className="h-7 w-auto sm:h-8"
                 priority
               />
