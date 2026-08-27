@@ -11,7 +11,8 @@ export function ServiceAreas() {
             Where We Work
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
-            Proudly Serving the San Gabriel Valley &amp; Los Angeles County
+            Proudly Serving Los Angeles, Orange County &amp; the San Gabriel
+            Valley
           </h2>
           <p className="mt-4 text-slate-600">
             Don&apos;t see your city listed? Give us a call &mdash; there&apos;s

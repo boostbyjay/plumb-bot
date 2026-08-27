@@ -65,6 +65,15 @@ export const serviceAreas = [
   "Bell",
   "Huntington Park",
   "South Gate",
+  // Orange County
+  "Anaheim",
+  "Santa Ana",
+  "Irvine",
+  "Huntington Beach",
+  "Garden Grove",
+  "Fullerton",
+  "Orange",
+  "Costa Mesa",
   // San Gabriel Valley
   "San Gabriel",
   "Alhambra",
