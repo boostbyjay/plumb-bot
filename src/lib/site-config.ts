@@ -40,6 +40,31 @@ export const navLinks = [
 ];
 
 export const serviceAreas = [
+  // Los Angeles & greater LA County
+  "Los Angeles",
+  "East Los Angeles",
+  "El Sereno",
+  "Highland Park",
+  "Eagle Rock",
+  "Glassell Park",
+  "Mount Washington",
+  "Lincoln Heights",
+  "Boyle Heights",
+  "Atwater Village",
+  "Silver Lake",
+  "Echo Park",
+  "Los Feliz",
+  "Glendale",
+  "Burbank",
+  "Montebello",
+  "Commerce",
+  "Pico Rivera",
+  "Whittier",
+  "Downey",
+  "Norwalk",
+  "Bell",
+  "Huntington Park",
+  "South Gate",
   // San Gabriel Valley
   "San Gabriel",
   "Alhambra",
@@ -59,22 +84,6 @@ export const serviceAreas = [
   "Duarte",
   "Monrovia",
   "Glendora",
-  "San Dimas",
-  "La Puente",
-  "Walnut",
-  "Diamond Bar",
-  "Hacienda Heights",
-  "Rowland Heights",
-  // Greater LA County
-  "Los Angeles",
-  "Glendale",
-  "Burbank",
-  "Whittier",
-  "Downey",
-  "Montebello",
-  "Pico Rivera",
-  "El Sereno",
-  "Highland Park",
 ];
 
 export type Service = {
