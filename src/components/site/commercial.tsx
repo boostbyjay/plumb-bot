@@ -39,7 +39,8 @@ export function Commercial() {
           </h2>
           <p className="mt-4 max-w-xl text-slate-300">
             Restaurants, retail centers, offices, and multi-unit properties
-            across the San Gabriel Valley and LA County trust JJJ Plumbing to
+            across Los Angeles, Orange County, and the San Gabriel Valley trust
+            JJJ Plumbing to
             keep operations running with minimal downtime and clear,
             predictable pricing.
           </p>

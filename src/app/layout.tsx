@@ -12,8 +12,10 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: `${siteConfig.name} | ${siteConfig.tagline}`,
-  description: `${siteConfig.legalName} has provided licensed, insured residential & commercial plumbing services across the ${siteConfig.region} for ${siteConfig.yearsInBusiness} years. Same-day emergency dispatch available. Call ${siteConfig.phone}.`,
+  description: `${siteConfig.legalName} has provided licensed, insured residential & commercial plumbing services across ${siteConfig.region} for ${siteConfig.yearsInBusiness} years. Same-day emergency dispatch available. Call ${siteConfig.phone}.`,
   keywords: [
+    "plumber Los Angeles",
+    "plumber Orange County",
     "plumber San Gabriel Valley",
     "emergency plumber Los Angeles County",
     "drain cleaning",
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description:
-      "Licensed & insured residential and commercial plumbing across the San Gabriel Valley and LA County. Same-day emergency dispatch available.",
+      "Licensed & insured residential and commercial plumbing across Los Angeles, Orange County, and the San Gabriel Valley. Same-day emergency dispatch available.",
     url: siteConfig.siteUrl,
     siteName: siteConfig.name,
     locale: "en_US",
@@ -74,7 +76,7 @@ function StructuredData() {
     ],
     areaServed: {
       "@type": "Place",
-      name: "San Gabriel Valley and Los Angeles County, CA",
+      name: "Los Angeles, Orange County, and the San Gabriel Valley, CA",
     },
     foundingDate: `${siteConfig.founded}`,
     sameAs: Object.values(siteConfig.social),

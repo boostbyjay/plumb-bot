@@ -27,8 +27,8 @@ export function Footer() {
               />
             </div>
             <p className="mt-4 text-sm text-slate-400">
-              {siteConfig.tagline}. Serving the San Gabriel Valley and Los
-              Angeles County for {siteConfig.yearsInBusiness} years.
+              {siteConfig.tagline}. Serving Los Angeles, Orange County, and the
+              San Gabriel Valley for {siteConfig.yearsInBusiness} years.
             </p>
             <div className="mt-4 flex items-center gap-1.5 text-xs text-slate-400">
               <ShieldCheck className="size-4 text-brand-accent" />

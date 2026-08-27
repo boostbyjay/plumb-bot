@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 
 const stats = [
   { icon: Award, value: "25 Years", label: "In Business" },
-  { icon: MapPin, value: "30+ Cities", label: "Served Across SGV & LA County" },
+  { icon: MapPin, value: "50+ Cities", label: "Across LA, OC & the SGV" },
   { icon: Wrench, value: "100%", label: "Satisfaction Guaranteed" },
   { icon: HardHat, value: "Licensed", label: siteConfig.license },
 ];
@@ -22,8 +22,8 @@ export function About() {
             </h2>
             <p className="mt-5 text-slate-600">
               {siteConfig.legalName} has been the trusted name in residential
-              and commercial plumbing across the San Gabriel Valley and Los
-              Angeles County for a quarter-century. What started as a small,
+              and commercial plumbing across Los Angeles, Orange County, and the
+              San Gabriel Valley for a quarter-century. What started as a small,
               family-run operation has grown into a full-service plumbing
               company &mdash; but our commitment to honest pricing, quality
               workmanship, and treating every customer&apos;s home or business
