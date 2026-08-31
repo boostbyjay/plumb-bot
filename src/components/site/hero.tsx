@@ -26,7 +26,7 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-28">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-accent/40 bg-brand-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-accent">
-            25 Years Serving the San Gabriel Valley &amp; LA County
+            25 Years Serving LA, Orange County &amp; the San Gabriel Valley
           </span>
           <h1 className="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-[3.25rem]">
             Trusted Plumbing &amp; Drain Experts for Home &amp; Business

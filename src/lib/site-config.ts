@@ -11,7 +11,7 @@ export const siteConfig = {
     standard: "Mon\u2013Sat, 8:00 AM \u2013 6:00 PM",
     emergency: "Same-Day Emergency Service Available",
   },
-  region: "San Gabriel Valley & Los Angeles County",
+  region: "Los Angeles, Orange County & the San Gabriel Valley",
   address: {
     streetAddress: "",
     addressLocality: "San Gabriel",
@@ -40,6 +40,40 @@ export const navLinks = [
 ];
 
 export const serviceAreas = [
+  // Los Angeles & greater LA County
+  "Los Angeles",
+  "East Los Angeles",
+  "El Sereno",
+  "Highland Park",
+  "Eagle Rock",
+  "Glassell Park",
+  "Mount Washington",
+  "Lincoln Heights",
+  "Boyle Heights",
+  "Atwater Village",
+  "Silver Lake",
+  "Echo Park",
+  "Los Feliz",
+  "Glendale",
+  "Burbank",
+  "Montebello",
+  "Commerce",
+  "Pico Rivera",
+  "Whittier",
+  "Downey",
+  "Norwalk",
+  "Bell",
+  "Huntington Park",
+  "South Gate",
+  // Orange County
+  "Anaheim",
+  "Santa Ana",
+  "Irvine",
+  "Huntington Beach",
+  "Garden Grove",
+  "Fullerton",
+  "Orange",
+  "Costa Mesa",
   // San Gabriel Valley
   "San Gabriel",
   "Alhambra",
@@ -59,22 +93,6 @@ export const serviceAreas = [
   "Duarte",
   "Monrovia",
   "Glendora",
-  "San Dimas",
-  "La Puente",
-  "Walnut",
-  "Diamond Bar",
-  "Hacienda Heights",
-  "Rowland Heights",
-  // Greater LA County
-  "Los Angeles",
-  "Glendale",
-  "Burbank",
-  "Whittier",
-  "Downey",
-  "Montebello",
-  "Pico Rivera",
-  "El Sereno",
-  "Highland Park",
 ];
 
 export type Service = {
@@ -223,12 +241,12 @@ export const faqs: FaqItem[] = [
   },
   {
     question: "Are your plumbers licensed and insured?",
-    answer: `Yes. JJJ Plumbing Inc is fully licensed (${siteConfig.license}) and insured, with 25 years of combined experience serving the San Gabriel Valley and Los Angeles County. Every technician is background-checked and trained to the highest industry standards.`,
+    answer: `Yes. JJJ Plumbing Inc is fully licensed (${siteConfig.license}) and insured, with 25 years of combined experience serving Los Angeles, Orange County, and the San Gabriel Valley. Every technician is background-checked and trained to the highest industry standards.`,
   },
   {
     question: "What areas do you service?",
     answer:
-      "We proudly serve the entire San Gabriel Valley as well as surrounding Los Angeles County cities. If you're unsure whether we cover your neighborhood, give us a call \u2014 we're happy to check.",
+      "We proudly serve Los Angeles, Orange County, and the San Gabriel Valley \u2014 from central LA to the OC. If you're unsure whether we cover your neighborhood, give us a call \u2014 we're happy to check.",
   },
   {
     question: "How fast can you get to my home or business?",
