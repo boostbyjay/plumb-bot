@@ -8,7 +8,7 @@ import { faqs } from "@/lib/site-config";
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-white py-16 sm:py-24">
+    <section id="faq" className="bg-white py-16 sm:py-24 scroll-mt-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center">
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">

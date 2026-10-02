@@ -9,9 +9,9 @@ const commercialOfferings = [
       "Scheduled pumping, cleaning, and maintenance to keep restaurants and food service properties compliant.",
   },
   {
-    title: "Backflow Testing & Certification",
+    title: "Sewer Line Replacement & Trenchless Repair",
     description:
-      "Annual backflow prevention testing and certification for offices, retail, and multi-tenant buildings.",
+      "Full commercial sewer line replacement and CIPP lining for multi-unit buildings, restaurants, and retail centers. Minimal disruption, same-day service.",
   },
   {
     title: "Multi-Unit Property Maintenance",
@@ -27,7 +27,7 @@ const commercialOfferings = [
 
 export function Commercial() {
   return (
-    <section id="commercial" className="bg-brand-navy py-16 text-white sm:py-24">
+    <section id="commercial" className="bg-brand-navy py-16 text-white sm:py-24 scroll-mt-28">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-accent/40 bg-brand-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-accent">

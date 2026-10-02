@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Phone, ShieldCheck } from "lucide-react";
+import { Menu, Phone, ShieldCheck, House } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -14,8 +14,69 @@ import {
 } from "@/components/ui/sheet";
 import { navLinks, siteConfig } from "@/lib/site-config";
 
+const NAV_TARGETS = [
+  "services",
+  "commercial",
+  "about",
+  "service-areas",
+  "reviews",
+  "estimate",
+];
+
+function bounceScroll(target: HTMLElement) {
+  const start = window.scrollY;
+  const end =
+    target.getBoundingClientRect().top +
+    start -
+    window.innerHeight / 2 +
+    target.offsetHeight / 2;
+  const distance = end - start;
+  const duration = 900;
+  const startTime = performance.now();
+
+  function easeOutBack(t: number) {
+    const c1 = 1.70158;
+    const c3 = c1 + 1;
+    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+  }
+
+  function frame(now: number) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeOutBack(progress);
+    window.scrollTo(0, start + distance * eased);
+    if (progress < 1) {
+      requestAnimationFrame(frame);
+    }
+  }
+
+  requestAnimationFrame(frame);
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      const link = (e.target as HTMLElement).closest("a[href^='#']");
+      if (!link) return;
+
+      const href = link.getAttribute("href");
+      if (!href || href === "#") return;
+
+      const hash = href.replace("#", "");
+      if (!NAV_TARGETS.includes(hash)) return;
+
+      e.preventDefault();
+      const el = document.getElementById(hash);
+      if (el) {
+        setTimeout(() => bounceScroll(el), 50);
+      }
+    }
+
+    document.addEventListener("click", handleClick, true);
+    return () => document.removeEventListener("click", handleClick, true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -38,21 +99,26 @@ export function Header() {
       </div>
 
       <div className="border-b border-slate-800 bg-brand-navy text-white shadow-lg">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 sm:py-2">
           <Link href="#top" className="flex shrink-0 items-center gap-2">
-            <div className="inline-flex items-center rounded-md bg-white/95 px-2.5 py-1.5">
-              <Image
-                src="/jjj-plumbing-logo-v2.png"
-                alt="JJJ Plumbing logo"
-                width={1300}
-                height={484}
-                className="h-7 w-auto sm:h-8"
-                priority
-              />
-            </div>
+            <Image
+              src="/jjj-plumbing-logo-v2.png"
+              alt="JJJ Plumbing logo"
+              width={1179}
+              height={403}
+              className="h-12 w-auto rounded-md sm:h-14"
+              priority
+            />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
+            <a
+              href="/"
+              className="text-slate-200 transition-colors hover:text-brand-accent"
+              aria-label="Home"
+            >
+              <House className="size-5" />
+            </a>
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -97,11 +163,18 @@ export function Header() {
               className="bg-brand-navy text-white border-slate-800 w-[280px] sm:w-[320px]"
             >
               <SheetHeader>
-                <SheetTitle className="text-white flex items-center justify-between">
+                <SheetTitle className="text-white">
                   <span>Menu</span>
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
+                <a
+                  href="/"
+                  className="rounded-md px-3 py-3 text-base font-medium text-slate-200 hover:bg-white/10 hover:text-brand-accent"
+                  onClick={() => setOpen(false)}
+                >
+                  Home
+                </a>
                 {navLinks.map((link) => (
                   <a
                     key={link.href}

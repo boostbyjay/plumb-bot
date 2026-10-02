@@ -1,10 +1,12 @@
+"use client";
+
 import { Phone } from "lucide-react";
 import { LeadForm } from "@/components/site/lead-form";
 import { siteConfig } from "@/lib/site-config";
 
 export function Estimate() {
   return (
-    <section id="estimate" className="bg-slate-50 py-16 sm:py-24">
+    <section id="estimate" className="bg-slate-50 py-16 sm:py-24 scroll-mt-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
           <div className="grid lg:grid-cols-5">
