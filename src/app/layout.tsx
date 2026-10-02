@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { services, serviceAreas, testimonials, siteConfig } from "@/lib/site-config";
 import "./globals.css";
-
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
 
 export const viewport = {
   width: "device-width",
@@ -250,7 +243,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   const callTrackingNumber = process.env.NEXT_PUBLIC_CALL_TRACKING_NUMBER;
 
   return (
-    <html lang="en" className={`${plusJakarta.variable} h-full antialiased`}>
+    <html lang="en" className={`h-full antialiased font-sans`}>
       <head>
         <StructuredData />
         {gaId && (
