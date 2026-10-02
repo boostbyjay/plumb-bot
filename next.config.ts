@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [],
+    unoptimized: true,
   },
   output: "export",
   trailingSlash: true,
