@@ -73,7 +73,7 @@ export function LeadForm({
     setStatus("submitting");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/maengkbw", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
