@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [],
   },
-  output: "export",
 };
 
 export default nextConfig;
