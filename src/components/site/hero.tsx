@@ -15,7 +15,7 @@ const trustBadges = [
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-brand-navy text-white">
-      <div className="grid lg:grid-cols-2 min-h-[520px] w-full max-w-full">
+      <div className="grid lg:grid-cols-2 min-h-0 lg:min-h-[520px] w-full max-w-full">
         {/* Left: Hero Image */}
         <div className="relative hidden lg:block">
           <Image
@@ -49,20 +49,20 @@ export function Hero() {
         </div>
 
         {/* Right: Content */}
-        <div className="relative z-10 flex min-w-0 max-w-full flex-col justify-center px-4 pt-6 pb-24 sm:px-6 sm:pt-10 sm:pb-28 lg:py-20 lg:pb-28">
+        <div className="relative z-10 flex min-w-0 max-w-full flex-col justify-center px-4 pt-5 pb-6 sm:px-6 sm:pt-10 sm:pb-20 lg:py-20 lg:pb-28">
           <span className="inline-block max-w-full rounded-2xl sm:rounded-full border border-brand-accent/40 bg-brand-accent/10 px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wide text-brand-accent text-center sm:text-left">
             25+ Years Serving LA, Orange County &amp; the San Gabriel Valley
           </span>
-          <h1 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-[3.25rem] break-words text-balance">
+          <h1 className="mt-4 sm:mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-[3.25rem] break-words text-balance">
             Trusted Plumbing &amp; Drain Experts for Home &amp; Business
           </h1>
-          <p className="mt-5 max-w-xl text-base text-slate-300 sm:text-lg text-pretty">
+          <p className="mt-3.5 sm:mt-5 max-w-xl text-base text-slate-300 sm:text-lg text-pretty">
             From emergency leak repairs to full commercial repiping, JJJ
             Plumbing delivers fast, up-front pricing and guaranteed
             workmanship.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-5 sm:mt-6 flex flex-col gap-3 sm:flex-row">
             <Button
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
@@ -83,7 +83,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <dl className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-3 lg:grid-cols-5">
+          <dl className="mt-5 sm:mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-3 lg:grid-cols-5">
             {trustBadges.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 min-w-0">
                 <Icon className="size-4 shrink-0 text-brand-accent" />
