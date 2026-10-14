@@ -73,15 +73,32 @@ export function LeadForm({
     setStatus("submitting");
 
     try {
-      const response = await fetch("https://formspree.io/f/maengkbw", {
+      const serviceLabel =
+        services.find((s) => s.id === values.service)?.title || values.service;
+
+      const response = await fetch("https://formsubmit.co/ajax/jjjplumbinginc@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Quote Request: ${serviceLabel} - ${values.name}`,
+          _template: "table",
+          _captcha: "false",
+          "Customer Name": values.name,
+          "Phone Number": values.phone,
+          "Email Address": values.email,
+          "Service Needed": serviceLabel,
+          "Address / Zip Code": values.zip,
+          "Issue Description": values.details || "None provided",
+        }),
       });
 
-      if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data.error || "Something went wrong. Please call us directly.");
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || data.success === "false" || data.success === false) {
+        throw new Error(data.message || "Something went wrong. Please call us directly.");
       }
 
       setStatus("success");
