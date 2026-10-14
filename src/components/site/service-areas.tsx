@@ -89,10 +89,10 @@ export function ServiceAreas() {
             render={<a href={siteConfig.phoneHref} />}
             nativeButton={false}
             size="lg"
-            className="bg-brand-navy px-7 font-semibold text-white hover:bg-brand-navy-light"
+            className="w-full sm:w-auto max-w-full bg-brand-navy px-5 sm:px-7 font-semibold text-white hover:bg-brand-navy-light text-center h-auto py-3 whitespace-normal"
           >
-            <Phone className="size-4" />
-            Ask if We Cover Your Area: {siteConfig.phone}
+            <Phone className="size-4 shrink-0" />
+            <span>Ask if We Cover Your Area: {siteConfig.phone}</span>
           </Button>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 min-w-0 max-w-full overflow-x-clip">
         <Hero />
         <DispatchBanner />
         <Services />

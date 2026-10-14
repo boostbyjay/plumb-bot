@@ -44,7 +44,7 @@ export function Services() {
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
             What We Do
           </span>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl text-balance break-words">
             Full-Service Plumbing Solutions
           </h2>
           <p className="mt-4 text-slate-600">

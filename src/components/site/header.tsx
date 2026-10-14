@@ -84,11 +84,11 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full">
       <div className="bg-brand-navy-dark text-white text-xs sm:text-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-2 text-center sm:justify-between">
-          <p className="flex items-center gap-1.5">
+          <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 text-center">
             <span aria-hidden>🚨</span>
-            <span>
-              Same-Day Dispatch Available &nbsp;|&nbsp; Licensed &amp; Insured
-            </span>
+            <span>Same-Day Dispatch Available</span>
+            <span className="hidden sm:inline text-slate-400" aria-hidden>|</span>
+            <span>Licensed &amp; Insured</span>
           </p>
           <a
             href={siteConfig.phoneHref}
@@ -114,13 +114,13 @@ export function Header() {
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
-            <a
+            <Link
               href="/"
               className="text-slate-200 transition-colors hover:text-brand-accent"
               aria-label="Home"
             >
               <House className="size-5" />
-            </a>
+            </Link>
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -170,13 +170,13 @@ export function Header() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
-                <a
+                <Link
                   href="/"
                   className="rounded-md px-3 py-3 text-base font-medium text-slate-200 hover:bg-white/10 hover:text-brand-accent"
                   onClick={() => setOpen(false)}
                 >
                   Home
-                </a>
+                </Link>
                 {navLinks.map((link) => (
                   <a
                     key={link.href}

@@ -260,7 +260,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </>
         )}
       </head>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans overflow-x-clip">
         {children}
         {callTrackingNumber && (
           <script

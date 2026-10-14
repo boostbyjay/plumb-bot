@@ -1,6 +1,5 @@
 import { CheckCircle2, Clock, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site-config";
 
 const highlights = [
   "Free, no-obligation estimates",
@@ -17,12 +16,12 @@ export function DispatchBanner() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
             {/* Left: 10% Off promo */}
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5 text-center sm:text-left">
               <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-accent/20">
                 <Tag className="size-4 text-brand-accent" />
               </span>
               <div>
-                <p className="text-sm font-bold text-white sm:text-base">
+                <p className="text-sm font-bold text-white sm:text-base text-balance">
                   Get 10% Off Your First Visit — Estimate Online
                 </p>
               </div>
@@ -54,7 +53,7 @@ export function DispatchBanner() {
               render={<a href="#estimate" />}
               nativeButton={false}
               size="sm"
-              className="shrink-0 bg-brand-accent px-5 text-sm font-bold text-brand-navy-dark hover:bg-sky-300"
+              className="w-full sm:w-auto shrink-0 bg-brand-accent px-5 text-sm font-bold text-brand-navy-dark hover:bg-sky-300 text-center"
             >
               Claim 10% Off + Free Estimate
             </Button>
