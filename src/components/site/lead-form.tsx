@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { services } from "@/lib/site-config";
+import { services, siteConfig } from "@/lib/site-config";
 
 type Status = "idle" | "submitting" | "success";
 
@@ -76,6 +76,20 @@ export function LeadForm({
       const serviceLabel =
         services.find((s) => s.id === values.service)?.title || values.service;
 
+      const autoresponseMessage = `Thank you for contacting JJJ Plumbing! We have received your request and your 10% discount on your first service visit is locked in.
+
+A member of our team will call you at ${values.phone} within 5 minutes during business hours to confirm your estimate and schedule your visit.
+
+Requested Service: ${serviceLabel}
+Service Location: ${values.zip}
+${values.details ? `Details Provided: ${values.details}\n` : ""}
+If this is an active emergency (burst pipe, gas leak, active flooding, or main sewer backup), please call us directly 24/7 at ${siteConfig.phone} for immediate dispatch.
+
+JJJ Plumbing Inc
+${siteConfig.license}
+Phone: ${siteConfig.phone}
+Website: https://www.jjjplumbing.com`;
+
       const response = await fetch("https://formsubmit.co/ajax/jjjplumbinginc@gmail.com", {
         method: "POST",
         headers: {
@@ -86,6 +100,9 @@ export function LeadForm({
           _subject: `New Quote Request: ${serviceLabel} - ${values.name}`,
           _template: "table",
           _captcha: "false",
+          _autoresponse: autoresponseMessage,
+          email: values.email,
+          _replyto: values.email,
           "Customer Name": values.name,
           "Phone Number": values.phone,
           "Email Address": values.email,
