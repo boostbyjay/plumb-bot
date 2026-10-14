@@ -9,6 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { services } from "@/lib/site-config";
+import { photoBlur } from "@/lib/photo-blur";
 
 const iconMap: Record<string, LucideIcon> = {
   flame: Flame,
@@ -18,12 +19,21 @@ const iconMap: Record<string, LucideIcon> = {
   building2: Building2,
 };
 
+/**
+ * Each card shows a photo of that actual service.
+ * Slugs resolve to /public/work/<slug>-{640,1024,1920}.jpg
+ */
 const imageMap: Record<string, string> = {
-  "emergency-repairs": "/jobs/job-08-ridgid-setup.jpg",
-  "drain-cleaning": "/jobs/job-07-drain-cable.jpg",
-  "water-heaters": "/jobs/job-03-noritz-outdoor.jpg",
-  "sewer-lines": "/jobs/job-05-trench.jpg",
-  "commercial": "/jobs/job-01-toilet-drain.jpg",
+  // technician on site with floor protection down
+  "emergency-repairs": "tech-descaling-drain",
+  // root mass pulled out of the line -- the result this service sells
+  "drain-cleaning": "root-removal-drain-machine",
+  // clean exterior Noritz with hot/cold service valves visible
+  "water-heaters": "tankless-exterior-noritz",
+  // cast iron wye + shielded no-hub couplings in an open trench
+  "sewer-lines": "sewer-cast-iron-wye",
+  // real commercial mechanical room, not a residential toilet
+  "commercial": "commercial-mechanical-room",
 };
 
 export function Services() {
@@ -52,12 +62,15 @@ export function Services() {
                 id={service.id === "commercial" ? undefined : service.id}
                 className="group flex flex-col rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-xl"
               >
-                <div className="relative h-48 w-full overflow-hidden rounded-t-2xl">
+                <div className="relative h-56 w-full overflow-hidden rounded-t-2xl bg-slate-100 sm:h-52">
                   <Image
-                    src={imageMap[service.id] || "/services/emergency-repairs.jpg"}
-                    alt={service.title}
+                    src={`/work/${imageMap[service.id]}-1024.jpg`}
+                    alt={`${service.title} — JJJ Plumbing job photo`}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    placeholder="blur"
+                    blurDataURL={photoBlur[imageMap[service.id]]}
+                    className="object-cover object-[center_35%] transition-transform duration-500 ease-out group-hover:scale-[1.06]"
                   />
                 </div>
                 <div className="flex flex-col p-6">

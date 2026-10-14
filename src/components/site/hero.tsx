@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Phone, ShieldCheck, BadgeCheck, Clock, DollarSign, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
+import { photoBlur } from "@/lib/photo-blur";
 
 const trustBadges = [
   { icon: ShieldCheck, label: "Licensed & Insured" },
@@ -18,13 +19,33 @@ export function Hero() {
         {/* Left: Hero Image */}
         <div className="relative hidden lg:block">
           <Image
-            src="/jobs/job-07-drain-cable.jpg"
-            alt="Professional drain cleaning with heavy-duty cable machine"
+            src="/work/hydrojetting-truck-hero-1920.jpg"
+            alt="JJJ Plumbing truck-mounted hydro jetting rig, 4000 PSI at 18 GPM, on a job site"
             fill
             priority
+            sizes="50vw"
+            placeholder="blur"
+            blurDataURL={photoBlur["hydrojetting-truck-hero"]}
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/40 to-brand-navy/10" />
+        </div>
+
+        {/* Mobile/tablet: same photo as a background layer behind the copy */}
+        <div className="absolute inset-0 lg:hidden">
+          <Image
+            src="/work/hydrojetting-truck-hero-1024.jpg"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL={photoBlur["hydrojetting-truck-hero"]}
+            className="object-cover object-[center_28%]"
+          />
+          {/* keeps headline contrast well above WCAG AA over the photo */}
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/85 via-brand-navy/92 to-brand-navy-dark/97" />
         </div>
 
         {/* Right: Content */}

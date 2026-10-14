@@ -2,7 +2,8 @@ import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
 import { DispatchBanner } from "@/components/site/dispatch-banner";
 import { Services } from "@/components/site/services";
-import { BeforeAfterGallery } from "@/components/site/before-after-gallery";
+import { RecentWork } from "@/components/site/recent-work";
+import { Fixtures } from "@/components/site/fixtures";
 import { Commercial } from "@/components/site/commercial";
 import { About } from "@/components/site/about";
 import { Estimate } from "@/components/site/estimate";
@@ -21,7 +22,8 @@ export default function Home() {
         <Hero />
         <DispatchBanner />
         <Services />
-        <BeforeAfterGallery />
+        <RecentWork />
+        <Fixtures />
         <Commercial />
         <About />
         <Estimate />

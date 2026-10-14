@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Award, HardHat, MapPin, Wrench } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { photoBlur } from "@/lib/photo-blur";
 
 const stats = [
   { icon: Award, value: "25 Years", label: "In Business" },
@@ -61,28 +62,37 @@ export function About() {
           </div>
 
           <div className="grid gap-4 sm:gap-5">
-            <div className="relative h-64 w-full overflow-hidden rounded-2xl sm:h-72">
+            <div className="relative h-64 w-full overflow-hidden rounded-2xl bg-slate-100 sm:h-72">
               <Image
-                src="/jobs/job-02-noritz-indoor.jpg"
-                alt="JJJ Plumbing technician installing a Noritz tankless water heater"
+                src="/work/hydrojetting-truck-rig-1024.jpg"
+                alt="JJJ Plumbing truck-mounted hydro jetter rated 4000 PSI at 18 GPM"
                 fill
-                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                placeholder="blur"
+                blurDataURL={photoBlur["hydrojetting-truck-rig"]}
+                className="object-cover object-[center_42%]"
               />
             </div>
             <div className="grid grid-cols-2 gap-4 sm:gap-5">
-              <div className="relative h-40 w-full overflow-hidden rounded-2xl sm:h-48">
+              <div className="relative h-40 w-full overflow-hidden rounded-2xl bg-slate-100 sm:h-48">
                 <Image
-                  src="/jobs/job-04-noritz-garage.jpg"
-                  alt="JJJ Plumbing service truck and equipment"
+                  src="/work/sewer-camera-inspection-640.jpg"
+                  alt="Sewer camera inspection equipment staged at a main line cleanout"
                   fill
+                  sizes="(max-width: 1024px) 50vw, 20vw"
+                  placeholder="blur"
+                  blurDataURL={photoBlur["sewer-camera-inspection"]}
                   className="object-cover"
                 />
               </div>
-              <div className="relative h-40 w-full overflow-hidden rounded-2xl sm:h-48">
+              <div className="relative h-40 w-full overflow-hidden rounded-2xl bg-slate-100 sm:h-48">
                 <Image
-                  src="/jobs/job-06-navien.jpg"
-                  alt="JJJ Plumbing workshop and Navien tankless water heater installation"
+                  src="/work/tankless-indoor-noritz-640.jpg"
+                  alt="Noritz tankless water heater installed with copper service valve assembly"
                   fill
+                  sizes="(max-width: 1024px) 50vw, 20vw"
+                  placeholder="blur"
+                  blurDataURL={photoBlur["tankless-indoor-noritz"]}
                   className="object-cover"
                 />
               </div>

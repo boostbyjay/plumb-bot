@@ -136,3 +136,145 @@
     @apply font-sans;
   }
 }
+
+/* ============================================================
+   Recent Work gallery
+   Motion is CSS-only so the swipe stays on the compositor
+   thread and keeps native iOS/Android momentum.
+   ============================================================ */
+
+.work-rail {
+  /* iOS momentum scrolling + stop the browser hijacking vertical swipes */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+  scrollbar-width: none;
+  /* let the focused card's shadow/scale breathe without clipping */
+  padding-top: 0.5rem;
+  scroll-padding-inline: 1rem;
+}
+
+.work-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.work-card {
+  /* promote to its own layer: transforms never trigger layout */
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.work-card:focus-visible {
+  outline: 3px solid var(--color-brand-accent);
+  outline-offset: 3px;
+}
+
+/* --- Scroll-driven focus effect -------------------------------
+   The card nearest the viewport centre sits at full scale and
+   opacity; neighbours recede. Driven by animation-timeline, which
+   the compositor evaluates per frame, so it cannot jank the way a
+   scroll event handler can. Unsupported browsers simply render the
+   cards at their normal size -- swipe, snap and tap all still work.
+   ------------------------------------------------------------- */
+@supports (animation-timeline: view()) {
+  @keyframes work-card-focus {
+    /* entering from the right */
+    0% {
+      transform: scale(0.9);
+      opacity: 0.45;
+    }
+    /* centred */
+    45%,
+    55% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    /* leaving to the left */
+    100% {
+      transform: scale(0.9);
+      opacity: 0.45;
+    }
+  }
+
+  .work-card {
+    animation: work-card-focus linear both;
+    animation-timeline: view(inline);
+    /* start/finish the curve while the card is still on screen */
+    animation-range: cover 0% cover 100%;
+  }
+}
+
+/* --- Section reveal ------------------------------------------
+   Cards rise and fade as the rail scrolls into view vertically.
+   ------------------------------------------------------------- */
+@supports (animation-timeline: view()) {
+  @keyframes work-rise {
+    from {
+      transform: translateY(1.25rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .work-rail {
+    animation: work-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+  }
+}
+
+/* --- Lightbox ------------------------------------------------ */
+@keyframes work-lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes work-lightbox-panel-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.work-lightbox {
+  animation: work-lightbox-in 200ms ease-out both;
+}
+
+.work-lightbox-panel {
+  /* slight overshoot so it springs open rather than easing flat */
+  animation: work-lightbox-panel-in 360ms cubic-bezier(0.34, 1.46, 0.64, 1) both;
+}
+
+/* Respect reduced-motion: keep the layout, drop the movement. */
+@media (prefers-reduced-motion: reduce) {
+  .work-rail,
+  .work-card {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .work-rail {
+    scroll-behavior: auto;
+  }
+
+  .work-card {
+    transition: none !important;
+  }
+
+  .work-lightbox,
+  .work-lightbox-panel {
+    animation-duration: 1ms;
+  }
+}

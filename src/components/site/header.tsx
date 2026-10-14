@@ -16,6 +16,8 @@ import { navLinks, siteConfig } from "@/lib/site-config";
 
 const NAV_TARGETS = [
   "services",
+  "recent-work",
+  "fixtures",
   "commercial",
   "about",
   "service-areas",
