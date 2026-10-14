@@ -75,17 +75,17 @@ const jobs: Job[] = [
   },
   {
     slug: "sewer-cast-iron-wye",
-    title: "Main Waste Line Wye Fitting Replacement",
+    title: "50-Foot Commercial Hospital Main Waste Line Replacement",
     city: "Los Angeles",
-    category: "Sewer Replacement",
-    turnaround: "1-Day Turnaround",
+    category: "Commercial Hospital Sewer",
+    turnaround: "Rapid Commercial Turnaround",
     problem:
-      "Cracked sub-grade wye junction leaking sewer gas and wastewater beneath the residential subfloor, causing foul odors and damp crawlspace soil.",
+      "Over 50 linear feet of aging underground cast iron waste line failed beneath an active commercial hospital facility, risking severe bio-hazard backups, sanitary code violations, and emergency medical wing shutdowns.",
     solution:
-      "Precision hand excavation, replaced damaged fitting with heavy-gauge cast iron wye and heavy-duty shielded no-hub couplings to seismic code.",
+      "Excavated open trench, extracted 50 feet of deteriorated main waste pipe, and precision-installed new heavy-duty cast iron wye junctions and heavy-gauge pipe assembled with seismic-rated shielded no-hub couplings to strict healthcare facility plumbing standards.",
     savings:
-      "Permanently eliminated odor and structural rot risks; passed LA City Building & Safety inspection on first attempt.",
-    alt: "Cast iron main waste line wye assembled with shielded no-hub couplings in an open trench",
+      "Maintained uninterrupted hospital operations with zero contamination or patient disruptions; passed stringent municipal healthcare plumbing code inspections on first walkthrough.",
+    alt: "JJJ Plumbing replacement of 50 feet of commercial hospital main waste line piping with cast iron wyes and shielded no-hub couplings in open trench",
   },
   {
     slug: "commercial-mechanical-room",

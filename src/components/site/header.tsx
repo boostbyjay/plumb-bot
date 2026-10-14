@@ -113,34 +113,34 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-7 lg:flex">
+          <nav className="hidden items-center gap-2 xl:gap-3 lg:flex flex-1 justify-center max-w-4xl mx-3">
             <Link
               href="/"
-              className="text-slate-200 transition-colors hover:text-brand-accent"
+              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] p-2.5 text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               aria-label="Home"
             >
-              <House className="size-5" />
+              <House className="size-4.5" />
             </Link>
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-200 transition-colors hover:text-brand-accent"
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-3.5 py-2 xl:px-4.5 xl:py-2.5 text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <div className="flex items-center gap-1.5 text-xs text-slate-300">
+          <div className="hidden items-center gap-3 lg:flex shrink-0">
+            <div className="flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] px-3 py-2 text-xs font-semibold text-slate-200">
               <ShieldCheck className="size-4 text-brand-accent" />
               {siteConfig.license}
             </div>
             <Button
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
-              className="bg-brand-accent text-brand-navy-dark hover:bg-sky-300 font-semibold"
+              className="h-11 rounded-xl bg-brand-accent px-5 text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all hover:-translate-y-0.5"
             >
               <Phone className="size-4" />
               Call Now
@@ -169,12 +169,13 @@ export function Header() {
                   <span>Menu</span>
                 </SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-col gap-1 px-4">
+              <nav className="flex flex-col gap-2 px-3 py-3">
                 <Link
                   href="/"
-                  className="rounded-md px-3 py-3 text-base font-medium text-slate-200 hover:bg-white/10 hover:text-brand-accent"
+                  className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-base font-bold text-slate-100 hover:border-brand-accent hover:bg-brand-accent/15 hover:text-brand-accent"
                   onClick={() => setOpen(false)}
                 >
+                  <House className="size-4 text-brand-accent" />
                   Home
                 </Link>
                 {navLinks.map((link) => (
@@ -182,19 +183,19 @@ export function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-md px-3 py-3 text-base font-medium text-slate-200 hover:bg-white/10 hover:text-brand-accent"
+                    className="rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-base font-bold text-slate-100 hover:border-brand-accent hover:bg-brand-accent/15 hover:text-brand-accent"
                   >
                     {link.label}
                   </a>
                 ))}
-                <div className="mt-4 flex items-center gap-1.5 px-3 text-xs text-slate-400">
+                <div className="mt-3 flex items-center gap-1.5 px-3 text-xs text-slate-300">
                   <ShieldCheck className="size-4 text-brand-accent" />
                   {siteConfig.license}
                 </div>
                 <Button
                   render={<a href={siteConfig.phoneHref} />}
                   nativeButton={false}
-                  className="mt-3 mx-3 bg-brand-accent text-brand-navy-dark hover:bg-sky-300 font-semibold"
+                  className="mt-2 bg-brand-accent text-brand-navy-dark hover:bg-sky-300 font-bold"
                 >
                   <Phone className="size-4" />
                   Call {siteConfig.phone}

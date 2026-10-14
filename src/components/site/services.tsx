@@ -30,7 +30,7 @@ const imageMap: Record<string, string> = {
   "drain-cleaning": "root-removal-drain-machine",
   // clean exterior Noritz with hot/cold service valves visible
   "water-heaters": "tankless-exterior-noritz",
-  // cast iron wye + shielded no-hub couplings in an open trench
+  // 50 feet of commercial hospital main waste line piping + shielded no-hub couplings in an open trench
   "sewer-lines": "sewer-cast-iron-wye",
   // real commercial mechanical room, not a residential toilet
   "commercial": "commercial-mechanical-room",
