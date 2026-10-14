@@ -51,4 +51,4 @@ The exterior end of the discharge line is easy to forget, but it's a common poin
 
 Testing twice a year, once before your rainy season and once before winter, is a reasonable cadence for most homes. It costs nothing but a few minutes and a bucket of water, and it's the only real way to know your pump will do its job when it matters.
 
-If your test reveals a problem, or if your pump is showing its age and you want a professional assessment before the next big storm, ProFlow Plumbing can inspect the whole system, including the backup power situation, so a failed test doesn't turn into a flooded basement later.
+If your test reveals a problem, or if your pump is showing its age and you want a professional assessment before the next big storm, JJJ Plumbing can inspect the whole system, including the backup power situation, so a failed test doesn't turn into a flooded basement later.

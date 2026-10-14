@@ -33,4 +33,4 @@ Pricing, experience, and the quality of work can vary quite a bit between plumbi
 
 Most plumbing myths share something in common: they promise a shortcut that sounds too easy for the problem it claims to solve. Real plumbing issues, whether it's a clog, a leak, or a running toilet, usually have straightforward causes and straightforward fixes, they just aren't always the ones that make for a catchy tip.
 
-When you're not sure whether a piece of plumbing advice is worth trying or worth skipping, it costs nothing to ask. ProFlow Plumbing is happy to tell you honestly whether something is a reasonable DIY move or a myth that's more likely to cost you than save you, and give you straightforward pricing on anything that does need a professional.
+When you're not sure whether a piece of plumbing advice is worth trying or worth skipping, it costs nothing to ask. JJJ Plumbing is happy to tell you honestly whether something is a reasonable DIY move or a myth that's more likely to cost you than save you, and give you straightforward pricing on anything that does need a professional.

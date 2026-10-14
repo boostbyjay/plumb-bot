@@ -41,4 +41,4 @@ A reset button that needs pressing once in a blue moon, maybe after grinding som
 
 ## When to Stop Resetting and Get It Checked
 
-Repeated tripping is your disposal telling you something is wrong beyond a one-time overheat. Continuing to reset it over and over without addressing the cause can shorten the unit's remaining life or, in some cases, point to a wiring issue worth taking seriously. If your reset button has become a daily habit instead of an occasional fix, it's a good time to have ProFlow Plumbing take a look before the motor gives out for good.
+Repeated tripping is your disposal telling you something is wrong beyond a one-time overheat. Continuing to reset it over and over without addressing the cause can shorten the unit's remaining life or, in some cases, point to a wiring issue worth taking seriously. If your reset button has become a daily habit instead of an occasional fix, it's a good time to have JJJ Plumbing take a look before the motor gives out for good.

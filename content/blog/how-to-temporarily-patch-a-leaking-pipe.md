@@ -37,4 +37,4 @@ Once your patch is in place, turn the main or local shutoff back on slowly rathe
 
 It's worth repeating: none of these methods repair the actual cause of the leak, whether that's a corroded section of pipe, a failed joint, or freeze damage that cracked the pipe wall. A temporary patch on a pressurized system can fail without warning, sometimes hours or days later, especially if water pressure fluctuates or the pipe shifts slightly.
 
-Once you've stabilized things and everyone in the house is safe, it's best to leave the water main off (or the affected fixture's line off) until ProFlow Plumbing can properly diagnose and repair the pipe. Treating the patch as a real fix, rather than a bridge to a professional repair, is how a manageable leak turns into a much bigger and more expensive problem.
+Once you've stabilized things and everyone in the house is safe, it's best to leave the water main off (or the affected fixture's line off) until JJJ Plumbing can properly diagnose and repair the pipe. Treating the patch as a real fix, rather than a bridge to a professional repair, is how a manageable leak turns into a much bigger and more expensive problem.

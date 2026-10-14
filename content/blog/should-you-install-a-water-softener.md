@@ -46,4 +46,4 @@ A softener treats water as it enters your home, using a resin bed and salt-based
 
 Even a great softener performs poorly if it's installed incorrectly, tied into the wrong point in your plumbing, sized wrong for your household's water usage, or plumbed with a bypass that doesn't actually work when you need it. This is genuinely a job worth having a professional handle rather than attempting as a weekend project, since it involves cutting into your main water line.
 
-If you've confirmed hard water and you're ready to move forward, ProFlow Plumbing can size the right system for your household and install it correctly the first time, so you get the benefits without a plumbing headache down the road.
+If you've confirmed hard water and you're ready to move forward, JJJ Plumbing can size the right system for your household and install it correctly the first time, so you get the benefits without a plumbing headache down the road.

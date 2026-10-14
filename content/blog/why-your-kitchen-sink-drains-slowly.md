@@ -51,4 +51,4 @@ Any of these point toward a blockage further down the main line rather than a si
 
 The best fix for a grease-clogged kitchen drain is not creating one in the first place. Wipe greasy pans with a paper towel before washing them, pour cooking oil into a container for disposal rather than down the sink, and run hot water for thirty seconds after washing dishes to help flush any residue through before it has a chance to cool and stick.
 
-If you've cleaned the trap, tried a hand auger, and you're still dealing with slow drainage, or if the clog keeps returning no matter what you do, it's a good sign the blockage has moved beyond what a homeowner's tools can reach. ProFlow Plumbing has the equipment to clear a main line blockage properly rather than treating the same symptom every few weeks.
+If you've cleaned the trap, tried a hand auger, and you're still dealing with slow drainage, or if the clog keeps returning no matter what you do, it's a good sign the blockage has moved beyond what a homeowner's tools can reach. JJJ Plumbing has the equipment to clear a main line blockage properly rather than treating the same symptom every few weeks.

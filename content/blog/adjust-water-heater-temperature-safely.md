@@ -39,4 +39,4 @@ If you have young children, older adults, or anyone with reduced sensitivity to 
 
 ## When to leave it to a professional
 
-If your dial doesn't seem to correspond to a clear temperature, if you're not comfortable working around an electric unit's internal thermostat with power involved, or if adjusting the temperature doesn't actually change the water coming out of the tap, something else may be going on with the thermostat or heating element. In that case, ProFlow Plumbing can diagnose and correct it safely rather than leaving you guessing at a dial that isn't doing what it should.
+If your dial doesn't seem to correspond to a clear temperature, if you're not comfortable working around an electric unit's internal thermostat with power involved, or if adjusting the temperature doesn't actually change the water coming out of the tap, something else may be going on with the thermostat or heating element. In that case, JJJ Plumbing can diagnose and correct it safely rather than leaving you guessing at a dial that isn't doing what it should.

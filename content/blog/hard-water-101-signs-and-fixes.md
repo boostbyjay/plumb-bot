@@ -43,4 +43,4 @@ For moderate to severe hardness, a whole-house **water softener** is the most ef
 
 ## Getting a Real Answer
 
-Test strips are a fine starting point, but if you're seeing significant scale buildup, appliance issues, or skin and hair complaints across the household, a professional water test gives you real numbers to work from instead of a rough color match. ProFlow Plumbing can test your water accurately and help you decide whether a softener, or a simpler fix, makes sense for your specific situation.
+Test strips are a fine starting point, but if you're seeing significant scale buildup, appliance issues, or skin and hair complaints across the household, a professional water test gives you real numbers to work from instead of a rough color match. JJJ Plumbing can test your water accurately and help you decide whether a softener, or a simpler fix, makes sense for your specific situation.

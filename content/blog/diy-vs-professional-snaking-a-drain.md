@@ -44,4 +44,4 @@ Ask yourself these questions before renting or buying a hand-crank auger:
 
 A hand-crank auger is a smart, inexpensive tool for straightforward, single-fixture clogs close to the surface. Once you're dealing with multiple affected drains, a recurring clog, or suspected root intrusion, you're in professional territory, where the equipment and expertise actually matter for getting it right the first time.
 
-If you've worked through the checklist above and it points toward "call a professional," ProFlow Plumbing can bring the right equipment for the job, camera inspection included, so you're not left guessing whether the clog is actually gone.
+If you've worked through the checklist above and it points toward "call a professional," JJJ Plumbing can bring the right equipment for the job, camera inspection included, so you're not left guessing whether the clog is actually gone.

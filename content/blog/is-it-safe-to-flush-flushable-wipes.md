@@ -39,4 +39,4 @@ Even wipes that make it past your home's plumbing without incident don't just va
 2. If you've already been flushing wipes for a while, keep an eye out for recurring slow drains or gurgling, early signs that a mass may be building up.
 3. When in doubt, the rule is simple: if it's not toilet paper or waste, it goes in the trash, not the bowl.
 
-If you're already noticing slow drains or recurring clogs and suspect wipes might be the culprit, it's worth getting ahead of it. ProFlow Plumbing can clear an existing blockage and take a look at the line before a small clog turns into a full backup.
+If you're already noticing slow drains or recurring clogs and suspect wipes might be the culprit, it's worth getting ahead of it. JJJ Plumbing can clear an existing blockage and take a look at the line before a small clog turns into a full backup.

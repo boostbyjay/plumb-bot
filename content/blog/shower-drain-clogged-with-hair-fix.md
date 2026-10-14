@@ -54,4 +54,4 @@ The single most effective habit is a mesh drain cover or hair catcher, a cheap a
 
 If you've cleared visible hair and the shower is still draining slowly, or if the clog keeps returning within weeks even with a drain catcher in place, the blockage may extend past what a hook tool can reach, or there may be a broader issue with the drain line itself.
 
-If a thorough cleanout doesn't bring your shower drain back to normal, ProFlow Plumbing can clear whatever's further down the line and take a look at whether anything else is contributing to the recurring buildup.
+If a thorough cleanout doesn't bring your shower drain back to normal, JJJ Plumbing can clear whatever's further down the line and take a look at whether anything else is contributing to the recurring buildup.

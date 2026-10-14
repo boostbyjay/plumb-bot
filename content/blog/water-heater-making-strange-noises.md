@@ -40,4 +40,4 @@ What to do: this one is less DIY-friendly than the others. Electric heating elem
 - **Popping or rumbling** from sediment: moderate concern, addressable with a flush.
 - **Crackling** from the heating element or burner: higher concern, often needs component-level repair.
 
-If a flush doesn't quiet things down, or you're hearing crackling and sizzling rather than the more benign ticking and popping, it's a good sign to have ProFlow Plumbing take a listen before a stressed component fails outright.
+If a flush doesn't quiet things down, or you're hearing crackling and sizzling rather than the more benign ticking and popping, it's a good sign to have JJJ Plumbing take a listen before a stressed component fails outright.

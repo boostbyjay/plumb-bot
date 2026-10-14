@@ -36,4 +36,4 @@ If the plunger loosened the clog somewhat but hasn't fully cleared it, pour a sm
 
 If you've plunged properly several times, tried the hot water and soap method, and the bowl is still not draining, or if water is at the rim and shows no sign of going down at all, it's time to stop before you risk an overflow. It's also worth stopping if this is a recurring clog that keeps happening despite your best plunging technique, since that often points to something further down the line rather than a simple bowl-level blockage.
 
-If your toilet is still clogged after trying everything above, don't keep experimenting while water sits at the rim. A quick call to ProFlow Plumbing gets it cleared safely, without the risk of a mess spreading across your bathroom floor.
+If your toilet is still clogged after trying everything above, don't keep experimenting while water sits at the rim. A quick call to JJJ Plumbing gets it cleared safely, without the risk of a mess spreading across your bathroom floor.

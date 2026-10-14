@@ -44,4 +44,4 @@ If you've refilled every P-trap in the house, the smell isn't isolated to one to
 3. Note whether the smell is constant or comes and goes, and whether it's tied to a specific room
 4. If none of the above resolves it, treat it as a sign something deeper needs a look
 
-If you've worked through the simple checks and the smell is still there, it's time to get a professional opinion rather than letting it linger. ProFlow Plumbing can track down the actual source, whether it's a wax ring, a vent issue, or something further down the line, and get your home smelling normal again. Reach us at (555) 010-4477.
+If you've worked through the simple checks and the smell is still there, it's time to get a professional opinion rather than letting it linger. JJJ Plumbing can track down the actual source, whether it's a wax ring, a vent issue, or something further down the line, and get your home smelling normal again. Reach us at (626) 506-6951.

@@ -42,4 +42,4 @@ Disc faucets are the modern option, usually identified by a single lever sitting
 
 Some faucets, especially older or less common brands, don't fit neatly into these categories, and a few manufacturers use proprietary designs that need brand-specific parts. If you've correctly identified your faucet type but still can't find a matching kit, or you get partway into disassembly and things don't look like what you expected, it's a good moment to stop before you damage something that was otherwise fine.
 
-If you'd rather skip the identification guesswork altogether, ProFlow Plumbing can diagnose the faucet, source the right part, and have the repair done faster than a second trip to the store would take you anyway.
+If you'd rather skip the identification guesswork altogether, JJJ Plumbing can diagnose the faucet, source the right part, and have the repair done faster than a second trip to the store would take you anyway.

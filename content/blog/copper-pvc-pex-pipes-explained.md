@@ -37,4 +37,4 @@ These are general patterns, not guarantees. Many homes have a mix of materials f
 
 ## Why this matters for you
 
-Understanding your home's likely pipe material helps you anticipate what kind of issues to watch for, whether that's corrosion in older copper, pinhole leaks in acidic-water areas, or brittleness in aging PVC. If you're planning a renovation, dealing with recurring leaks, or just curious what's actually running through your walls, ProFlow Plumbing can identify your home's specific plumbing materials and flag anything that's approaching the end of its useful life.
+Understanding your home's likely pipe material helps you anticipate what kind of issues to watch for, whether that's corrosion in older copper, pinhole leaks in acidic-water areas, or brittleness in aging PVC. If you're planning a renovation, dealing with recurring leaks, or just curious what's actually running through your walls, JJJ Plumbing can identify your home's specific plumbing materials and flag anything that's approaching the end of its useful life.

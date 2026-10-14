@@ -42,4 +42,4 @@ Unlike most plumbing fixes, replacing a showerhead doesn't involve shutting off 
 
 Occasionally, removing an old showerhead reveals a problem with the shower arm itself, corrosion, a crack, or threads that are too damaged to get a good seal no matter how much tape you use. If that's the case, the shower arm itself may need replacing, which is a slightly more involved job depending on how it's connected to the plumbing behind the wall.
 
-If your new showerhead won't stop leaking no matter what you try, or you notice the shower arm itself looks damaged, ProFlow Plumbing can take it from there. It's a small job for us, and a lot less frustrating than fighting with plumber's tape all afternoon. Call us at (555) 010-4477.
+If your new showerhead won't stop leaking no matter what you try, or you notice the shower arm itself looks damaged, JJJ Plumbing can take it from there. It's a small job for us, and a lot less frustrating than fighting with plumber's tape all afternoon. Call us at (626) 506-6951.

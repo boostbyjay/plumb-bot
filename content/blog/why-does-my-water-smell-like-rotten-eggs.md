@@ -44,4 +44,4 @@ For most households, the rotten egg smell caused by anode rod reactions or natur
 
 ## When to Get Help
 
-A rotten egg smell that persists after flushing the tank, or that shows up in both hot and cold water suggesting a source-level issue, is worth having professionally diagnosed rather than guessed at repeatedly. ProFlow Plumbing can test your water, inspect your water heater's anode rod, and recommend the right fix so you're not just masking the smell every few weeks.
+A rotten egg smell that persists after flushing the tank, or that shows up in both hot and cold water suggesting a source-level issue, is worth having professionally diagnosed rather than guessed at repeatedly. JJJ Plumbing can test your water, inspect your water heater's anode rod, and recommend the right fix so you're not just masking the smell every few weeks.

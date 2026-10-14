@@ -44,4 +44,4 @@ The instinct is to pump hard and fast, like you're trying to punch through the c
 
 If you're using the right plunger, forming a good seal, and using the correct technique but the drain is still slow or blocked, the clog is probably further down the pipe than a plunger's pressure can reach, or it's something denser than plunging is designed to move.
 
-If proper plunging hasn't cleared things up after a few honest attempts, it's worth calling ProFlow Plumbing rather than switching to harsher chemical cleaners, which can be hard on older pipes and don't always solve the underlying blockage anyway.
+If proper plunging hasn't cleared things up after a few honest attempts, it's worth calling JJJ Plumbing rather than switching to harsher chemical cleaners, which can be hard on older pipes and don't always solve the underlying blockage anyway.

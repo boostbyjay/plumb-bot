@@ -30,4 +30,4 @@ If you've checked all three points and everything looks tight and clear, but wat
 
 ## Getting it right
 
-A dishwasher leak that seems minor can do real damage if it's allowed to continue, since the space under a sink cabinet is exactly the kind of dark, enclosed spot where water damage and mold go unnoticed for a while. If tightening the supply line and clearing the air gap doesn't solve it, or if you're not confident telling a plumbing connection issue apart from an internal appliance fault, ProFlow Plumbing can trace the leak to its actual source so you're not replacing parts that were never the problem.
+A dishwasher leak that seems minor can do real damage if it's allowed to continue, since the space under a sink cabinet is exactly the kind of dark, enclosed spot where water damage and mold go unnoticed for a while. If tightening the supply line and clearing the air gap doesn't solve it, or if you're not confident telling a plumbing connection issue apart from an internal appliance fault, JJJ Plumbing can trace the leak to its actual source so you're not replacing parts that were never the problem.

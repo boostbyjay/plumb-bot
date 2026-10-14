@@ -49,4 +49,4 @@ A cracked hose bib is a different situation entirely and isn't something you pat
 
 Disconnect garden hoses before the first hard freeze, since a connected hose traps water in the bib and dramatically increases the odds of it freezing. If your home doesn't already have frost-proof hose bibs, they're a worthwhile upgrade, since their shutoff valve sits further back inside the heated part of the house rather than right at the outdoor wall.
 
-A simple washer swap is well within reach for most homeowners with basic tools. But if you've found a cracked bib body, can't locate or operate the interior shutoff valve, or the fitting is soldered rather than threaded, ProFlow Plumbing can replace it correctly and set you up with a frost-proof fixture so you're not dealing with the same problem again next spring.
+A simple washer swap is well within reach for most homeowners with basic tools. But if you've found a cracked bib body, can't locate or operate the interior shutoff valve, or the fitting is soldered rather than threaded, JJJ Plumbing can replace it correctly and set you up with a frost-proof fixture so you're not dealing with the same problem again next spring.

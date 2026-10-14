@@ -41,4 +41,4 @@ The leaks under your kitchen or bathroom sink usually announce themselves fast, 
 
 You don't need a formal inspection schedule. Pick a day each season, maybe when you change your HVAC filter, and spend fifteen minutes walking through this list. It costs nothing and catches problems while they're still cheap to fix.
 
-If you do find dampness, staining, or a musty smell in any of these areas and you're not sure where it's coming from, don't just wipe it up and hope it doesn't come back. ProFlow Plumbing can trace a hidden leak to its actual source, not just the spot where the water happens to show up, so you fix the real problem instead of the symptom.
+If you do find dampness, staining, or a musty smell in any of these areas and you're not sure where it's coming from, don't just wipe it up and hope it doesn't come back. JJJ Plumbing can trace a hidden leak to its actual source, not just the spot where the water happens to show up, so you fix the real problem instead of the symptom.

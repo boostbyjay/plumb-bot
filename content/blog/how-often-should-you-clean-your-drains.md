@@ -45,4 +45,4 @@ Regardless of the calendar, address a drain right away if you notice slower drai
 
 If you're following a reasonable schedule and a drain is still slowing down faster than expected, or a clog keeps returning despite regular maintenance, there may be a bigger blockage or a structural issue further down the line that routine cleaning won't reach.
 
-If your maintenance routine isn't keeping up with recurring slow drains, it's worth having ProFlow Plumbing take a closer look, since a professional inspection can catch what a monthly hot water flush simply can't.
+If your maintenance routine isn't keeping up with recurring slow drains, it's worth having JJJ Plumbing take a closer look, since a professional inspection can catch what a monthly hot water flush simply can't.

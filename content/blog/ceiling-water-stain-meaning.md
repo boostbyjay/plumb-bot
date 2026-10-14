@@ -28,4 +28,4 @@ Water takes the path of least resistance once it penetrates a ceiling or floor c
 3. Watch for a pattern, like the stain appearing worse after a shower is used, after rain, or seemingly at random.
 4. Avoid poking or cutting into the ceiling yourself unless you're prepared to handle what might be behind it.
 
-A ceiling stain is a symptom, not the actual problem, and figuring out its true source often takes more than a glance upward. If you've spotted one, especially a growing or actively wet one, it's worth having ProFlow Plumbing trace it to the real source before more of your ceiling or the structure above it takes on damage.
+A ceiling stain is a symptom, not the actual problem, and figuring out its true source often takes more than a glance upward. If you've spotted one, especially a growing or actively wet one, it's worth having JJJ Plumbing trace it to the real source before more of your ceiling or the structure above it takes on damage.

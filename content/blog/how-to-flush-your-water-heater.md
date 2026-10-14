@@ -37,4 +37,4 @@ Most homeowners never think about their water heater until it stops working, but
 
 A tank that's never been flushed can accumulate inches of sediment at the bottom over several years, particularly in areas with hard water. That buildup doesn't just make noise. It reduces the effective capacity of your tank, makes the heating element or burner work overtime, and is one of the most common reasons a water heater fails years earlier than it should.
 
-If your tank hasn't been flushed in a few years, the sediment may be heavy enough that a full flush needs extra care to avoid clogging the drain valve. In that case, or if you're just not comfortable working around the gas or electrical connections, ProFlow Plumbing can handle the flush and check the rest of the tank's condition while they're at it.
+If your tank hasn't been flushed in a few years, the sediment may be heavy enough that a full flush needs extra care to avoid clogging the drain valve. In that case, or if you're just not comfortable working around the gas or electrical connections, JJJ Plumbing can handle the flush and check the rest of the tank's condition while they're at it.

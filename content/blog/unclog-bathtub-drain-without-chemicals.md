@@ -50,4 +50,4 @@ The zip-it and boiling water method addresses the actual physical clog directly,
 
 A simple mesh drain cover placed over the tub drain catches hair before it goes down at all, which is by far the easiest way to avoid repeating this whole process every few months.
 
-If you've cleared the visible clog but the tub is still draining slowly, or the clog keeps coming back no matter how thoroughly you clean it out, there may be a deeper blockage further down the line that a zip-it tool simply can't reach. ProFlow Plumbing can clear it properly without resorting to harsh chemicals that could do more harm than good to your pipes. Give us a call at (555) 010-4477.
+If you've cleared the visible clog but the tub is still draining slowly, or the clog keeps coming back no matter how thoroughly you clean it out, there may be a deeper blockage further down the line that a zip-it tool simply can't reach. JJJ Plumbing can clear it properly without resorting to harsh chemicals that could do more harm than good to your pipes. Give us a call at (626) 506-6951.

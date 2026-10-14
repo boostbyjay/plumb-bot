@@ -45,4 +45,4 @@ New flappers often come with excess chain length that you'll need to trim or adj
 
 If you've installed a properly matched flapper with correct chain slack and the toilet is still running, or the same flapper wears out again unusually quickly, the flush valve seat itself may have mineral buildup or damage preventing a proper seal, which a new flapper alone won't solve.
 
-If your flapper replacement didn't stop the running, or you're unsure which flapper your specific toilet needs, ProFlow Plumbing can identify the right part and take care of the installation in one visit.
+If your flapper replacement didn't stop the running, or you're unsure which flapper your specific toilet needs, JJJ Plumbing can identify the right part and take care of the installation in one visit.

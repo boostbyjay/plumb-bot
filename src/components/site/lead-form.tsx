@@ -76,10 +76,12 @@ export function LeadForm({
       const serviceLabel =
         services.find((s) => s.id === values.service)?.title || values.service;
 
-      const autoresponseMessage = `Thank you for contacting JJJ Plumbing! We have received your request and your 10% discount on your first service visit is locked in.
+      const autoresponseMessage = `Thank you for contacting JJJ Plumbing! We have received your request and your $75 Repair Voucher (Code: JJJ-75OFF) is now unlocked and locked in for your service visit.
 
 A member of our team will call you at ${values.phone} within 5 minutes during business hours to confirm your estimate and schedule your visit.
 
+VOUCHER CODE: JJJ-75OFF
+DISCOUNT: $75 OFF Any Plumbing Repair Over $300
 Requested Service: ${serviceLabel}
 Service Location: ${values.zip}
 ${values.details ? `Details Provided: ${values.details}\n` : ""}
@@ -97,7 +99,7 @@ Website: https://www.jjjplumbing.com`;
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: `New Quote Request: ${serviceLabel} - ${values.name}`,
+          _subject: `New $75 Voucher Quote: ${serviceLabel} - ${values.name}`,
           _template: "table",
           _captcha: "false",
           _autoresponse: autoresponseMessage,
@@ -109,6 +111,7 @@ Website: https://www.jjjplumbing.com`;
           "Service Needed": serviceLabel,
           "Address / Zip Code": values.zip,
           "Issue Description": values.details || "None provided",
+          "Voucher Applied": "JJJ-75OFF ($75 Off $300+)",
         }),
       });
 
@@ -169,28 +172,46 @@ Website: https://www.jjjplumbing.com`;
     return (
       <div
         className={cn(
-          "flex flex-col items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-6 py-10 text-center",
+          "flex flex-col items-center gap-4 rounded-2xl border-2 border-dashed border-emerald-500 bg-emerald-50/70 p-6 sm:p-8 text-center shadow-lg",
           className,
         )}
       >
-        <CheckCircle2 className="size-12 text-emerald-600" />
-        <h3 className="text-lg font-bold text-emerald-900">
-          You&apos;re on the list — 10% off your first visit is locked in
-        </h3>
-        <p className="max-w-sm text-sm text-emerald-800">
-          A member of our team will call you within 5 minutes during business
-          hours to confirm your estimate. For true emergencies, please call us
-          directly.
-        </p>
-        <div className="mt-2 rounded-lg border border-emerald-200 bg-emerald-100 px-4 py-2.5 text-left">
-          <p className="text-xs font-semibold text-emerald-900">
-            Show this screen or your confirmation email to redeem 10% off your
-            first service visit.
+        <div className="flex size-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+          <CheckCircle2 className="size-8" />
+        </div>
+        <div>
+          <span className="inline-block rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+            Voucher Unlocked &amp; Applied
+          </span>
+          <h3 className="mt-2 text-2xl font-black text-emerald-950">
+            $75 Repair Voucher Locked In
+          </h3>
+          <p className="mt-2 max-w-sm text-sm text-emerald-800">
+            Our dispatch team will call you at <strong>{values.phone}</strong> within 5 minutes to confirm your estimate.
           </p>
-          <p className="mt-1.5 text-xs text-emerald-700">
-            We&apos;ve sent a confirmation to <strong>{values.email}</strong> with
-            everything you need to know.
+        </div>
+
+        {/* Digital Coupon Box */}
+        <div className="w-full max-w-sm rounded-xl border-2 border-dashed border-emerald-400 bg-white p-4 shadow-sm text-center">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Your Official Voucher Code
           </p>
+          <div className="mt-1.5 inline-block rounded-lg bg-emerald-100 px-4 py-1.5 font-mono text-xl font-extrabold tracking-widest text-emerald-900 border border-emerald-300">
+            JJJ-75OFF
+          </div>
+          <p className="mt-2 text-xs text-slate-600">
+            Show this screen or quote <strong>JJJ-75OFF</strong> to your technician upon arrival. Valid on repairs $300+.
+          </p>
+        </div>
+
+        <div className="w-full pt-1">
+          <p className="text-xs text-slate-500 mb-2">Need immediate emergency dispatch right now?</p>
+          <a
+            href={siteConfig.phoneHref}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-navy py-3 px-4 text-sm font-bold text-white hover:bg-brand-navy-light"
+          >
+            Call {siteConfig.phone} (24/7 Dispatch)
+          </a>
         </div>
       </div>
     );
@@ -202,6 +223,15 @@ Website: https://www.jjjplumbing.com`;
       noValidate
       className={cn("flex flex-col gap-4", className)}
     >
+      <div className="flex items-center gap-2 rounded-xl border border-brand-accent/40 bg-brand-accent/10 p-2.5 sm:p-3 text-xs sm:text-sm font-semibold text-brand-navy">
+        <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-accent text-brand-navy-dark text-xs font-black">
+          $
+        </span>
+        <p className="leading-snug">
+          <strong>$75 Repair Voucher:</strong> Unlocked automatically when you submit this form or text a photo!
+        </p>
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
           <Label htmlFor={`name-${uid}`}>Full Name</Label>
@@ -319,7 +349,7 @@ Website: https://www.jjjplumbing.com`;
         ) : (
           <>
             <Send className="size-4" />
-            Get My Free Estimate
+            Claim $75 Voucher &amp; Get Estimate
           </>
         )}
       </Button>

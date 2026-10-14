@@ -47,4 +47,4 @@ Most silicone caulk needs 24 hours to fully cure, though it may feel dry to the 
 
 Bad or missing caulk lets water seep behind the tub surround and into the wall cavity or subfloor, where it can cause hidden rot, mold, and eventually a much more expensive repair than a tube of caulk and an afternoon.
 
-If you've recaulked and are still seeing water intrusion, or you notice soft or spongy flooring near the tub, that points to damage that's already happened behind the scenes, and caulk alone won't fix it. ProFlow Plumbing can assess whether there's underlying damage that needs repair beyond a fresh bead of caulk. Reach us at (555) 010-4477.
+If you've recaulked and are still seeing water intrusion, or you notice soft or spongy flooring near the tub, that points to damage that's already happened behind the scenes, and caulk alone won't fix it. JJJ Plumbing can assess whether there's underlying damage that needs repair beyond a fresh bead of caulk. Reach us at (626) 506-6951.

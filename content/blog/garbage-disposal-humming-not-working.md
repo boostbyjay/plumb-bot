@@ -43,4 +43,4 @@ Occasionally, a humming disposal isn't mechanically jammed at all. If the flywhe
 
 ## The Bottom Line
 
-A humming disposal is one of the more fixable problems in your kitchen, and most of the time a hex key and two minutes of patience solves it. But if you've cleared every jam you can find, reset the unit, and it still just hums, or if this keeps happening every few weeks, the underlying issue is bigger than a stray fork. ProFlow Plumbing can quickly tell you whether it's worth repairing or simply time for a new unit, so you're not stuck troubleshooting the same problem over and over.
+A humming disposal is one of the more fixable problems in your kitchen, and most of the time a hex key and two minutes of patience solves it. But if you've cleared every jam you can find, reset the unit, and it still just hums, or if this keeps happening every few weeks, the underlying issue is bigger than a stray fork. JJJ Plumbing can quickly tell you whether it's worth repairing or simply time for a new unit, so you're not stuck troubleshooting the same problem over and over.

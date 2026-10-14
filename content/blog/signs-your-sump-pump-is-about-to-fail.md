@@ -41,4 +41,4 @@ Whatever the cause, short cycling puts a lot of extra wear on the motor and swit
 
 The frustrating thing about sump pump failure is that it tends to happen exactly when you need the pump most, in the middle of a heavy storm when the power might also be flickering. If you're noticing any combination of these signs, it's worth testing the pump now (pour a bucket of water into the pit and watch it respond) rather than assuming it'll hold up next time.
 
-If your pump is showing its age, making noises that weren't there before, or you're just not confident it'll handle the next big storm, give ProFlow Plumbing a call at (555) 010-4477. We can inspect the whole system, including the check valve and discharge line, and get a reliable pump in place before you're standing in an inch of water at 2 a.m.
+If your pump is showing its age, making noises that weren't there before, or you're just not confident it'll handle the next big storm, give JJJ Plumbing a call at (626) 506-6951. We can inspect the whole system, including the check valve and discharge line, and get a reliable pump in place before you're standing in an inch of water at 2 a.m.

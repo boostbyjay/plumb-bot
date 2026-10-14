@@ -44,4 +44,4 @@ If any of these apply, the grout is telling you about a problem that started und
 
 Retiling and regrouting after a hidden leak has taken hold is a much bigger job than a simple grout refresh, since it typically means removing tile, drying and possibly replacing the wall material, and addressing the leak itself before anything goes back up. Doing the cosmetic work first just delays and hides the real problem.
 
-If your grout situation matches the simple, surface-level list, go ahead and tackle it yourself. But if you're seeing loose tile, soft walls, or recurring failure in the same spot, have ProFlow Plumbing take a look at what's happening behind the tile before you spend a weekend regrouting over an issue that's still there.
+If your grout situation matches the simple, surface-level list, go ahead and tackle it yourself. But if you're seeing loose tile, soft walls, or recurring failure in the same spot, have JJJ Plumbing take a look at what's happening behind the tile before you spend a weekend regrouting over an issue that's still there.

@@ -46,4 +46,4 @@ Press the reset button on the bottom of the unit, restore power at the breaker, 
 
 ## When to Stop and Call for Help
 
-If the flywheel won't turn even with the hex key, if the disposal trips the breaker repeatedly, or if you smell burning, that points to a motor issue rather than a simple jam, and further attempts risk making things worse or creating an electrical hazard. A disposal that hums but never spins, no matter how many times you reset it, usually needs a professional look. ProFlow Plumbing can diagnose whether it's a fixable jam, a failing motor, or time for a replacement, so you're not stuck guessing in the middle of dinner prep.
+If the flywheel won't turn even with the hex key, if the disposal trips the breaker repeatedly, or if you smell burning, that points to a motor issue rather than a simple jam, and further attempts risk making things worse or creating an electrical hazard. A disposal that hums but never spins, no matter how many times you reset it, usually needs a professional look. JJJ Plumbing can diagnose whether it's a fixable jam, a failing motor, or time for a replacement, so you're not stuck guessing in the middle of dinner prep.

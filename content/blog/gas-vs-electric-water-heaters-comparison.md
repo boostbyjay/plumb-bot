@@ -39,4 +39,4 @@ One factor homeowners sometimes overlook is what happens during a power outage. 
 
 If you're currently on electric and considering gas (or the reverse), the water heater itself is often the easy part. The real work is in the supporting infrastructure: running a new gas line and venting through the roof or wall for a gas conversion, or upgrading your electrical panel and circuit for an electric conversion. Both of these involve code requirements and safety considerations that go well beyond installing the tank.
 
-If you're weighing a fuel switch or just replacing a tank that's reaching the end of its life, ProFlow Plumbing can walk through what your home's existing setup supports and what a conversion would actually involve, so you're deciding with the full picture instead of guessing at the install cost.
+If you're weighing a fuel switch or just replacing a tank that's reaching the end of its life, JJJ Plumbing can walk through what your home's existing setup supports and what a conversion would actually involve, so you're deciding with the full picture instead of guessing at the install cost.

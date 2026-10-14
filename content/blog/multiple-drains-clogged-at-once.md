@@ -39,4 +39,4 @@ A plunger works by creating pressure that dislodges a blockage close to that spe
 2. Don't use chemical drain cleaners, which are largely ineffective on main line clogs and can make a professional inspection more difficult
 3. Note exactly which fixtures are affected and in what order, since that helps pinpoint where the blockage likely is
 
-Main line clogs need a mechanical solution, usually a professional-grade snake or hydro-jetting, sometimes preceded by a camera inspection to see exactly what's blocking the pipe. If more than one drain in your home is acting up, don't waste time working each one separately. Call ProFlow Plumbing at (555) 010-4477 and we'll find the actual source of the problem instead of chasing symptoms around the house.
+Main line clogs need a mechanical solution, usually a professional-grade snake or hydro-jetting, sometimes preceded by a camera inspection to see exactly what's blocking the pipe. If more than one drain in your home is acting up, don't waste time working each one separately. Call JJJ Plumbing at (626) 506-6951 and we'll find the actual source of the problem instead of chasing symptoms around the house.

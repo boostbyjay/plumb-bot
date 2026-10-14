@@ -45,4 +45,4 @@ There's no universally right answer here. Plenty of households love the convenie
 
 ## Making the Switch Either Way
 
-If you're thinking about adding a disposal to a kitchen that doesn't have one, or removing an old, failing unit and simplifying your under-sink plumbing, both jobs involve more than just swapping a part, including proper electrical connections and drain line adjustments. ProFlow Plumbing can walk through your specific setup, including whether your septic system can handle one, so you make the choice that actually fits your home rather than guessing.
+If you're thinking about adding a disposal to a kitchen that doesn't have one, or removing an old, failing unit and simplifying your under-sink plumbing, both jobs involve more than just swapping a part, including proper electrical connections and drain line adjustments. JJJ Plumbing can walk through your specific setup, including whether your septic system can handle one, so you make the choice that actually fits your home rather than guessing.

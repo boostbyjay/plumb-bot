@@ -36,4 +36,4 @@ Every item on this list is designed to buy time, not to permanently solve the pr
 
 Using these tools also assumes you've already shut off the water supply to the affected area or the whole house; none of them are meant to be applied to a pipe that's still under full pressure.
 
-Having this kit ready means that when a pipe does fail, you can stabilize the situation calmly instead of scrambling. Once things are under control, ProFlow Plumbing can come out to make the permanent repair and take a look at whether nearby pipes are at similar risk.
+Having this kit ready means that when a pipe does fail, you can stabilize the situation calmly instead of scrambling. Once things are under control, JJJ Plumbing can come out to make the permanent repair and take a look at whether nearby pipes are at similar risk.

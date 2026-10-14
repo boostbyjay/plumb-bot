@@ -95,10 +95,10 @@ export function Services() {
                     ))}
                   </ul>
                   <a
-                    href={`/service-city/${service.id}/beverly-hills`}
-                    className="mt-4 text-sm font-medium text-brand-blue hover:text-brand-accent transition-colors"
+                    href="#service-areas"
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-blue hover:text-brand-accent transition-colors"
                   >
-                    See service areas →
+                    View coverage & service areas →
                   </a>
                 </div>
               </div>

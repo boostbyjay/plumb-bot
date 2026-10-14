@@ -40,4 +40,4 @@ A whole-house pressure problem points toward something like a failing pressure r
 
 If you've cleaned the aerator, checked the shut-off valve, and confirmed the issue is isolated to one faucet but pressure still hasn't improved, there may be a deeper blockage or a failing part inside the faucet body that needs replacement rather than cleaning. And if the low pressure turns out to be a whole-house issue, that's squarely outside what a homeowner should try to diagnose alone, since it can involve your main water line or the pressure regulator itself.
 
-If you've worked through this checklist and you're still stuck with weak flow, it's worth having ProFlow Plumbing take a look. A quick pressure test can usually pinpoint the exact cause in less time than it took to try every DIY fix on this list.
+If you've worked through this checklist and you're still stuck with weak flow, it's worth having JJJ Plumbing take a look. A quick pressure test can usually pinpoint the exact cause in less time than it took to try every DIY fix on this list.

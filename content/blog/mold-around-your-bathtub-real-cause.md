@@ -40,4 +40,4 @@ The most frequent culprit is failed caulk or grout around the tub or shower that
 
 If you're dealing with straightforward surface mildew, better ventilation and a caulk refresh will usually solve it for good. But if mold keeps coming back, shows up in unexpected spots, or comes with soft walls, discoloration, or a persistent musty smell, cleaning the surface won't fix the underlying issue, it'll just buy you a few weeks before it's back.
 
-At that point, it's worth having someone find where the water is actually getting in rather than continuing to treat the symptom. ProFlow Plumbing can check behind the tile and pan for an active leak so you're not just repainting over a problem that's still growing.
+At that point, it's worth having someone find where the water is actually getting in rather than continuing to treat the symptom. JJJ Plumbing can check behind the tile and pan for an active leak so you're not just repainting over a problem that's still growing.

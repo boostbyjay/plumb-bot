@@ -4,6 +4,13 @@ export const siteConfig = {
   tagline: "Fast, Reliable Residential & Commercial Plumbing Services",
   phone: "(626) 506-6951",
   phoneHref: "tel:+16265066951",
+  smsHref:
+    "sms:+16265066951?body=Hi%20JJJ%20Plumbing,%20here%20is%20a%20photo%20of%20my%20plumbing%20problem:%20(Please%20apply%20my%20$75%20repair%20voucher)",
+  voucher: {
+    code: "JJJ-75OFF",
+    amount: "$75 Off",
+    description: "Unlocked when you submit an estimate form or text in a photo of your issue (valid on repairs $300+).",
+  },
   license: "CA LIC #842875",
   yearsInBusiness: 25,
   founded: 2001,
@@ -25,8 +32,8 @@ export const siteConfig = {
   },
   social: {
     facebook: "https://www.facebook.com/",
-    google: "https://www.google.com/",
-    yelp: "https://www.yelp.com/",
+    google: "https://www.google.com/search?q=JJJ+Plumbing+Inc+San+Gabriel+CA#lrd=0x80c2dbb505bf4799:0x8544c0175b922d5f,1,,,",
+    yelp: "https://www.yelp.com/search?find_desc=JJJ+Plumbing&find_loc=San+Gabriel%2C+CA",
   },
   siteUrl: "https://www.jjjplumbing.com",
 };

@@ -39,4 +39,4 @@ Most versions of this trick end with flushing the drain with hot or boiling wate
 
 If a drain is already slow, gurgling, or has backed up even slightly, the baking soda and vinegar trick isn't going to clear it, and running it repeatedly while the real clog gets worse just wastes time. At that point, a plunger or a drain-cleaning tool designed to physically grab and remove hair or debris is a much better next step, since those actually address the blockage instead of hoping a mild chemical reaction will dissolve it.
 
-If you've tried this trick, moved on to a plunger, and the drain is still slow or backing up, it's a sign the blockage is beyond what home remedies can reach. ProFlow Plumbing can clear it properly with tools built for the job, without relying on a science experiment to do the heavy lifting.
+If you've tried this trick, moved on to a plunger, and the drain is still slow or backing up, it's a sign the blockage is beyond what home remedies can reach. JJJ Plumbing can clear it properly with tools built for the job, without relying on a science experiment to do the heavy lifting.

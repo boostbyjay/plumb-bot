@@ -52,4 +52,4 @@ If you notice any of these, stop applying heat immediately and shut off the wate
 
 If you can't locate the frozen section, if it's buried inside a wall or ceiling where you can't safely access it, or if you suspect the pipe has already burst, this is where DIY needs to end. A hidden burst pipe can release a shocking amount of water in a short time once it fully thaws.
 
-If you're not confident locating or thawing a frozen pipe on your own, or if you've found signs the pipe may already be damaged, call ProFlow Plumbing at (555) 010-4477. We'd rather help you thaw a pipe carefully than help you clean up after one that burst.
+If you're not confident locating or thawing a frozen pipe on your own, or if you've found signs the pipe may already be damaged, call JJJ Plumbing at (626) 506-6951. We'd rather help you thaw a pipe carefully than help you clean up after one that burst.

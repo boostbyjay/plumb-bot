@@ -46,4 +46,4 @@ If the pump has power and the float is moving freely, but the motor still won't 
 
 ## When This Is Bigger Than a Quick Fix
 
-If you've checked the outlet, the breaker, and the float switch, and the pump still won't run, especially during active heavy rain, this isn't the time to keep experimenting. A failed sump pump during a storm is a genuine emergency given how quickly water can accumulate. ProFlow Plumbing can respond quickly to get water moving again, or in the meantime, a portable backup pump can buy you time while a permanent fix gets sorted out. Either way, don't wait until the basement is already wet to make the call.
+If you've checked the outlet, the breaker, and the float switch, and the pump still won't run, especially during active heavy rain, this isn't the time to keep experimenting. A failed sump pump during a storm is a genuine emergency given how quickly water can accumulate. JJJ Plumbing can respond quickly to get water moving again, or in the meantime, a portable backup pump can buy you time while a permanent fix gets sorted out. Either way, don't wait until the basement is already wet to make the call.

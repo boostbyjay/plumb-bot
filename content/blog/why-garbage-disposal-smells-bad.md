@@ -44,4 +44,4 @@ For a more thorough monthly routine, freeze a mixture of vinegar and small citru
 
 ## When It's More Than Just Odor
 
-If you've cleaned the splash guard, run the ice and citrus trick, and the smell keeps coming back within a few days, or if it's paired with slow draining or gurgling, there may be organic buildup further down the line that a surface clean won't reach. Persistent sewer-like odors, in particular, are worth taking seriously rather than repeatedly masking. If the smell won't quit, ProFlow Plumbing can inspect the drain line beyond what you can see or reach and get to the actual source.
+If you've cleaned the splash guard, run the ice and citrus trick, and the smell keeps coming back within a few days, or if it's paired with slow draining or gurgling, there may be organic buildup further down the line that a surface clean won't reach. Persistent sewer-like odors, in particular, are worth taking seriously rather than repeatedly masking. If the smell won't quit, JJJ Plumbing can inspect the drain line beyond what you can see or reach and get to the actual source.

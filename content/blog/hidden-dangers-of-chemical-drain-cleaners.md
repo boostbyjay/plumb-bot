@@ -40,4 +40,4 @@ Even when these products work, they often only dissolve the surface layer of a c
 
 If you have older pipes, if a previous cleaning product might still be in the drain, or if the clog has already resisted a first attempt with a chemical cleaner, it's time to stop reaching for the bottle and switch to mechanical methods instead. Repeated chemical treatments on a clog that won't clear are a strong sign the blockage is more serious than a bottle of cleaner is built to handle.
 
-If you're dealing with a stubborn clog and would rather not risk your pipes or your safety experimenting further, ProFlow Plumbing can clear it mechanically, without the fumes, the splashback risk, or the chance of quietly damaging your plumbing in the process.
+If you're dealing with a stubborn clog and would rather not risk your pipes or your safety experimenting further, JJJ Plumbing can clear it mechanically, without the fumes, the splashback risk, or the chance of quietly damaging your plumbing in the process.

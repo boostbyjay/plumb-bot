@@ -45,4 +45,4 @@ Since this friction naturally returns over time, it's worth doing this same quic
 
 If you've regreased the stem and the handle still squeaks, or if it's stiff to turn even after lubrication, the internal parts themselves may be worn out or corroded rather than just dry. That's usually the point where a cartridge or stem replacement makes more sense than another round of grease.
 
-If your faucet handle has gone from squeaky to genuinely hard to turn, don't force it. A quick call to ProFlow Plumbing can get it moving smoothly again before you end up with a stripped handle and no way to shut the water off.
+If your faucet handle has gone from squeaky to genuinely hard to turn, don't force it. A quick call to JJJ Plumbing can get it moving smoothly again before you end up with a stripped handle and no way to shut the water off.

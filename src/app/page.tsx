@@ -6,6 +6,7 @@ import { RecentWork } from "@/components/site/recent-work";
 import { Fixtures } from "@/components/site/fixtures";
 import { Commercial } from "@/components/site/commercial";
 import { About } from "@/components/site/about";
+import { Guarantees } from "@/components/site/guarantees";
 import { Estimate } from "@/components/site/estimate";
 import { ServiceAreas } from "@/components/site/service-areas";
 import { Testimonials } from "@/components/site/testimonials";
@@ -26,6 +27,7 @@ export default function Home() {
         <Fixtures />
         <Commercial />
         <About />
+        <Guarantees />
         <Estimate />
         <ServiceAreas />
         <Testimonials />

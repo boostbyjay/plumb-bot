@@ -49,4 +49,4 @@ The single best prevention step is a mesh drain catcher or hair strainer placed 
 
 If you've cleared the stopper and cleaned out what the zip-it tool could reach, but the sink is still draining slowly, the clog may extend further down into the P-trap or the branch line beyond it. That's a bit more involved to access and clear properly.
 
-If your bathroom sink is still slow to drain after this cleanout, it's a good sign to bring in ProFlow Plumbing rather than reaching for a chemical drain cleaner, which won't fully clear a deeper blockage and can be harsh on the pipes underneath.
+If your bathroom sink is still slow to drain after this cleanout, it's a good sign to bring in JJJ Plumbing rather than reaching for a chemical drain cleaner, which won't fully clear a deeper blockage and can be harsh on the pipes underneath.
