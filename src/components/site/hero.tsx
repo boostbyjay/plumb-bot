@@ -13,10 +13,10 @@ const trustBadges = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-brand-navy text-white">
-      <div className="grid lg:grid-cols-2 min-h-0 lg:min-h-[560px] w-full max-w-full">
+    <section id="top" className="relative overflow-hidden bg-brand-navy text-white min-h-[calc(100vh-3.75rem)] min-h-[calc(100svh-3.75rem)] lg:min-h-[calc(100vh-4.5rem)] flex flex-col justify-center">
+      <div className="grid lg:grid-cols-2 min-h-0 flex-1 w-full max-w-full">
         {/* Left: Hero Image */}
-        <div className="relative hidden lg:block">
+        <div className="relative hidden lg:block h-full min-h-full">
           <Image
             src="/work/hydrojetting-truck-hero-1920.jpg"
             alt="JJJ Plumbing truck-mounted hydro jetting rig, 4000 PSI at 18 GPM, on a job site"
@@ -48,7 +48,7 @@ export function Hero() {
         </div>
 
         {/* Right: Content */}
-        <div className="relative z-10 flex min-w-0 max-w-full flex-col justify-center px-4 pt-5 pb-6 sm:px-6 sm:pt-10 sm:pb-16 lg:py-16 lg:pb-24">
+        <div className="relative z-10 flex min-w-0 max-w-full flex-col justify-center px-4 pt-6 pb-20 sm:px-6 sm:py-12 lg:py-14 lg:pb-16">
           {/* Badges: Google Rating + Live Dispatch */}
           <div className="flex flex-wrap items-center gap-2">
             <a

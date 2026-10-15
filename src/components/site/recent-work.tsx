@@ -281,7 +281,7 @@ export function RecentWork() {
   const currentJob = lightbox !== null ? jobs[lightbox] : null;
 
   return (
-    <section id="recent-work" className="bg-white py-16 sm:py-24 scroll-mt-28">
+    <section id="recent-work" className="bg-white border-t border-slate-200/80 py-16 sm:py-24 scroll-mt-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
