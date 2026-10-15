@@ -1,7 +1,10 @@
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
-import { Services } from "@/components/site/services";
+import { Coupons } from "@/components/site/coupons";
 import { RecentWork } from "@/components/site/recent-work";
+import { Services } from "@/components/site/services";
+import { SecondOpinionBanner } from "@/components/site/second-opinion-banner";
+import { Financing } from "@/components/site/financing";
 import { Fixtures } from "@/components/site/fixtures";
 import { Commercial } from "@/components/site/commercial";
 import { About } from "@/components/site/about";
@@ -20,8 +23,11 @@ export default function Home() {
       <Header />
       <main className="flex-1 min-w-0 max-w-full overflow-x-clip">
         <Hero />
+        <Coupons />
         <RecentWork />
         <Services />
+        <SecondOpinionBanner />
+        <Financing />
         <Fixtures />
         <Commercial />
         <About />

@@ -1,4 +1,4 @@
-import { ShieldCheck, DollarSign, BadgeCheck } from "lucide-react";
+import { ShieldCheck, DollarSign, BadgeCheck, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const guarantees = [
@@ -18,10 +18,17 @@ const guarantees = [
   },
   {
     icon: BadgeCheck,
-    title: "Licensed Code-Compliance",
-    badge: "Done to CA Code",
+    title: "Diagnostic Credited",
+    badge: "100% Applied",
     description:
-      "All repairs and installations are completed strictly to California Uniform Plumbing Code by licensed professionals — no shortcuts, no unpermitted risks.",
+      "Your service evaluation fee is completely credited toward the cost of any approved repair or replacement. You never pay twice.",
+  },
+  {
+    icon: Award,
+    title: "Free 2nd Opinions",
+    badge: "Sewer & Repiping",
+    description:
+      "Got an expensive quote from another company? We provide a 100% free second opinion and camera review to protect you from unnecessary work.",
   },
 ];
 
@@ -31,37 +38,37 @@ export function Guarantees() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
-            Risk-Free Guarantee
+            Risk-Free Guarantees
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
             Why Southern California Homeowners Trust JJJ Plumbing
           </h2>
           <p className="mt-3 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
-            Hiring a contractor shouldn&apos;t feel like a gamble. We eliminate the risk with 3 ironclad promises on every service call.
+            Hiring a contractor shouldn&apos;t feel like a gamble. We eliminate the risk with 4 ironclad promises on every service call.
           </p>
         </div>
 
-        <div className="mt-8 mx-auto max-w-5xl grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 mx-auto max-w-6xl grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {guarantees.map((g) => {
             const Icon = g.icon;
             return (
               <div
                 key={g.title}
-                className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-accent/40"
+                className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-accent/40"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="flex size-12 items-center justify-center rounded-xl bg-brand-navy text-brand-accent">
-                      <Icon className="size-6" />
+                    <span className="flex size-11 items-center justify-center rounded-xl bg-brand-navy text-brand-accent">
+                      <Icon className="size-5.5" />
                     </span>
-                    <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600">
+                    <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-slate-700">
                       {g.badge}
                     </span>
                   </div>
-                  <h3 className="mt-4 text-lg font-bold text-brand-navy">
+                  <h3 className="mt-3.5 text-base sm:text-lg font-bold text-brand-navy">
                     {g.title}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {g.description}
                   </p>
                 </div>

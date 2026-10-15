@@ -12,17 +12,17 @@ export function Estimate() {
           <div className="grid lg:grid-cols-5">
             <div className="bg-brand-navy p-8 text-white lg:col-span-2 sm:p-10">
               <span className="inline-block rounded-full border border-brand-accent/40 bg-brand-accent/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-accent">
-                Instant $75 Voucher
+                Web Specials &amp; Upfront Quotes
               </span>
               <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-                Get a Fast, Upfront Quote
+                Book Fast Dispatch &amp; Lock In Your Savings
               </h2>
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300">
-                Submit this quick form to automatically unlock your <strong>$75 repair voucher</strong>. Our dispatch team will call you back within 5 minutes to confirm details and pricing.
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-300">
+                Pick your preferred arrival window and select any active coupon ($59 drain clearing, $75 off repair, or $150 off water heaters). Our dispatch team calls within 5 minutes!
               </p>
-              <p className="mt-2 text-[11px] text-slate-400">
-                *Valid on repairs $300+. Limit one voucher per customer.
-              </p>
+              <div className="mt-3 rounded-lg bg-emerald-500/15 border border-emerald-400/30 p-2 text-xs font-semibold text-emerald-300">
+                ✓ 100% Diagnostic Fee credited toward any approved repair.
+              </div>
 
               {/* Text a photo alternative */}
               <div className="mt-6 rounded-xl border border-brand-accent/30 bg-brand-navy-dark/60 p-4">

@@ -15,8 +15,10 @@ import {
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 const NAV_TARGETS = [
+  "specials",
   "services",
   "recent-work",
+  "financing",
   "fixtures",
   "commercial",
   "about",
@@ -110,13 +112,24 @@ export function Header() {
             />
           </Link>
 
-          {/* Mobile License Badge */}
-          <div className="flex lg:hidden items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[11px] font-semibold text-slate-200 shadow-sm">
-            <ShieldCheck className="size-3.5 text-brand-accent shrink-0" />
-            <span>{siteConfig.license}</span>
+          {/* Mobile License & Bilingual Badge */}
+          <div className="flex lg:hidden items-center gap-1.5">
+            <span className="rounded-xl border border-amber-400/40 bg-amber-400/15 px-2 py-0.5 text-[10px] font-bold text-amber-300">
+              {siteConfig.bilingual}
+            </span>
+            <a
+              href={siteConfig.cslbUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 rounded-xl border border-white/15 bg-white/[0.06] px-2 py-0.5 text-[10px] font-semibold text-slate-200 shadow-sm hover:border-brand-accent/60"
+              title="Verify California Contractor License"
+            >
+              <ShieldCheck className="size-3 text-brand-accent shrink-0" />
+              <span>{siteConfig.license}</span>
+            </a>
           </div>
 
-          <nav className="hidden items-center gap-1.5 xl:gap-2.5 lg:flex flex-1 justify-center max-w-4xl mx-2">
+          <nav className="hidden items-center gap-1.5 xl:gap-2 lg:flex flex-1 justify-center max-w-4xl mx-2">
             <Link
               href="/"
               onClick={handleHomeClick}
@@ -129,22 +142,31 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 py-1.5 xl:px-4 xl:py-2 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 py-1.5 xl:px-3.5 xl:py-2 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-2.5 lg:flex shrink-0">
-            <div className="flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] px-3 py-2 text-xs font-semibold text-slate-200">
-              <ShieldCheck className="size-4 text-brand-accent" />
+          <div className="hidden items-center gap-2 lg:flex shrink-0">
+            <span className="inline-flex items-center rounded-xl border border-amber-400/40 bg-amber-400/15 px-2.5 py-1.5 text-xs font-bold text-amber-300">
+              {siteConfig.bilingual}
+            </span>
+            <a
+              href={siteConfig.cslbUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] px-2.5 py-2 text-xs font-semibold text-slate-200 hover:border-brand-accent/70 transition-colors"
+              title="Verify California Contractor License"
+            >
+              <ShieldCheck className="size-3.5 text-brand-accent" />
               {siteConfig.license}
-            </div>
+            </a>
             <Button
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
-              className="h-10 xl:h-11 rounded-xl bg-brand-accent px-4 xl:px-5 text-xs xl:text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all hover:-translate-y-0.5"
+              className="h-10 xl:h-11 rounded-xl bg-brand-accent px-3.5 xl:px-5 text-xs xl:text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all hover:-translate-y-0.5"
             >
               <Phone className="size-3.5 xl:size-4" />
               Call Now
@@ -174,6 +196,10 @@ export function Header() {
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-2 px-3 py-3">
+                <div className="flex items-center justify-between rounded-xl border border-amber-400/40 bg-amber-400/10 px-3 py-2 text-xs font-bold text-amber-300">
+                  <span>{siteConfig.bilingual}</span>
+                  <span className="text-[11px] text-slate-300">Technicians Available</span>
+                </div>
                 <Link
                   href="/"
                   className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-base font-bold text-slate-100 hover:border-brand-accent hover:bg-brand-accent/15 hover:text-brand-accent cursor-pointer"
@@ -192,10 +218,15 @@ export function Header() {
                     {link.label}
                   </a>
                 ))}
-                <div className="mt-3 flex items-center gap-1.5 px-3 text-xs text-slate-300">
+                <a
+                  href={siteConfig.cslbUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 text-xs text-slate-300 hover:text-brand-accent"
+                >
                   <ShieldCheck className="size-4 text-brand-accent" />
-                  {siteConfig.license}
-                </div>
+                  Verify {siteConfig.license} (CSLB) →
+                </a>
                 <Button
                   render={<a href={siteConfig.phoneHref} />}
                   nativeButton={false}

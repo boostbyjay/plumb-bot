@@ -35,14 +35,14 @@ export function MobileStickyBar() {
           <span>Text Photo</span>
         </a>
 
-        {/* 3. $75 Voucher */}
+        {/* 3. Specials / $59+ */}
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="flex flex-1 flex-col sm:flex-row items-center justify-center gap-1 bg-brand-accent py-2.5 text-xs sm:text-sm font-bold text-brand-navy-dark active:bg-sky-300"
+          className="flex flex-1 flex-col sm:flex-row items-center justify-center gap-1 bg-brand-accent py-2.5 text-xs sm:text-sm font-extrabold text-brand-navy-dark active:bg-sky-300"
         >
           <Tag className="size-4" />
-          <span>$75 Voucher</span>
+          <span>Specials $59+</span>
         </button>
       </div>
 
@@ -50,10 +50,10 @@ export function MobileStickyBar() {
         <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg p-5 sm:p-6">
           <DialogHeader>
             <DialogTitle className="text-xl font-black text-brand-navy">
-              Claim Your $75 Repair Voucher
+              Claim Web Special &amp; Book Arrival Window
             </DialogTitle>
             <p className="text-xs text-slate-600">
-              Submit your request below or text a photo to lock in your discount. *Valid once per customer on repairs $300+.
+              Select your offer ($59 drain clearing, $75 off repair, or $150 off water heater). Diagnostic fee 100% credited toward your repair!
             </p>
           </DialogHeader>
           <LeadForm compact />

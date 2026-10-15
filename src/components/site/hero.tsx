@@ -6,9 +6,9 @@ import { photoBlur } from "@/lib/photo-blur";
 
 const trustBadges = [
   { icon: ShieldCheck, label: "Licensed & Insured" },
-  { icon: BadgeCheck, label: "100% Satisfaction Guarantee" },
-  { icon: DollarSign, label: "Upfront Pricing" },
-  { icon: Award, label: "Master Tech on Every Job" },
+  { icon: BadgeCheck, label: "Fixed Right or Free" },
+  { icon: DollarSign, label: "Diagnostic Fee Credited" },
+  { icon: Award, label: "Free 2nd Opinion on Sewers" },
 ];
 
 export function Hero() {
@@ -91,14 +91,14 @@ export function Hero() {
             </Button>
 
             <Button
-              render={<a href="#estimate" />}
+              render={<a href="#specials" />}
               nativeButton={false}
               size="lg"
               variant="outline"
               className="h-11 sm:h-12 w-full sm:w-auto border-brand-accent/60 bg-brand-accent/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark"
             >
               <Tag className="size-4 shrink-0 mr-1.5" />
-              Claim $75 Voucher
+              View $59+ Specials
             </Button>
 
             <Button
@@ -113,7 +113,15 @@ export function Hero() {
             </Button>
           </div>
 
-          <dl className="mt-5 sm:mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+          <p className="mt-3 text-[11px] sm:text-xs text-slate-300/90 flex flex-wrap items-center gap-x-2.5 gap-y-1">
+            <span className="text-emerald-300 font-semibold">✓ Diagnostic credited to repair</span>
+            <span>•</span>
+            <span className="text-brand-accent font-semibold">✓ 0% APR financing</span>
+            <span>•</span>
+            <span className="text-amber-300 font-semibold">✓ {siteConfig.bilingual}</span>
+          </p>
+
+          <dl className="mt-4 sm:mt-5 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
             {trustBadges.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 min-w-0">
                 <Icon className="size-4 shrink-0 text-brand-accent" />
