@@ -96,7 +96,7 @@ export function Financing() {
                   <Button
                     render={<a href="#estimate" />}
                     nativeButton={false}
-                    className="w-full bg-brand-accent hover:bg-sky-300 text-brand-navy-dark font-extrabold text-xs h-9.5 rounded-lg shadow-sm"
+                    className="w-full bg-brand-accent hover:bg-sky-300 text-brand-navy-dark font-extrabold text-xs h-9.5 rounded-lg shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
                   >
                     <DollarSign className="size-3.5 shrink-0 mr-1" />
                     Apply With Your Estimate

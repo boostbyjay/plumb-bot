@@ -6,9 +6,9 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Estimate() {
   return (
-    <section id="estimate" className="bg-slate-50 py-16 sm:py-24 scroll-mt-24">
+    <section id="estimate" className="bg-slate-50 py-16 sm:py-24 scroll-mt-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
+        <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl transition-all duration-500 target:ring-2 target:ring-brand-accent/60 target:shadow-2xl">
           <div className="grid lg:grid-cols-5">
             <div className="bg-brand-navy p-8 text-white lg:col-span-2 sm:p-10">
               <span className="inline-block rounded-full border border-brand-accent/40 bg-brand-accent/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-accent">

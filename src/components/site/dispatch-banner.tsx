@@ -54,7 +54,7 @@ export function DispatchBanner() {
                 render={<a href="#estimate" />}
                 nativeButton={false}
                 size="sm"
-                className="w-full sm:w-auto shrink-0 bg-brand-accent px-4 py-2 text-xs sm:text-sm font-bold text-brand-navy-dark hover:bg-sky-300"
+                className="w-full sm:w-auto shrink-0 bg-brand-accent px-4 py-2 text-xs sm:text-sm font-bold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
               >
                 Claim $75 Voucher
               </Button>

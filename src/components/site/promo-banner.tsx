@@ -19,7 +19,7 @@ export function PromoBanner() {
             render={<a href="#estimate" />}
             nativeButton={false}
             size="sm"
-            className="shrink-0 bg-brand-navy px-4 text-xs font-bold text-white hover:bg-brand-navy-light sm:text-sm"
+            className="shrink-0 bg-brand-navy px-4 text-xs font-bold text-white hover:bg-brand-navy-light sm:text-sm shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
           >
             Claim $75 Voucher
           </Button>

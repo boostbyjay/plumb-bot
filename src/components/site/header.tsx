@@ -26,19 +26,21 @@ const NAV_TARGETS = [
   "estimate",
 ];
 
-function bounceScroll(target: HTMLElement) {
+export function bounceScroll(target: HTMLElement) {
   const start = window.scrollY;
-  const end =
-    target.getBoundingClientRect().top +
-    start -
-    window.innerHeight / 2 +
-    target.offsetHeight / 2;
+  const headerOffset = 80;
+  // If element is tall (like estimate or services), land cleanly at the top of the section with header offset
+  // If element is smaller, center it
+  const isTall = target.offsetHeight > window.innerHeight * 0.6;
+  const end = isTall
+    ? target.getBoundingClientRect().top + start - headerOffset
+    : target.getBoundingClientRect().top + start - (window.innerHeight - target.offsetHeight) / 2;
   const distance = end - start;
-  const duration = 900;
+  const duration = 850;
   const startTime = performance.now();
 
   function easeOutBack(t: number) {
-    const c1 = 1.70158;
+    const c1 = 1.35;
     const c3 = c1 + 1;
     return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
   }
@@ -76,13 +78,15 @@ export function Header() {
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
-      const link = (e.target as HTMLElement).closest("a[href^='#']");
+      const link = (e.target as HTMLElement).closest("a[href*='#']");
       if (!link) return;
 
       const href = link.getAttribute("href");
       if (!href || href === "#") return;
 
-      const hash = href.replace("#", "");
+      const hash = href.includes("#") ? href.split("#")[1] : "";
+      if (!hash) return;
+
       if (hash === "specials") {
         e.preventDefault();
         window.dispatchEvent(new CustomEvent("jjj:open-specials"));
@@ -90,10 +94,12 @@ export function Header() {
       }
       if (!NAV_TARGETS.includes(hash)) return;
 
-      e.preventDefault();
-      const el = document.getElementById(hash);
-      if (el) {
-        setTimeout(() => bounceScroll(el), 50);
+      if (typeof window !== "undefined" && (window.location.pathname === "/" || window.location.pathname === "")) {
+        const el = document.getElementById(hash);
+        if (el) {
+          e.preventDefault();
+          setTimeout(() => bounceScroll(el), 50);
+        }
       }
     }
 
@@ -105,7 +111,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full">
       <div className="border-b border-slate-800 bg-brand-navy text-white shadow-lg">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-4 py-1.5 sm:py-2.5">
-          <Link href="/" onClick={handleHomeClick} className="flex shrink-0 items-center gap-2 cursor-pointer">
+          <Link href="/" onClick={handleHomeClick} className="flex shrink-0 items-center gap-2 cursor-pointer transition-all duration-200 hover:opacity-90 active:scale-[0.98]">
             <Image
               src="/jjj-plumbing-logo-v2.png"
               alt="JJJ Plumbing logo"
@@ -125,7 +131,7 @@ export function Header() {
               href={siteConfig.cslbUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 rounded-xl border border-white/15 bg-white/[0.06] px-2 py-0.5 text-[10px] font-semibold text-slate-200 shadow-sm hover:border-brand-accent/60"
+              className="flex items-center gap-1 rounded-xl border border-white/20 bg-white/[0.06] px-2 py-0.5 text-[10px] font-semibold text-slate-200 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
               title="Verify California Contractor License"
             >
               <ShieldCheck className="size-3 text-brand-accent shrink-0" />
@@ -137,7 +143,7 @@ export function Header() {
             <Link
               href="/"
               onClick={handleHomeClick}
-              className="h-9 w-9 xl:h-9.5 xl:w-9.5 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shrink-0"
+              className="h-9 w-9 xl:h-9.5 xl:w-9.5 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer shrink-0"
               aria-label="Home"
             >
               <House className="size-4" />
@@ -146,7 +152,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="h-9 xl:h-9.5 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 xl:px-3.5 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+                className="h-9 xl:h-9.5 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 xl:px-3.5 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
               >
                 {link.label}
               </a>
@@ -158,17 +164,17 @@ export function Header() {
               href={siteConfig.cslbUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-9 xl:h-9.5 inline-flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] px-2.5 text-xs font-semibold text-slate-200 hover:border-brand-accent/70 transition-colors"
+              className="h-9 xl:h-9.5 inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/[0.06] px-2.5 text-xs font-semibold text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
               title="Verify California Contractor License"
             >
               <ShieldCheck className="size-3.5 text-brand-accent" />
-              {siteConfig.license}
+              <span>{siteConfig.license}</span>
             </a>
             <div className="relative inline-flex items-center justify-center">
               <Button
                 render={<a href={siteConfig.phoneHref} />}
                 nativeButton={false}
-                className="h-9 xl:h-9.5 rounded-xl bg-brand-accent px-3.5 xl:px-4.5 text-xs xl:text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all hover:-translate-y-0.5"
+                className="h-9 xl:h-9.5 rounded-xl bg-brand-accent px-3.5 xl:px-4.5 text-xs xl:text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
               >
                 <Phone className="size-3.5 xl:size-4 mr-1" />
                 Call Now
@@ -185,7 +191,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/10 hover:text-white lg:hidden"
+                  className="text-white hover:bg-white/10 hover:text-white lg:hidden transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
                   aria-label="Open menu"
                 />
               }

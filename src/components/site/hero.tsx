@@ -84,7 +84,7 @@ export function Hero() {
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
               size="lg"
-              className="h-11 sm:h-12 w-full sm:w-auto bg-brand-accent px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-navy-dark hover:bg-sky-300 shadow-sm"
+              className="h-11 sm:h-12 w-full sm:w-auto bg-brand-accent px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-navy-dark hover:bg-sky-300 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               <Phone className="size-4.5 shrink-0 mr-1.5" />
               Call {siteConfig.phone}
@@ -95,7 +95,7 @@ export function Hero() {
               nativeButton={false}
               size="lg"
               variant="outline"
-              className="h-11 sm:h-12 w-full sm:w-auto border-brand-accent/60 bg-brand-accent/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark"
+              className="h-11 sm:h-12 w-full sm:w-auto border-brand-accent/60 bg-brand-accent/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               <Tag className="size-4 shrink-0 mr-1.5" />
               View Web Specials
@@ -106,7 +106,7 @@ export function Hero() {
               nativeButton={false}
               size="lg"
               variant="outline"
-              className="h-11 sm:h-12 w-full sm:w-auto border-white/30 bg-white/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-white hover:bg-white/20"
+              className="h-11 sm:h-12 w-full sm:w-auto border-white/30 bg-white/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-white hover:bg-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               <Camera className="size-4 shrink-0 mr-1.5 text-brand-accent" />
               Text Photo for Quote

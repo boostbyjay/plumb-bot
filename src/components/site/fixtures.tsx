@@ -88,7 +88,7 @@ export function Fixtures() {
         <div className="mt-10 flex justify-center">
           <a
             href="#estimate"
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-navy px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-navy-light"
+            className="inline-flex items-center gap-2 rounded-xl bg-brand-navy px-7 py-3 text-sm font-bold text-white shadow-md transition-all duration-200 hover:bg-brand-navy-light hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
           >
             Ask About a Fixture or Valve Upgrade
           </a>

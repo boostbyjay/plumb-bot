@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { bounceScroll } from "@/components/site/header";
 
 export function Coupons() {
   const [open, setOpen] = useState(false);
@@ -55,7 +56,7 @@ export function Coupons() {
       const el = document.getElementById("estimate");
       if (el) {
         setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
+          bounceScroll(el);
         }, 150);
       }
     }
@@ -154,7 +155,7 @@ export function Coupons() {
                   <Button
                     type="button"
                     onClick={() => handleClaim(coupon.code, coupon.serviceId)}
-                    className="w-full bg-brand-navy hover:bg-brand-navy-light text-white text-xs font-bold rounded-lg h-9 shadow-sm"
+                    className="w-full bg-brand-navy hover:bg-brand-navy-light text-white text-xs font-bold rounded-lg h-9 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
                   >
                     <span>Claim This Offer</span>
                     <ArrowRight className="size-3 ml-1" />

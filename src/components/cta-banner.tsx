@@ -24,7 +24,7 @@ export function CtaBanner({
           <Button
             render={<a href="/#estimate" />}
             nativeButton={false}
-            className="bg-brand-accent font-bold text-brand-navy-dark hover:bg-sky-300"
+            className="bg-brand-accent font-bold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
           >
             Claim $75 Voucher
           </Button>

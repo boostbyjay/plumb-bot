@@ -94,7 +94,7 @@ export function Guarantees() {
                 render={<a href="#estimate" />}
                 nativeButton={false}
                 size="lg"
-                className="bg-brand-accent px-6 font-bold text-brand-navy-dark hover:bg-sky-300"
+                className="bg-brand-accent px-6 font-bold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
               >
                 Claim $75 Voucher &amp; Free Estimate
               </Button>

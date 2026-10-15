@@ -107,14 +107,14 @@ export function Services() {
 
           <a
             href="#estimate"
-            className="flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-brand-accent/50 bg-brand-navy p-6 text-center text-white transition-colors hover:bg-brand-navy-light"
+            className="flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-brand-accent/50 bg-brand-navy p-6 text-center text-white transition-all duration-200 hover:bg-brand-navy-light hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer group"
           >
             <p className="text-lg font-bold">Not sure what you need?</p>
             <p className="text-sm text-slate-300">
               Tell us what&apos;s going on and we&apos;ll recommend the right
               fix, upfront and in plain English.
             </p>
-            <span className="mt-2 rounded-full bg-brand-accent px-5 py-2 text-sm font-bold text-brand-navy-dark">
+            <span className="mt-2 rounded-full bg-brand-accent px-5 py-2 text-sm font-bold text-brand-navy-dark shadow-sm transition-all duration-200 group-hover:bg-sky-300">
               Get a Free Estimate
             </span>
           </a>

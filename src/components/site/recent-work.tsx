@@ -392,7 +392,7 @@ export function RecentWork() {
         <div className="mt-8 flex justify-center">
           <a
             href="#estimate"
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-accent px-7 py-3 text-sm font-bold text-brand-navy-dark transition-colors hover:bg-sky-300"
+            className="inline-flex items-center gap-2 rounded-xl bg-brand-accent px-7 py-3 text-sm font-bold text-brand-navy-dark shadow-md transition-all duration-200 hover:bg-sky-300 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
           >
             <Tag className="size-4" />
             Claim $75 Voucher &amp; Get Estimate
@@ -503,7 +503,7 @@ export function RecentWork() {
                   render={<a href="#estimate" onClick={() => setLightbox(null)} />}
                   nativeButton={false}
                   size="default"
-                  className="flex-1 bg-brand-accent py-2.5 text-xs sm:text-sm font-bold text-brand-navy-dark hover:bg-sky-300"
+                  className="flex-1 bg-brand-accent py-2.5 text-xs sm:text-sm font-bold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
                 >
                   <Tag className="size-4 mr-1.5" />
                   Claim $75 Voucher For Similar Fix
