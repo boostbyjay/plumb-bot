@@ -128,7 +128,7 @@ export function LeadForm({
 
       const autoresponseMessage = `Thank you for contacting JJJ Plumbing! We have received your request and your special offer (${couponTitle}) has been locked in for your visit.
 
-A member of our team will call you at ${values.phone} within 5 minutes to confirm your details, arrival window, and upfront pricing.
+A member of our team will text you at ${values.phone} within 5 minutes to confirm your details, arrival window, and upfront pricing.
 
 OFFICIAL COUPON CODE: ${values.couponCode}
 OFFER APPLIED: ${couponTitle}
@@ -242,7 +242,7 @@ Website: https://www.jjjplumbing.com`;
             {matchedCoupon?.title || "Special Offer Applied"}
           </h3>
           <p className="mt-2 max-w-sm text-sm text-emerald-800">
-            Our dispatch team will call you at <strong>{values.phone}</strong> within 5 minutes to confirm your visit.
+            Our dispatch team will text you at <strong>{values.phone}</strong> within 5 minutes to confirm your visit.
           </p>
         </div>
 
@@ -510,7 +510,7 @@ Website: https://www.jjjplumbing.com`;
           ✓ Diagnostic fee 100% credited toward your repair if work is performed.
         </p>
         <p className="text-[10px] text-muted-foreground leading-normal">
-          No hidden fees. Upfront quote before any wrench is turned. We will call you within 5 minutes.
+          No hidden fees. Upfront quote before any wrench is turned. We will text you within 5 minutes.
         </p>
       </div>
     </form>
