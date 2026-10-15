@@ -78,7 +78,7 @@ export function Coupons() {
             <span>Limited-Time Web Specials</span>
           </div>
           <DialogTitle className="text-xl sm:text-2xl font-black text-brand-navy tracking-tight mt-1.5">
-            Exclusive Los Angeles Plumbing Coupons
+            Exclusive Plumbing Coupons
           </DialogTitle>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             Lock in upfront savings on your next repair, drain clearing, or installation. Tap claim to lock in your offer online or copy the code to mention over the phone.
