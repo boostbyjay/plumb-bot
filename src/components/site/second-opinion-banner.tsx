@@ -20,7 +20,7 @@ export function SecondOpinionBanner() {
               </h3>
 
               <p className="mt-2 text-sm sm:text-base text-slate-700 leading-relaxed">
-                Don&apos;t risk thousands on unnecessary excavation. JJJ Plumbing provides a <strong>100% Free Second Opinion &amp; Sewer Camera Inspection</strong> on all major sewer repairs, trenchless lining, and whole-home repiping. We routinely save Los Angeles homeowners \$1,000 to \$3,500 with honest, master-plumber diagnostics.
+                Don&apos;t risk thousands on unnecessary excavation. JJJ Plumbing provides a <strong>100% Free Second Opinion &amp; Sewer Camera Inspection</strong> on all major sewer repairs, trenchless lining, and whole-home repiping. We routinely save Los Angeles homeowners $1,000 to $3,500 with honest, master-plumber diagnostics.
               </p>
 
               <div className="mt-4 flex flex-wrap gap-y-2 gap-x-5 text-xs sm:text-sm text-slate-600 font-medium">

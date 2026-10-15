@@ -15,7 +15,6 @@ import {
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 const NAV_TARGETS = [
-  "specials",
   "services",
   "recent-work",
   "financing",
@@ -84,6 +83,11 @@ export function Header() {
       if (!href || href === "#") return;
 
       const hash = href.replace("#", "");
+      if (hash === "specials") {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent("jjj:open-specials"));
+        return;
+      }
       if (!NAV_TARGETS.includes(hash)) return;
 
       e.preventDefault();
@@ -149,10 +153,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-2 lg:flex shrink-0">
-            <span className="inline-flex items-center rounded-xl border border-amber-400/40 bg-amber-400/15 px-2.5 py-1.5 text-xs font-bold text-amber-300">
-              {siteConfig.bilingual}
-            </span>
+          <div className="hidden items-center gap-3 lg:flex shrink-0">
             <a
               href={siteConfig.cslbUrl}
               target="_blank"
@@ -163,14 +164,19 @@ export function Header() {
               <ShieldCheck className="size-3.5 text-brand-accent" />
               {siteConfig.license}
             </a>
-            <Button
-              render={<a href={siteConfig.phoneHref} />}
-              nativeButton={false}
-              className="h-10 xl:h-11 rounded-xl bg-brand-accent px-3.5 xl:px-5 text-xs xl:text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all hover:-translate-y-0.5"
-            >
-              <Phone className="size-3.5 xl:size-4" />
-              Call Now
-            </Button>
+            <div className="flex flex-col items-center gap-0.5">
+              <Button
+                render={<a href={siteConfig.phoneHref} />}
+                nativeButton={false}
+                className="h-9 xl:h-9.5 rounded-xl bg-brand-accent px-3.5 xl:px-4.5 text-xs xl:text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all hover:-translate-y-0.5"
+              >
+                <Phone className="size-3.5 xl:size-4 mr-1" />
+                Call Now
+              </Button>
+              <span className="text-[10px] font-bold text-amber-300 tracking-tight leading-none">
+                {siteConfig.bilingual}
+              </span>
+            </div>
           </div>
 
           <Sheet open={open} onOpenChange={setOpen}>

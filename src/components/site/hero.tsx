@@ -91,7 +91,7 @@ export function Hero() {
             </Button>
 
             <Button
-              render={<a href="#specials" />}
+              render={<a href="#specials" data-specials-trigger="true" />}
               nativeButton={false}
               size="lg"
               variant="outline"
