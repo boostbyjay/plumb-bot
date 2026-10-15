@@ -200,7 +200,7 @@ Website: https://www.jjjplumbing.com`;
             JJJ-75OFF
           </div>
           <p className="mt-2 text-xs text-slate-600">
-            Show this screen or quote <strong>JJJ-75OFF</strong> to your technician upon arrival. Valid on repairs $300+.
+            Show this screen or quote <strong>JJJ-75OFF</strong> to your technician upon arrival. Valid on repairs $300+ (limit one per customer).
           </p>
         </div>
 
@@ -227,9 +227,14 @@ Website: https://www.jjjplumbing.com`;
         <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-accent text-brand-navy-dark text-xs font-black">
           $
         </span>
-        <p className="leading-snug">
-          <strong>$75 Repair Voucher:</strong> Unlocked automatically when you submit this form or text a photo!
-        </p>
+        <div className="leading-snug">
+          <p>
+            <strong>$75 Repair Voucher:</strong> Unlocked automatically when you submit this form or text a photo!
+          </p>
+          <p className="text-[11px] font-normal text-slate-600 mt-0.5">
+            *Valid on repairs $300+. Limit one voucher per customer.
+          </p>
+        </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -356,9 +361,8 @@ Website: https://www.jjjplumbing.com`;
       {errors._form && (
         <p className="text-center text-xs text-destructive">{errors._form}</p>
       )}
-      <p className="text-center text-xs text-muted-foreground">
-        By submitting, you agree to be contacted about your service request.
-        No spam, ever.
+      <p className="text-center text-[11px] text-muted-foreground leading-normal">
+        *Voucher valid on repairs $300+. Limit 1 per customer. By submitting, you agree to be contacted about your service request.
       </p>
     </form>
   );

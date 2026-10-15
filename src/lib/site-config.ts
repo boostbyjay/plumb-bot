@@ -9,7 +9,8 @@ export const siteConfig = {
   voucher: {
     code: "JJJ-75OFF",
     amount: "$75 Off",
-    description: "Unlocked when you submit an estimate form or text in a photo of your issue (valid on repairs $300+).",
+    description: "Unlocked when you submit an estimate form or text in a photo of your issue (valid on repairs $300+, limit once per customer).",
+    disclaimer: "Valid on repairs $300+. Limit one voucher per customer.",
   },
   license: "CA LIC #842875",
   yearsInBusiness: 25,

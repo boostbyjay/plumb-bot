@@ -520,6 +520,9 @@ export function RecentWork() {
                   Text Photo
                 </Button>
               </div>
+              <p className="mt-2 text-center text-[11px] text-slate-500">
+                *Valid on repairs $300+. Limit one voucher per customer.
+              </p>
             </div>
           </div>
 

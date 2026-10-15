@@ -53,7 +53,7 @@ export function MobileStickyBar() {
               Claim Your $75 Repair Voucher
             </DialogTitle>
             <p className="text-xs text-slate-600">
-              Submit your request below or text a photo to lock in your discount.
+              Submit your request below or text a photo to lock in your discount. *Valid once per customer on repairs $300+.
             </p>
           </DialogHeader>
           <LeadForm compact />

@@ -79,6 +79,9 @@ export function Guarantees() {
             <p className="mt-1.5 text-xs sm:text-sm text-slate-300">
               Submit your request or text a photo to unlock your <strong>$75 repair voucher</strong>.
             </p>
+            <p className="mt-1 text-[11px] text-slate-400">
+              *Valid on repairs $300+. Limit one voucher per customer.
+            </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3">
               <Button
                 render={<a href="#estimate" />}

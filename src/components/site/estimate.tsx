@@ -20,6 +20,9 @@ export function Estimate() {
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300">
                 Submit this quick form to automatically unlock your <strong>$75 repair voucher</strong>. Our dispatch team will call you back within 5 minutes to confirm details and pricing.
               </p>
+              <p className="mt-2 text-[11px] text-slate-400">
+                *Valid on repairs $300+. Limit one voucher per customer.
+              </p>
 
               {/* Text a photo alternative */}
               <div className="mt-6 rounded-xl border border-brand-accent/30 bg-brand-navy-dark/60 p-4">
