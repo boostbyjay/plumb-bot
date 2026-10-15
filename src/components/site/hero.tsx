@@ -76,7 +76,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-3.5 sm:mt-5 max-w-xl text-base text-slate-300 sm:text-lg text-pretty">
-            From emergency leak repairs to sewer replacements, JJJ Plumbing arrives on time with master plumbers, upfront pricing, and guaranteed workmanship. Submit a form or text a photo to unlock your <strong className="text-brand-accent">$75 repair voucher</strong>.
+            From emergency leak repairs to sewer replacements, JJJ Plumbing arrives on time with master plumbers, upfront pricing, and guaranteed workmanship.
           </p>
 
           <div className="mt-5 sm:mt-6 flex flex-col gap-2.5 sm:flex-row sm:items-center">

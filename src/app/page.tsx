@@ -1,6 +1,5 @@
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
-import { DispatchBanner } from "@/components/site/dispatch-banner";
 import { Services } from "@/components/site/services";
 import { RecentWork } from "@/components/site/recent-work";
 import { Fixtures } from "@/components/site/fixtures";
@@ -21,7 +20,6 @@ export default function Home() {
       <Header />
       <main className="flex-1 min-w-0 max-w-full overflow-x-clip">
         <Hero />
-        <DispatchBanner />
         <Services />
         <RecentWork />
         <Fixtures />
