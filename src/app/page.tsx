@@ -20,8 +20,8 @@ export default function Home() {
       <Header />
       <main className="flex-1 min-w-0 max-w-full overflow-x-clip">
         <Hero />
-        <Services />
         <RecentWork />
+        <Services />
         <Fixtures />
         <Commercial />
         <About />

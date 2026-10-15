@@ -39,8 +39,8 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "Services", href: "/#services" },
   { label: "Our Work", href: "/#recent-work" },
+  { label: "Services", href: "/#services" },
   { label: "Commercial", href: "/#commercial" },
   { label: "About", href: "/#about" },
   { label: "Service Areas", href: "/#service-areas" },

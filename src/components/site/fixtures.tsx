@@ -39,7 +39,7 @@ const fixtures = [
 
 export function Fixtures() {
   return (
-    <section id="fixtures" className="bg-slate-50 py-16 sm:py-24 scroll-mt-28">
+    <section id="fixtures" className="bg-white border-t border-slate-200/60 py-16 sm:py-24 scroll-mt-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
