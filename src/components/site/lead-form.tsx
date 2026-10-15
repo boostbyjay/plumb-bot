@@ -39,15 +39,15 @@ const initialValues: FormValues = {
   zip: "",
   details: "",
   urgency: "asap",
-  couponCode: "JJJ-75OFF",
+  couponCode: "",
 };
 
 const quickIssues = [
   { label: "💧 Hydro-Jet / Drain", service: "drain-cleaning", coupon: "HYDRO149" },
-  { label: "🚨 Emergency Leak", service: "emergency-repairs", coupon: "JJJ-75OFF" },
+  { label: "🚨 Emergency Leak", service: "emergency-repairs", coupon: "" },
   { label: "🚿 Water Heater", service: "water-heaters", coupon: "HEAT150" },
   { label: "🏗️ Sewer / Line", service: "sewer-lines", coupon: "SEWER-2ND" },
-  { label: "🏢 Commercial", service: "commercial", coupon: "JJJ-75OFF" },
+  { label: "🏢 Commercial", service: "commercial", coupon: "" },
 ];
 
 const urgencyOptions = [
@@ -94,7 +94,7 @@ export function LeadForm({
     setValues((prev) => ({
       ...prev,
       service: serviceId,
-      couponCode: couponCode || prev.couponCode,
+      couponCode: couponCode || "",
     }));
     setErrors((prev) => ({ ...prev, service: undefined }));
   }
@@ -124,14 +124,23 @@ export function LeadForm({
         urgencyOptions.find((u) => u.id === values.urgency)?.label || values.urgency;
 
       const matchedCoupon = siteConfig.coupons.find((c) => c.code === values.couponCode);
-      const couponTitle = matchedCoupon ? `${matchedCoupon.title} (Code: ${matchedCoupon.code})` : values.couponCode;
+      const hasSpecificOffer =
+        values.couponCode &&
+        values.couponCode !== "JJJ-75OFF" &&
+        matchedCoupon;
 
-      const autoresponseMessage = `Thank you for contacting JJJ Plumbing! We have received your request and your special offer (${couponTitle}) has been locked in for your visit.
+      const offerLine = hasSpecificOffer
+        ? `\nOFFICIAL COUPON CODE: ${values.couponCode}\nOFFER APPLIED: ${matchedCoupon.title}\n`
+        : "";
 
-A member of our team will text you at ${values.phone} within 5 minutes to confirm your details, arrival window, and upfront pricing.
+      const introSentence = hasSpecificOffer
+        ? `Thank you for contacting JJJ Plumbing! We have received your request and your special offer (${matchedCoupon.title}) has been locked in for your visit.`
+        : `Thank you for contacting JJJ Plumbing! We have received your request and our dispatch team is reviewing your details.`;
 
-OFFICIAL COUPON CODE: ${values.couponCode}
-OFFER APPLIED: ${couponTitle}
+      const autoresponseMessage = `${introSentence}
+
+Our dispatch team will text you at ${values.phone} within 5 minutes to confirm your details, arrival window, and upfront pricing.
+${offerLine}
 REQUESTED SERVICE: ${serviceLabel}
 PREFERRED ARRIVAL: ${urgencyLabel}
 SERVICE LOCATION: ${values.zip}
@@ -152,7 +161,7 @@ Website: https://www.jjjplumbing.com`;
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: `New Quote Request: ${serviceLabel} [${values.couponCode}] - ${values.name}`,
+          _subject: `New Quote Request: ${serviceLabel} ${hasSpecificOffer ? `[${values.couponCode}] ` : ""}- ${values.name}`,
           _template: "table",
           _captcha: "false",
           _autoresponse: autoresponseMessage,
@@ -163,7 +172,7 @@ Website: https://www.jjjplumbing.com`;
           "Email Address": values.email,
           "Service Needed": serviceLabel,
           "Preferred Arrival Time": urgencyLabel,
-          "Special Offer / Coupon": couponTitle,
+          "Special Offer / Coupon": hasSpecificOffer ? matchedCoupon.title : "None",
           "Address / Zip Code": values.zip,
           "Issue Description": values.details || "None provided",
         }),
@@ -224,6 +233,7 @@ Website: https://www.jjjplumbing.com`;
 
   if (status === "success") {
     const matchedCoupon = siteConfig.coupons.find((c) => c.code === values.couponCode);
+    const showCoupon = Boolean(matchedCoupon && values.couponCode && values.couponCode !== "JJJ-75OFF");
     return (
       <div
         className={cn(
@@ -236,27 +246,34 @@ Website: https://www.jjjplumbing.com`;
         </div>
         <div>
           <span className="inline-block rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-            Special Offer Locked In
+            Request Received
           </span>
           <h3 className="mt-2 text-2xl font-black text-emerald-950">
-            {matchedCoupon?.title || "Special Offer Applied"}
+            {showCoupon ? matchedCoupon!.title : "Fast Dispatch Confirmed"}
           </h3>
           <p className="mt-2 max-w-sm text-sm text-emerald-800">
             Our dispatch team will text you at <strong>{values.phone}</strong> within 5 minutes to confirm your visit.
           </p>
         </div>
 
-        {/* Digital Coupon Box */}
-        <div className="w-full max-w-sm rounded-xl border-2 border-dashed border-emerald-400 bg-white p-4 shadow-sm text-center">
-          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-            Your Official Coupon Code
-          </p>
-          <div className="mt-1.5 inline-block rounded-lg bg-emerald-100 px-4 py-1.5 font-mono text-xl font-extrabold tracking-widest text-emerald-900 border border-emerald-300">
-            {values.couponCode}
+        {/* Digital Coupon Box - only if specific promo like hydrojetting, never the $75 voucher */}
+        {showCoupon && (
+          <div className="w-full max-w-sm rounded-xl border-2 border-dashed border-emerald-400 bg-white p-4 shadow-sm text-center">
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Your Official Coupon Code
+            </p>
+            <div className="mt-1.5 inline-block rounded-lg bg-emerald-100 px-4 py-1.5 font-mono text-xl font-extrabold tracking-widest text-emerald-900 border border-emerald-300">
+              {values.couponCode}
+            </div>
+            <p className="mt-2 text-xs text-slate-600">
+              Show this screen to your technician upon arrival. Diagnostic fee 100% credited toward your repair!
+            </p>
           </div>
-          <p className="mt-2 text-xs text-slate-600">
-            Show this screen to your technician upon arrival. Diagnostic fee 100% credited toward your repair!
-          </p>
+        )}
+
+        {/* Reassurance badge */}
+        <div className="w-full max-w-sm rounded-xl border border-emerald-200 bg-white/80 p-3 text-xs text-emerald-900 font-medium text-center">
+          ✓ 100% Diagnostic fee credited toward your repair if work is performed.
         </div>
 
         <div className="w-full pt-1">
@@ -451,15 +468,16 @@ Website: https://www.jjjplumbing.com`;
           )}
         </div>
         <div className="flex flex-col gap-1.5">
-          <Label htmlFor={`coupon-${uid}`} className="text-xs font-semibold">Applied Coupon</Label>
+          <Label htmlFor={`coupon-${uid}`} className="text-xs font-semibold">Special Offer (Optional)</Label>
           <Select
-            value={values.couponCode}
-            onValueChange={(val) => updateField("couponCode", val ?? "JJJ-75OFF")}
+            value={values.couponCode || "none"}
+            onValueChange={(val) => updateField("couponCode", val === "none" ? "" : (val ?? ""))}
           >
-            <SelectTrigger id={`coupon-${uid}`} className="w-full h-10 text-sm font-mono font-semibold">
-              <SelectValue />
+            <SelectTrigger id={`coupon-${uid}`} className="w-full h-10 text-sm font-semibold">
+              <SelectValue placeholder="No coupon applied" />
             </SelectTrigger>
             <SelectContent>
+              <SelectItem value="none">No coupon applied</SelectItem>
               {siteConfig.coupons.map((c) => (
                 <SelectItem key={c.code} value={c.code}>
                   {c.code} — {c.title}
