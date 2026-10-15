@@ -95,36 +95,36 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-2 xl:gap-3 lg:flex flex-1 justify-center max-w-4xl mx-3">
+          <nav className="hidden items-center gap-1.5 xl:gap-2.5 lg:flex flex-1 justify-center max-w-4xl mx-2">
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] p-2.5 text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] p-2 xl:p-2.5 text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               aria-label="Home"
             >
-              <House className="size-4.5" />
+              <House className="size-4" />
             </Link>
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-3.5 py-2 xl:px-4.5 xl:py-2.5 text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 py-1.5 xl:px-4 xl:py-2 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex shrink-0">
-            <div className="flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] px-3 py-2 text-xs font-semibold text-slate-200">
+          <div className="hidden items-center gap-2.5 lg:flex shrink-0">
+            <div className="hidden xl:flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] px-3 py-2 text-xs font-semibold text-slate-200">
               <ShieldCheck className="size-4 text-brand-accent" />
               {siteConfig.license}
             </div>
             <Button
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
-              className="h-11 rounded-xl bg-brand-accent px-5 text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all hover:-translate-y-0.5"
+              className="h-10 xl:h-11 rounded-xl bg-brand-accent px-4 xl:px-5 text-xs xl:text-sm font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all hover:-translate-y-0.5"
             >
-              <Phone className="size-4" />
+              <Phone className="size-3.5 xl:size-4" />
               Call Now
             </Button>
           </div>

@@ -79,14 +79,14 @@ export function Hero() {
             From emergency leak repairs to sewer replacements, JJJ Plumbing arrives on time with master plumbers, upfront pricing, and guaranteed workmanship.
           </p>
 
-          <div className="mt-5 sm:mt-6 flex flex-col gap-2.5 sm:flex-row sm:items-center">
+          <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
             <Button
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
               size="lg"
-              className="h-12 w-full sm:w-auto bg-brand-accent px-6 text-base font-bold text-brand-navy-dark hover:bg-sky-300"
+              className="h-11 sm:h-12 w-full sm:w-auto bg-brand-accent px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-navy-dark hover:bg-sky-300 shadow-sm"
             >
-              <Phone className="size-5 shrink-0 mr-1.5" />
+              <Phone className="size-4.5 shrink-0 mr-1.5" />
               Call {siteConfig.phone}
             </Button>
 
@@ -95,7 +95,7 @@ export function Hero() {
               nativeButton={false}
               size="lg"
               variant="outline"
-              className="h-12 w-full sm:w-auto border-brand-accent/60 bg-brand-accent/10 px-6 text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark"
+              className="h-11 sm:h-12 w-full sm:w-auto border-brand-accent/60 bg-brand-accent/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark"
             >
               <Tag className="size-4 shrink-0 mr-1.5" />
               Claim $75 Voucher
@@ -106,18 +106,18 @@ export function Hero() {
               nativeButton={false}
               size="lg"
               variant="outline"
-              className="h-12 w-full sm:w-auto border-white/30 bg-white/10 px-6 text-base font-bold text-white hover:bg-white/20"
+              className="h-11 sm:h-12 w-full sm:w-auto border-white/30 bg-white/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-white hover:bg-white/20"
             >
               <Camera className="size-4 shrink-0 mr-1.5 text-brand-accent" />
               Text Photo for Quote
             </Button>
           </div>
 
-          <dl className="mt-5 sm:mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="mt-5 sm:mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
             {trustBadges.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 min-w-0">
                 <Icon className="size-4 shrink-0 text-brand-accent" />
-                <dt className="text-xs font-semibold text-slate-100 leading-snug break-words">
+                <dt className="text-xs font-semibold text-slate-100 leading-snug">
                   {label}
                 </dt>
               </div>
