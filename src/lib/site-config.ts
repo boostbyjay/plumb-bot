@@ -5,7 +5,7 @@ export const siteConfig = {
   phone: "(626) 506-6951",
   phoneHref: "tel:+16265066951",
   smsHref:
-    "sms:+16265066951?body=Hi%20JJJ%20Plumbing,%20here%20is%20a%20photo%20of%20my%20plumbing%20problem:%20(Please%20apply%20my%20$75%20repair%20voucher)",
+    "sms:+16265066951?body=Hi%20JJJ%20Plumbing,%20here%20is%20a%20photo%20of%20my%20plumbing%20issue%20($75%20voucher):%0A%0AName:%20%0ACity:%20%0ADescribe%20issue:%20",
   voucher: {
     code: "JJJ-75OFF",
     amount: "$75 Off",

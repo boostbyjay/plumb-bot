@@ -1,4 +1,4 @@
-import { ShieldCheck, DollarSign, Clock, Sparkles } from "lucide-react";
+import { ShieldCheck, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const guarantees = [
@@ -16,39 +16,25 @@ const guarantees = [
     description:
       "You approve the exact quote before we turn a wrench. No hidden travel charges, no dispatch add-ons, and no overtime surprises on your invoice.",
   },
-  {
-    icon: Clock,
-    title: "On-Time Arrival",
-    badge: "Respect for Your Time",
-    description:
-      "We provide clear arrival windows. If our technician is more than 15 minutes late without prior notice, we automatically credit $25 off your service.",
-  },
-  {
-    icon: Sparkles,
-    title: "Clean Home Guarantee",
-    badge: "Property Protection",
-    description:
-      "We wear protective shoe covers and use drop cloths on every job. If we don't leave your bathroom or kitchen spotless, we pay for a maid service.",
-  },
 ];
 
 export function Guarantees() {
   return (
-    <section className="bg-slate-100/80 py-16 sm:py-24 border-y border-slate-200">
+    <section className="bg-slate-100/80 py-10 sm:py-14 border-y border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
             Risk-Free Guarantee
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
+          <h2 className="mt-2.5 text-2xl font-extrabold tracking-tight text-brand-navy sm:text-3xl">
             Why Southern California Homeowners Trust JJJ Plumbing
           </h2>
-          <p className="mt-4 text-slate-600 text-base sm:text-lg">
-            Hiring a contractor shouldn&apos;t feel like a gamble. We eliminate the risk with 4 ironclad promises on every service call.
+          <p className="mt-2.5 text-slate-600 text-sm sm:text-base">
+            Hiring a contractor shouldn&apos;t feel like a gamble. We eliminate the risk with ironclad promises on every service call.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 mx-auto max-w-4xl grid gap-5 sm:grid-cols-2">
           {guarantees.map((g) => {
             const Icon = g.icon;
             return (
@@ -65,7 +51,7 @@ export function Guarantees() {
                       {g.badge}
                     </span>
                   </div>
-                  <h3 className="mt-5 text-lg font-bold text-brand-navy">
+                  <h3 className="mt-4 text-lg font-bold text-brand-navy">
                     {g.title}
                   </h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">
@@ -78,15 +64,15 @@ export function Guarantees() {
         </div>
 
         {/* Action card */}
-        <div className="mt-10 rounded-2xl border border-brand-accent/30 bg-brand-navy p-6 sm:p-8 text-center text-white">
-          <div className="mx-auto max-w-2xl">
-            <h3 className="text-xl sm:text-2xl font-bold">
+        <div className="mt-8 mx-auto max-w-4xl rounded-2xl border border-brand-accent/30 bg-brand-navy p-5 sm:p-6 text-center text-white">
+          <div className="mx-auto max-w-xl">
+            <h3 className="text-lg sm:text-xl font-bold">
               Ready for Fast, Guaranteed Plumbing Service?
             </h3>
-            <p className="mt-2 text-sm text-slate-300">
+            <p className="mt-1.5 text-xs sm:text-sm text-slate-300">
               Submit your request or text a photo to unlock your <strong>$75 repair voucher</strong>.
             </p>
-            <div className="mt-5 flex flex-wrap justify-center gap-3">
+            <div className="mt-4 flex flex-wrap justify-center gap-3">
               <Button
                 render={<a href="#estimate" />}
                 nativeButton={false}
