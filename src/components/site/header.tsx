@@ -58,6 +58,21 @@ function bounceScroll(target: HTMLElement) {
 export function Header() {
   const [open, setOpen] = useState(false);
 
+  function handleHomeClick(e: React.MouseEvent) {
+    if (typeof window !== "undefined" && (window.location.pathname === "/" || window.location.pathname === "")) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  function handleMobileHomeClick(e: React.MouseEvent) {
+    setOpen(false);
+    if (typeof window !== "undefined" && (window.location.pathname === "/" || window.location.pathname === "")) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       const link = (e.target as HTMLElement).closest("a[href^='#']");
@@ -84,7 +99,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full">
       <div className="border-b border-slate-800 bg-brand-navy text-white shadow-lg">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-4 py-1.5 sm:py-2">
-          <Link href="#top" className="flex shrink-0 items-center gap-2">
+          <Link href="/" onClick={handleHomeClick} className="flex shrink-0 items-center gap-2 cursor-pointer">
             <Image
               src="/jjj-plumbing-logo-v2.png"
               alt="JJJ Plumbing logo"
@@ -104,7 +119,8 @@ export function Header() {
           <nav className="hidden items-center gap-1.5 xl:gap-2.5 lg:flex flex-1 justify-center max-w-4xl mx-2">
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] p-2 xl:p-2.5 text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+              onClick={handleHomeClick}
+              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] p-2 xl:p-2.5 text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               aria-label="Home"
             >
               <House className="size-4" />
@@ -160,8 +176,8 @@ export function Header() {
               <nav className="flex flex-col gap-2 px-3 py-3">
                 <Link
                   href="/"
-                  className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-base font-bold text-slate-100 hover:border-brand-accent hover:bg-brand-accent/15 hover:text-brand-accent"
-                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-base font-bold text-slate-100 hover:border-brand-accent hover:bg-brand-accent/15 hover:text-brand-accent cursor-pointer"
+                  onClick={handleMobileHomeClick}
                 >
                   <House className="size-4 text-brand-accent" />
                   Home
