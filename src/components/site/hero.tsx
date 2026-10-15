@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Phone, ShieldCheck, BadgeCheck, Clock, DollarSign, Award, Star, Camera, Tag } from "lucide-react";
+import { Phone, ShieldCheck, BadgeCheck, DollarSign, Award, Star, Camera, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 import { photoBlur } from "@/lib/photo-blur";
@@ -8,7 +8,6 @@ const trustBadges = [
   { icon: ShieldCheck, label: "Licensed & Insured" },
   { icon: BadgeCheck, label: "100% Satisfaction Guarantee" },
   { icon: DollarSign, label: "Upfront Pricing" },
-  { icon: Clock, label: "Available 24/7 for Emergencies" },
   { icon: Award, label: "Master Tech on Every Job" },
 ];
 
@@ -68,7 +67,7 @@ export function Hero() {
 
             <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
               <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Plumbers on Duty Today • Same-Day Dispatch</span>
+              <span>Same-Day Dispatch</span>
             </span>
           </div>
 
@@ -114,7 +113,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <dl className="mt-5 sm:mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-3 lg:grid-cols-5">
+          <dl className="mt-5 sm:mt-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-4">
             {trustBadges.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 min-w-0">
                 <Icon className="size-4 shrink-0 text-brand-accent" />

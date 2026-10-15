@@ -82,24 +82,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      <div className="bg-brand-navy-dark text-white text-xs sm:text-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-2 text-center sm:justify-between">
-          <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 text-center">
-            <span aria-hidden>🚨</span>
-            <span>Same-Day Dispatch Available</span>
-            <span className="hidden sm:inline text-slate-400" aria-hidden>|</span>
-            <span>Licensed &amp; Insured</span>
-          </p>
-          <a
-            href={siteConfig.phoneHref}
-            className="hidden items-center gap-1.5 font-semibold text-brand-accent hover:text-sky-200 sm:flex"
-          >
-            <Phone className="size-3.5" />
-            {siteConfig.phone}
-          </a>
-        </div>
-      </div>
-
       <div className="border-b border-slate-800 bg-brand-navy text-white shadow-lg">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 sm:py-2">
           <Link href="#top" className="flex shrink-0 items-center gap-2">

@@ -85,7 +85,7 @@ DISCOUNT: $75 OFF Any Plumbing Repair Over $300
 Requested Service: ${serviceLabel}
 Service Location: ${values.zip}
 ${values.details ? `Details Provided: ${values.details}\n` : ""}
-If this is an active emergency (burst pipe, gas leak, active flooding, or main sewer backup), please call us directly 24/7 at ${siteConfig.phone} for immediate dispatch.
+If this is an active emergency (burst pipe, gas leak, active flooding, or main sewer backup), please call us directly at ${siteConfig.phone} for immediate dispatch.
 
 JJJ Plumbing Inc
 ${siteConfig.license}
@@ -210,7 +210,7 @@ Website: https://www.jjjplumbing.com`;
             href={siteConfig.phoneHref}
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-navy py-3 px-4 text-sm font-bold text-white hover:bg-brand-navy-light"
           >
-            Call {siteConfig.phone} (24/7 Dispatch)
+            Call {siteConfig.phone} (Immediate Dispatch)
           </a>
         </div>
       </div>
