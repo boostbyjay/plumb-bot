@@ -106,7 +106,7 @@ export function Hero() {
               nativeButton={false}
               size="lg"
               variant="outline"
-              className="h-12 w-full sm:w-auto border-white/30 bg-white/10 px-5 text-sm font-semibold text-white hover:bg-white/20"
+              className="h-12 w-full sm:w-auto border-white/30 bg-white/10 px-6 text-base font-bold text-white hover:bg-white/20"
             >
               <Camera className="size-4 shrink-0 mr-1.5 text-brand-accent" />
               Text Photo for Quote

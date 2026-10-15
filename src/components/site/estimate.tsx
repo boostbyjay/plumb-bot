@@ -11,13 +11,13 @@ export function Estimate() {
         <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
           <div className="grid lg:grid-cols-5">
             <div className="bg-brand-navy p-8 text-white lg:col-span-2 sm:p-10">
-              <span className="inline-block rounded-full bg-brand-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-accent">
+              <span className="inline-block rounded-full border border-brand-accent/40 bg-brand-accent/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-accent">
                 Instant $75 Voucher
               </span>
-              <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl">
+              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
                 Get a Fast, Upfront Quote
               </h2>
-              <p className="mt-4 text-sm text-slate-300">
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300">
                 Submit this quick form to automatically unlock your <strong>$75 repair voucher</strong>. Our dispatch team will call you back within 5 minutes to confirm details and pricing.
               </p>
 

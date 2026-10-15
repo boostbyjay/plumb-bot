@@ -290,7 +290,7 @@ export function RecentWork() {
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
             Recent Jobs &amp; Proven Results
           </h2>
-          <p className="mt-4 text-slate-600">
+          <p className="mt-3 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
             Real photos, real emergencies, and real money saved across Los Angeles, Orange County, and the San Gabriel Valley. <strong>Tap any case study for details.</strong>
           </p>
         </div>

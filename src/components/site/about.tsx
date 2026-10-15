@@ -16,13 +16,13 @@ export function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
-            <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
+            <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
               About JJJ Plumbing
             </span>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
               25 Years of Honest, Reliable Plumbing
             </h2>
-            <p className="mt-5 text-slate-600">
+            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
               {siteConfig.legalName} has been the trusted name in residential
               and commercial plumbing across Los Angeles, Orange County, and the
               San Gabriel Valley for a quarter-century. What started as a small,
@@ -31,13 +31,13 @@ export function About() {
               workmanship, and treating every customer&apos;s home or business
               like our own hasn&apos;t changed.
             </p>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
               Today, our team of licensed, background-checked technicians
               handles everything from same-day emergency repairs to full
               commercial plumbing contracts, all backed by a 100%
               satisfaction guarantee.
             </p>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
               Every job is run by a master technician and owner-operator — so
               you get guaranteed quality work, up-to-code installations, and
               someone who actually cares about the result.

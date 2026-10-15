@@ -33,10 +33,10 @@ export function Guarantees() {
           <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
             Risk-Free Guarantee
           </span>
-          <h2 className="mt-2.5 text-2xl font-extrabold tracking-tight text-brand-navy sm:text-3xl">
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
             Why Southern California Homeowners Trust JJJ Plumbing
           </h2>
-          <p className="mt-2.5 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
             Hiring a contractor shouldn&apos;t feel like a gamble. We eliminate the risk with 3 ironclad promises on every service call.
           </p>
         </div>

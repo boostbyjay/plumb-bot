@@ -111,13 +111,13 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ se
       <div className="grid gap-10 lg:grid-cols-5">
         {/* Left: Content */}
         <div className="lg:col-span-2">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
+          <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
             {cityName}
           </span>
           <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
             {serviceName} in {cityName}
           </h1>
-          <p className="mt-4 text-slate-600">
+          <p className="mt-3 text-slate-600 text-base sm:text-lg leading-relaxed">
             JJJ Plumbing provides professional {serviceName.toLowerCase()} services to {cityName} and
             surrounding areas. With 25+ years of experience and CA LIC #{siteConfig.license.split("#")[1]},
             our licensed technicians deliver quality workmanship, upfront pricing, and guaranteed

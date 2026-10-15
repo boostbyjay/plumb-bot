@@ -37,20 +37,25 @@ export function Testimonials() {
     <section id="reviews" className="bg-brand-navy py-16 text-white sm:py-24 scroll-mt-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Header bar */}
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
-            <p className="text-2xl font-extrabold sm:text-3xl">Excellent</p>
-            <div className="mt-1 flex items-center gap-2">
+            <span className="inline-block rounded-full border border-brand-accent/40 bg-brand-accent/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-accent">
+              Verified Reviews
+            </span>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              What Our Customers Say
+            </h2>
+            <div className="mt-3 flex items-center gap-2.5">
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className="size-5 fill-brand-accent text-brand-accent"
+                    className="size-5 fill-amber-400 text-amber-400"
                   />
                 ))}
               </div>
-              <span className="text-lg font-bold">{overallRating}</span>
-              <span className="text-sm text-slate-400">
+              <span className="text-lg font-bold text-white">{overallRating} / 5.0</span>
+              <span className="text-sm text-slate-300">
                 Based on{" "}
                 <a
                   href={siteConfig.social.google}
@@ -58,7 +63,7 @@ export function Testimonials() {
                   rel="noopener noreferrer"
                   className="underline transition-colors hover:text-brand-accent"
                 >
-                  {reviewCount} reviews
+                  {reviewCount} Google reviews
                 </a>
               </span>
             </div>
@@ -67,7 +72,7 @@ export function Testimonials() {
             href={siteConfig.social.google}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-accent px-5 py-2.5 text-sm font-bold text-brand-navy-dark transition-colors hover:bg-sky-300"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand-accent px-5 py-2.5 text-sm font-bold text-brand-navy-dark transition-colors hover:bg-sky-300 shadow-sm"
           >
             <svg viewBox="0 0 24 24" className="size-4" fill="currentColor">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
@@ -91,19 +96,19 @@ export function Testimonials() {
                   {review.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">
+                  <p className="text-sm sm:text-base font-bold text-white">
                     {review.name}
                   </p>
                   <StarRating rating={review.rating} />
                 </div>
               </div>
 
-              <p className="mt-4 text-sm leading-relaxed text-slate-200">
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-200">
                 &ldquo;{review.quote}&rdquo;
               </p>
 
               <div className="mt-4 flex items-center justify-between">
-                <span className="text-xs text-slate-400">{review.location}</span>
+                <span className="text-xs text-slate-400 font-medium">{review.location}</span>
                 <svg viewBox="0 0 24 24" className="size-4 opacity-60">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>

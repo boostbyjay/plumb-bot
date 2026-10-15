@@ -11,13 +11,13 @@ export function Faq() {
     <section id="faq" className="bg-white py-16 sm:py-24 scroll-mt-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
+          <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
             Common Questions
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-slate-600">
+          <p className="mt-3 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
             Have a different question? We&apos;re happy to help &mdash; give
             us a call and we&apos;ll walk you through it.
           </p>
@@ -26,10 +26,10 @@ export function Faq() {
         <Accordion className="mt-10">
           {faqs.map((faq, i) => (
             <AccordionItem key={faq.question} value={`faq-${i}`}>
-              <AccordionTrigger className="text-left text-base font-semibold text-brand-navy hover:no-underline">
+              <AccordionTrigger className="text-left text-base sm:text-lg font-bold text-brand-navy hover:no-underline hover:text-brand-blue transition-colors">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600">
+              <AccordionContent className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

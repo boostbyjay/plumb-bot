@@ -19,13 +19,13 @@ export default function NeighborhoodsIndexPage() {
     <div className="bg-slate-50 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
+          <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
             Service Areas
           </span>
           <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
             Neighborhoods We Serve
           </h1>
-          <p className="mt-4 text-slate-600">
+          <p className="mt-3 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
             From Beverly Hills to Anaheim, JJJ Plumbing covers 50+ neighborhoods
             across Los Angeles, Orange County, and the San Gabriel Valley with
             same-day emergency dispatch.

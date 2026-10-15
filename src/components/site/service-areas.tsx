@@ -16,14 +16,14 @@ export function ServiceAreas() {
     <section id="service-areas" className="bg-white py-16 sm:py-24 scroll-mt-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-wide text-brand-blue">
+          <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
             Where We Work
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
             Proudly Serving Los Angeles, Orange County &amp; the San Gabriel
             Valley
           </h2>
-          <p className="mt-4 text-slate-600">
+          <p className="mt-3 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg">
             Don&apos;t see your city listed? Give us a call &mdash; there&apos;s
             a good chance we cover your area too.
           </p>

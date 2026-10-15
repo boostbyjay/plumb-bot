@@ -30,14 +30,14 @@ export function Commercial() {
     <section id="commercial" className="bg-brand-navy py-16 text-white sm:py-24 scroll-mt-28">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-accent/40 bg-brand-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-accent">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-accent/40 bg-brand-accent/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-accent">
             <Building2 className="size-3.5" />
             Commercial Plumbing
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl text-white">
             Reliable Plumbing Partners for Local Businesses
           </h2>
-          <p className="mt-4 max-w-xl text-slate-300">
+          <p className="mt-4 max-w-xl text-slate-300 text-base sm:text-lg leading-relaxed">
             Restaurants, retail centers, offices, and multi-unit properties
             across Los Angeles, Orange County, and the San Gabriel Valley trust
             JJJ Plumbing to
@@ -72,8 +72,8 @@ export function Commercial() {
               className="rounded-xl border border-white/10 bg-white/5 p-5"
             >
               <CheckCircle2 className="size-5 text-brand-accent" />
-              <h3 className="mt-3 font-bold">{item.title}</h3>
-              <p className="mt-1.5 text-sm text-slate-300">
+              <h3 className="mt-3 text-lg font-bold text-white">{item.title}</h3>
+              <p className="mt-1.5 text-sm text-slate-300 leading-relaxed">
                 {item.description}
               </p>
             </div>
