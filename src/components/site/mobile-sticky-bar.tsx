@@ -24,7 +24,7 @@ export function MobileStickyBar() {
         <span>Text Photo</span>
       </a>
 
-      {/* 3. Specials / $59+ */}
+      {/* 3. Web Specials */}
       <button
         type="button"
         onClick={() => {
@@ -33,7 +33,7 @@ export function MobileStickyBar() {
         className="flex flex-1 flex-col sm:flex-row items-center justify-center gap-1 bg-brand-accent py-2.5 text-xs sm:text-sm font-extrabold text-brand-navy-dark active:bg-sky-300"
       >
         <Tag className="size-4" />
-        <span>Specials $59+</span>
+        <span>Web Specials</span>
       </button>
     </div>
   );

@@ -104,7 +104,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       <div className="border-b border-slate-800 bg-brand-navy text-white shadow-lg">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-4 py-1.5 sm:py-2">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-4 py-1.5 sm:py-2.5">
           <Link href="/" onClick={handleHomeClick} className="flex shrink-0 items-center gap-2 cursor-pointer">
             <Image
               src="/jjj-plumbing-logo-v2.png"
@@ -137,7 +137,7 @@ export function Header() {
             <Link
               href="/"
               onClick={handleHomeClick}
-              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] p-2 xl:p-2.5 text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="h-9 w-9 xl:h-9.5 xl:w-9.5 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shrink-0"
               aria-label="Home"
             >
               <House className="size-4" />
@@ -146,7 +146,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 py-1.5 xl:px-3.5 xl:py-2 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+                className="h-9 xl:h-9.5 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 xl:px-3.5 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               >
                 {link.label}
               </a>
@@ -158,13 +158,13 @@ export function Header() {
               href={siteConfig.cslbUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] px-2.5 py-2 text-xs font-semibold text-slate-200 hover:border-brand-accent/70 transition-colors"
+              className="h-9 xl:h-9.5 inline-flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] px-2.5 text-xs font-semibold text-slate-200 hover:border-brand-accent/70 transition-colors"
               title="Verify California Contractor License"
             >
               <ShieldCheck className="size-3.5 text-brand-accent" />
               {siteConfig.license}
             </a>
-            <div className="flex flex-col items-center gap-0.5">
+            <div className="relative inline-flex items-center justify-center">
               <Button
                 render={<a href={siteConfig.phoneHref} />}
                 nativeButton={false}
@@ -173,7 +173,7 @@ export function Header() {
                 <Phone className="size-3.5 xl:size-4 mr-1" />
                 Call Now
               </Button>
-              <span className="text-[10px] font-bold text-amber-300 tracking-tight leading-none">
+              <span className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] font-bold uppercase tracking-wider text-amber-300/90 pointer-events-none">
                 {siteConfig.bilingual}
               </span>
             </div>

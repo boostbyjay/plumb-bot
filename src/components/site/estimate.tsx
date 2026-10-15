@@ -18,7 +18,7 @@ export function Estimate() {
                 Book Fast Dispatch &amp; Lock In Your Savings
               </h2>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-300">
-                Pick your preferred arrival window and select any active coupon ($59 drain clearing, $75 off repair, or $150 off water heaters). Our dispatch team calls within 5 minutes!
+                Pick your preferred arrival window and select any active coupon ($149 hydro-jetting, $75 off repair, or $150 off water heaters). Our dispatch team calls within 5 minutes!
               </p>
               <div className="mt-3 rounded-lg bg-emerald-500/15 border border-emerald-400/30 p-2 text-xs font-semibold text-emerald-300">
                 ✓ 100% Diagnostic Fee credited toward any approved repair.

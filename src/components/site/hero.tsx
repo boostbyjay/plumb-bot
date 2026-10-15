@@ -98,7 +98,7 @@ export function Hero() {
               className="h-11 sm:h-12 w-full sm:w-auto border-brand-accent/60 bg-brand-accent/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark"
             >
               <Tag className="size-4 shrink-0 mr-1.5" />
-              View $59+ Specials
+              View Web Specials
             </Button>
 
             <Button
