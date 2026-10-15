@@ -1,4 +1,4 @@
-import { ShieldCheck, DollarSign } from "lucide-react";
+import { ShieldCheck, DollarSign, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const guarantees = [
@@ -16,6 +16,13 @@ const guarantees = [
     description:
       "You approve the exact quote before we turn a wrench. No hidden travel charges, no dispatch add-ons, and no overtime surprises on your invoice.",
   },
+  {
+    icon: BadgeCheck,
+    title: "Licensed Code-Compliance",
+    badge: "Done to CA Code",
+    description:
+      "All repairs and installations are completed strictly to California Uniform Plumbing Code by licensed professionals — no shortcuts, no unpermitted risks.",
+  },
 ];
 
 export function Guarantees() {
@@ -30,11 +37,11 @@ export function Guarantees() {
             Why Southern California Homeowners Trust JJJ Plumbing
           </h2>
           <p className="mt-2.5 text-slate-600 text-sm sm:text-base">
-            Hiring a contractor shouldn&apos;t feel like a gamble. We eliminate the risk with ironclad promises on every service call.
+            Hiring a contractor shouldn&apos;t feel like a gamble. We eliminate the risk with 3 ironclad promises on every service call.
           </p>
         </div>
 
-        <div className="mt-8 mx-auto max-w-4xl grid gap-5 sm:grid-cols-2">
+        <div className="mt-8 mx-auto max-w-5xl grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {guarantees.map((g) => {
             const Icon = g.icon;
             return (
@@ -64,7 +71,7 @@ export function Guarantees() {
         </div>
 
         {/* Action card */}
-        <div className="mt-8 mx-auto max-w-4xl rounded-2xl border border-brand-accent/30 bg-brand-navy p-5 sm:p-6 text-center text-white">
+        <div className="mt-8 mx-auto max-w-3xl rounded-2xl border border-brand-accent/30 bg-brand-navy p-5 sm:p-6 text-center text-white">
           <div className="mx-auto max-w-xl">
             <h3 className="text-lg sm:text-xl font-bold">
               Ready for Fast, Guaranteed Plumbing Service?
