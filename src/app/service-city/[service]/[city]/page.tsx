@@ -8,7 +8,7 @@ import Link from "next/link";
 const serviceConfig: Record<string, { label: string; keywords: string[] }> = {
   "emergency-repairs": {
     label: "Emergency Plumber",
-    keywords: ["burst pipe", "flooding", "sewer backup", "24/7", "same-day"],
+    keywords: ["burst pipe", "flooding", "sewer backup", "slab leak", "same-day"],
   },
   "drain-cleaning": {
     label: "Drain Cleaning",

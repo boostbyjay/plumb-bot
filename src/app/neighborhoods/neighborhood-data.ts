@@ -86,7 +86,7 @@ export const neighborhoods: Neighborhood[] = [
     region: "Los Angeles",
     focus: "Emergency repairs, sewer lines",
     description:
-      "Pacific Palisades hillside homes face unique plumbing challenges — from earthquake-related pipe damage to sewer lines on steep slopes. Our emergency dispatch team is ready 24/7.",
+      "Pacific Palisades hillside homes face unique plumbing challenges — from earthquake-related pipe damage to sewer lines on steep slopes. Our same-day emergency dispatch team is ready to help.",
     geo: { lat: 34.047, lng: -118.528 },
   },
   {

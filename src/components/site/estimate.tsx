@@ -31,7 +31,7 @@ export function Estimate() {
                   className="flex flex-col justify-center rounded-xl border border-white/15 bg-white/5 px-3 py-2.5 transition-colors hover:bg-white/10"
                 >
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    Call 24/7 Dispatch
+                    Call Fast Dispatch
                   </span>
                   <span className="mt-0.5 flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-brand-accent">
                     <Phone className="size-3.5 shrink-0" />

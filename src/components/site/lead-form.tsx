@@ -146,7 +146,7 @@ SERVICE LOCATION: ${values.zip}
 ${values.details ? `DETAILS PROVIDED: ${values.details}\n` : ""}
 GUARANTEE: Your diagnostic fee is 100% credited toward any repair performed.
 
-If this is an active emergency (burst pipe, gas leak, active flooding, or main sewer backup), please call us directly 24/7 at ${siteConfig.phone} for immediate emergency dispatch.
+If this is an active emergency (burst pipe, gas leak, active flooding, or main sewer backup), please call us directly at ${siteConfig.phone} for immediate same-day dispatch.
 
 JJJ Plumbing Inc
 ${siteConfig.license}

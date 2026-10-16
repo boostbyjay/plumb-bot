@@ -225,7 +225,7 @@ export const services: Service[] = [
     id: "emergency-repairs",
     title: "Emergency Repairs",
     description:
-      "Burst pipes, major leaks, and overflow emergencies handled fast, day or night.",
+      "Burst pipes, major leaks, and overflow emergencies handled fast with same-day dispatch.",
     bullets: [
       "Burst pipe & slab leak repair",
       "Emergency shutoff & mitigation",
@@ -301,7 +301,7 @@ export const testimonials: Testimonial[] = [
     location: "Alhambra, CA",
     rating: 5,
     quote:
-      "Our kitchen pipe burst on a Sunday night and JJJ had someone at our door within the hour. Upfront pricing, no surprises, and the repair has held up perfectly.",
+      "Our kitchen pipe burst on a Saturday afternoon and JJJ had someone at our door within the hour. Upfront pricing, no surprises, and the repair has held up perfectly.",
   },
   {
     name: "David L.",
@@ -347,9 +347,9 @@ export type FaqItem = {
 
 export const faqs: FaqItem[] = [
   {
-    question: "Do you charge extra for after-hours emergency calls?",
+    question: "Do you charge extra for same-day emergency calls?",
     answer:
-      "We believe in transparent, upfront pricing you agree to before any work begins \u2014 you're always told the cost of your visit ahead of time so there are never hidden surprises on your invoice, even for same-day emergency dispatch.",
+      "We believe in transparent, upfront pricing you agree to before any work begins \u2014 you're always told the cost of your visit ahead of time so there are never hidden surprises on your invoice, even for urgent same-day dispatch.",
   },
   {
     question: "Are your plumbers licensed and insured?",
