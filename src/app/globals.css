@@ -146,6 +146,36 @@
 }
 
 /* ============================================================
+   Desktop Wrench Cursor (matches Option 1 Cobalt & Chrome Logo)
+   Applied only on fine-pointer desktop devices.
+   ============================================================ */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor: url("/cursor-wrench.svg") 5 5, auto;
+  }
+
+  a,
+  button,
+  [role="button"],
+  summary,
+  select,
+  label[for],
+  .cursor-pointer {
+    cursor: url("/cursor-wrench-pointer.svg") 5 5, pointer !important;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="search"],
+  input[type="number"],
+  textarea {
+    cursor: text;
+  }
+}
+
+/* ============================================================
    Recent Work gallery
    Motion is CSS-only so the swipe stays on the compositor
    thread and keeps native iOS/Android momentum.
