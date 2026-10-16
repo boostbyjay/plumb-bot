@@ -3,10 +3,25 @@ import { MapPin, Phone, ShieldCheck, Star } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
+  const topFooterCities = [
+    { name: "Los Angeles", slug: "los-angeles" },
+    { name: "Pasadena", slug: "pasadena" },
+    { name: "San Gabriel", slug: "san-gabriel" },
+    { name: "West Covina", slug: "west-covina" },
+    { name: "Arcadia", slug: "arcadia" },
+    { name: "Glendale", slug: "glendale" },
+    { name: "Alhambra", slug: "alhambra" },
+    { name: "Beverly Hills", slug: "beverly-hills" },
+    { name: "Santa Monica", slug: "santa-monica" },
+    { name: "Long Beach", slug: "long-beach" },
+    { name: "Anaheim", slug: "anaheim" },
+    { name: "Irvine", slug: "irvine" },
+  ];
+
   return (
-    <footer className="bg-brand-navy-dark pb-20 pt-8 text-slate-300 lg:pb-14">
+    <footer className="bg-brand-navy-dark pb-20 pt-10 text-slate-300 lg:pb-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Image
               src="/jjj-plumbing-logo-v2.png"
@@ -42,21 +57,53 @@ export function Footer() {
               ))}
               <li>
                 <a
-                  href="/blog"
+                  href="/neighborhoods"
                   className="text-sm text-slate-400 hover:text-brand-accent"
                 >
-                  Blog
+                  Neighborhoods Served
                 </a>
               </li>
               <li>
                 <a
-                  href="#faq"
+                  href="/blog"
+                  className="text-sm text-slate-400 hover:text-brand-accent"
+                >
+                  Plumbing Blog &amp; Guides
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#faq"
                   className="text-sm text-slate-400 hover:text-brand-accent"
                 >
                   FAQ
                 </a>
               </li>
             </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wide text-white">
+              Top Service Areas
+            </h3>
+            <ul className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2">
+              {topFooterCities.map((c) => (
+                <li key={c.slug}>
+                  <a
+                    href={`/service-city/emergency-repairs/${c.slug}`}
+                    className="text-xs text-slate-400 hover:text-brand-accent transition-colors"
+                  >
+                    {c.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/#service-areas"
+              className="mt-3 inline-block text-xs font-bold text-brand-accent hover:underline"
+            >
+              View All 65+ Cities →
+            </a>
           </div>
 
           <div>

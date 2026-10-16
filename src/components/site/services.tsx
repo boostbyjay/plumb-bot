@@ -94,11 +94,34 @@ export function Services() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-4 pt-3 border-t border-slate-100">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                      Popular Local Areas:
+                    </p>
+                    <div className="mt-1.5 flex flex-wrap gap-1.5">
+                      {[
+                        { name: "Los Angeles", slug: "los-angeles" },
+                        { name: "Pasadena", slug: "pasadena" },
+                        { name: "Anaheim", slug: "anaheim" },
+                        { name: "Irvine", slug: "irvine" },
+                        { name: "West Covina", slug: "west-covina" },
+                        { name: "Beverly Hills", slug: "beverly-hills" },
+                      ].map((c) => (
+                        <a
+                          key={c.slug}
+                          href={`/service-city/${service.id}/${c.slug}`}
+                          className="rounded bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600 transition-colors hover:bg-brand-accent/20 hover:text-brand-navy"
+                        >
+                          {c.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                   <a
                     href="#service-areas"
-                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-blue hover:text-brand-accent transition-colors"
+                    className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-blue hover:text-brand-navy transition-colors"
                   >
-                    View coverage & service areas →
+                    View all 65+ cities for {service.title.toLowerCase()} →
                   </a>
                 </div>
               </div>

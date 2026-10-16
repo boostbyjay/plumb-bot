@@ -31,8 +31,31 @@ export default async function NeighborhoodPage({ params }: { params: Promise<{ s
     .filter((n) => n.region === hood.region && n.slug !== hood.slug)
     .slice(0, 3);
 
+  const pageUrl = `${siteConfig.siteUrl}/neighborhoods/${hood.slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    name: `JJJ Plumbing — ${hood.name}`,
+    url: pageUrl,
+    telephone: "+1-626-506-6951",
+    priceRange: "$$",
+    areaServed: {
+      "@type": "Place",
+      name: `${hood.name}, ${hood.city}, CA`,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: hood.geo.lat,
+        longitude: hood.geo.lng,
+      },
+    },
+  };
+
   return (
     <div className="bg-slate-50 py-16 sm:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* Breadcrumb */}
         <nav className="mb-6 text-sm text-slate-500">
@@ -40,7 +63,7 @@ export default async function NeighborhoodPage({ params }: { params: Promise<{ s
           <span className="mx-2">/</span>
           <a href="/neighborhoods" className="hover:text-brand-accent">Neighborhoods</a>
           <span className="mx-2">/</span>
-          <span className="text-brand-navy">{hood.name}</span>
+          <span className="text-brand-navy font-semibold">{hood.name}</span>
         </nav>
 
         <div className="grid gap-10 lg:grid-cols-5">
@@ -75,7 +98,7 @@ export default async function NeighborhoodPage({ params }: { params: Promise<{ s
               <ul className="mt-4 space-y-3 text-sm text-slate-600">
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5 size-5 shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-xs font-bold">✓</span>
-                  Licensed & insured — CA LIC #{siteConfig.license.split("#")[1]}
+                  Licensed &amp; insured — CA LIC #{siteConfig.license.split("#")[1]}
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5 size-5 shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-xs font-bold">✓</span>
@@ -94,6 +117,27 @@ export default async function NeighborhoodPage({ params }: { params: Promise<{ s
                   100% satisfaction guarantee on every job
                 </li>
               </ul>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-lg font-bold text-brand-navy">Dedicated Services in {hood.name}</h3>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {[
+                  { id: "emergency-repairs", label: "Emergency Plumber" },
+                  { id: "drain-cleaning", label: "Drain Cleaning" },
+                  { id: "water-heaters", label: "Water Heaters" },
+                  { id: "sewer-lines", label: "Sewer Line Repair" },
+                  { id: "commercial", label: "Commercial Plumbing" },
+                ].map((s) => (
+                  <a
+                    key={s.id}
+                    href={`/service-city/${s.id}/${hood.slug}`}
+                    className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-brand-navy hover:border-brand-accent hover:bg-brand-accent/15 transition-colors"
+                  >
+                    {s.label} in {hood.name} →
+                  </a>
+                ))}
+              </div>
             </div>
 
             {related.length > 0 && (

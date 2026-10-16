@@ -1,8 +1,7 @@
 import { Metadata } from "next";
-import { services, serviceAreas, siteConfig } from "@/lib/site-config";
+import { services, serviceAreas, siteConfig, cityToSlug, slugToCity } from "@/lib/site-config";
 import { LeadForm } from "@/components/site/lead-form";
-import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, MapPin, Wrench, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 // Map service slugs to display names and long-tail keywords
@@ -29,31 +28,14 @@ const serviceConfig: Record<string, { label: string; keywords: string[] }> = {
   },
 };
 
-// Top 30 high-income cities
-const highIncomeCities = [
-  "Beverly Hills", "Bel Air", "Pacific Palisades", "Santa Monica",
-  "Brentwood", "West Hollywood", "Palos Verdes", "Rancho Palos Verdes",
-  "Rolling Hills", "Newport Beach", "Laguna Beach", "Manhattan Beach",
-  "Redondo Beach", "El Segundo", "Irvine", "Pasadena", "San Marino",
-  "South Pasadena", "Arcadia", "La Cañada Flintridge", "Sherman Oaks",
-  "Studio City", "Encino", "Woodland Hills", "Torrance", "Long Beach",
-  "Culver City", "Cerritos", "Lakewood", "West Covina",
-];
-
 export function generateStaticParams() {
   const params: { service: string; city: string }[] = [];
   for (const service of services) {
-    for (const city of highIncomeCities) {
-      params.push({ service: service.id, city: city.toLowerCase().replace(/ /g, "-") });
+    for (const city of serviceAreas) {
+      params.push({ service: service.id, city: cityToSlug(city) });
     }
   }
   return params;
-}
-
-function getCityName(slug: string): string {
-  return highIncomeCities.find(
-    (c) => c.toLowerCase().replace(/ /g, "-") === slug
-  ) || slug;
 }
 
 function getLongTailTitle(serviceId: string, cityName: string): string {
@@ -81,7 +63,7 @@ function getLongTailDescription(serviceId: string, cityName: string): string {
 
 export async function generateMetadata({ params }: { params: Promise<{ service: string; city: string }> }): Promise<Metadata> {
   const { service, city } = await params;
-  const cityName = getCityName(city);
+  const cityName = slugToCity(city);
   
   return {
     title: getLongTailTitle(service, cityName),
@@ -96,23 +78,88 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
 export default async function ServiceCityPage({ params }: { params: Promise<{ service: string; city: string }> }) {
   const { service, city } = await params;
   const serviceName = serviceConfig[service]?.label || service;
-  const cityName = getCityName(city);
+  const cityName = slugToCity(city);
   const keywords = serviceConfig[service]?.keywords || [service];
+
+  // Pick 12 nearby/related cities for strong internal linking
+  const currentIdx = Math.max(0, serviceAreas.findIndex((c) => cityToSlug(c) === city));
+  const nearbyCities: string[] = [];
+  for (let offset = 1; offset <= 12; offset++) {
+    const candidate = serviceAreas[(currentIdx + offset) % serviceAreas.length];
+    if (candidate && cityToSlug(candidate) !== city) {
+      nearbyCities.push(candidate);
+    }
+  }
+
+  const pageUrl = `${siteConfig.siteUrl}/service-city/${service}/${city}`;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Plumber",
+      "@id": `${pageUrl}#plumber`,
+      name: `${siteConfig.name} — ${serviceName} in ${cityName}`,
+      url: pageUrl,
+      telephone: "+1-626-506-6951",
+      priceRange: "$$",
+      areaServed: {
+        "@type": "City",
+        name: cityName,
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: siteConfig.address.addressLocality,
+        addressRegion: siteConfig.address.addressRegion,
+        postalCode: siteConfig.address.postalCode,
+        addressCountry: siteConfig.address.addressCountry,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteConfig.siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Service Areas",
+          item: `${siteConfig.siteUrl}/#service-areas`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: `${serviceName} in ${cityName}`,
+          item: pageUrl,
+        },
+      ],
+    },
+  ];
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-slate-500">
         <Link href="/" className="hover:text-brand-accent">Home</Link>
         <span className="mx-2">/</span>
-        <span className="text-brand-navy">{serviceName} in {cityName}</span>
+        <Link href="/#service-areas" className="hover:text-brand-accent">Service Areas</Link>
+        <span className="mx-2">/</span>
+        <span className="text-brand-navy font-semibold">{serviceName} in {cityName}</span>
       </nav>
 
       <div className="grid gap-10 lg:grid-cols-5">
         {/* Left: Content */}
         <div className="lg:col-span-2">
           <span className="inline-block rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue">
-            {cityName}
+            {cityName}, CA
           </span>
           <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">
             {serviceName} in {cityName}
@@ -145,11 +192,11 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ se
             <ul className="mt-4 space-y-3 text-sm text-slate-600">
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 size-5 shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-xs font-bold">✓</span>
-                Licensed & insured — CA LIC #{siteConfig.license.split("#")[1]}
+                Licensed &amp; insured — CA LIC #{siteConfig.license.split("#")[1]}
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 size-5 shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-xs font-bold">✓</span>
-                25+ years serving {cityName} and the {siteConfig.region}
+                25+ years serving {cityName} and {siteConfig.region}
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 size-5 shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-xs font-bold">✓</span>
@@ -157,7 +204,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ se
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 size-5 shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-xs font-bold">✓</span>
-                Same-day emergency dispatch available
+                Same-day emergency dispatch available in {cityName}
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-0.5 size-5 shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-xs font-bold">✓</span>
@@ -201,7 +248,7 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ se
           </div>
         </div>
 
-          {/* Right: Form */}
+        {/* Right: Form */}
         <div id="estimate" className="lg:col-span-3 scroll-mt-28">
           <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
             <div className="bg-brand-navy p-8 text-white sm:p-10">
@@ -227,6 +274,61 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ se
             <div className="p-8 sm:p-10">
               <LeadForm />
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Internal SEO Link Hub: Other Services in Same City + Nearby Cities */}
+      <div className="mt-16 border-t border-slate-200 pt-12 grid gap-10 lg:grid-cols-2">
+        <div>
+          <h2 className="flex items-center gap-2 text-lg font-extrabold text-brand-navy">
+            <Wrench className="size-5 text-brand-blue" />
+            All Plumbing Services in {cityName}
+          </h2>
+          <p className="mt-1 text-xs text-slate-500">
+            Explore our dedicated {cityName} plumbing solutions:
+          </p>
+          <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+            {services.map((s) => {
+              const isCurrent = s.id === service;
+              const label = serviceConfig[s.id]?.label || s.title;
+              return (
+                <Link
+                  key={s.id}
+                  href={`/service-city/${s.id}/${city}`}
+                  className={`flex items-center justify-between rounded-xl border px-3.5 py-2.5 text-xs font-bold transition-all ${
+                    isCurrent
+                      ? "border-brand-blue bg-brand-blue/10 text-brand-navy"
+                      : "border-slate-200 bg-white text-slate-700 hover:border-brand-accent hover:text-brand-navy hover:shadow-sm"
+                  }`}
+                >
+                  <span>{label} in {cityName}</span>
+                  <ArrowRight className="size-3.5 text-brand-blue shrink-0" />
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="flex items-center gap-2 text-lg font-extrabold text-brand-navy">
+            <MapPin className="size-5 text-brand-blue" />
+            Nearby Cities for {serviceName}
+          </h2>
+          <p className="mt-1 text-xs text-slate-500">
+            Same-day {serviceName.toLowerCase()} dispatch across surrounding communities:
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {nearbyCities.map((nearCity) => (
+              <Link
+                key={nearCity}
+                href={`/service-city/${service}/${cityToSlug(nearCity)}`}
+                className="inline-flex items-center gap-1 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-all hover:border-brand-accent hover:bg-brand-accent/15 hover:text-brand-navy"
+              >
+                <MapPin className="size-3 text-brand-blue" />
+                {serviceName} in {nearCity}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -189,6 +189,24 @@ export const serviceAreas = [
   "Brentwood",
 ];
 
+export function cityToSlug(city: string): string {
+  return city
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-");
+}
+
+export function slugToCity(slug: string): string {
+  return (
+    serviceAreas.find((c) => cityToSlug(c) === slug) ||
+    slug
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ")
+  );
+}
+
 export type Service = {
   id: string;
   title: string;
