@@ -144,29 +144,80 @@ export function Services() {
         </div>
 
         {/* Major Brands Authority Strip */}
-        <div className="mt-14 rounded-2xl border border-slate-200 bg-white px-6 py-7 shadow-sm">
+        <div className="mt-14 rounded-2xl border border-slate-200 bg-white p-5 sm:p-8 shadow-sm">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400">
             Authorized Service, Repair &amp; Installation For Major Brands
           </p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-10">
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5 sm:gap-4">
             {[
-              "Noritz",
-              "Navien",
-              "Rinnai",
-              "Bradford White",
-              "Rheem",
-              "Moen",
-              "Kohler",
-              "TOTO",
-              "Delta",
-              "American Standard",
+              {
+                name: "Noritz",
+                logo: "/brands/noritz.svg",
+                sizeClass: "h-5 sm:h-5.5 w-[108px]",
+              },
+              {
+                name: "Navien",
+                logo: "/brands/navien.svg",
+                sizeClass: "h-4.5 sm:h-5 w-[122px]",
+              },
+              {
+                name: "Rinnai",
+                logo: "/brands/rinnai.svg",
+                sizeClass: "h-5 sm:h-5.5 w-[106px]",
+              },
+              {
+                name: "Bradford White",
+                logo: "/brands/bradford-white.png",
+                sizeClass: "h-8 sm:h-9 w-[124px]",
+              },
+              {
+                name: "Rheem",
+                logo: "/brands/rheem.svg",
+                sizeClass: "h-9 sm:h-10 w-9 sm:w-10",
+              },
+              {
+                name: "Moen",
+                logo: "/brands/moen.svg",
+                sizeClass: "h-5 sm:h-5.5 w-[104px]",
+              },
+              {
+                name: "Kohler",
+                logo: "/brands/kohler.svg",
+                sizeClass: "h-4.5 sm:h-5 w-[104px]",
+              },
+              {
+                name: "TOTO",
+                logo: "/brands/toto.svg",
+                sizeClass: "h-4.5 sm:h-5 w-[98px]",
+              },
+              {
+                name: "Delta",
+                logo: "/brands/delta.svg",
+                sizeClass: "h-6 sm:h-6.5 w-[108px]",
+              },
+              {
+                name: "American Standard",
+                logo: "/brands/american-standard.svg",
+                sizeClass: "h-3.5 sm:h-4 w-[132px]",
+              },
             ].map((brand) => (
-              <span
-                key={brand}
-                className="text-sm sm:text-base font-extrabold tracking-tight text-slate-500 transition-colors hover:text-brand-navy"
+              <div
+                key={brand.name}
+                className="flex flex-col items-center justify-between rounded-xl border border-slate-100 bg-slate-50/70 px-3 py-3.5 transition-all hover:border-slate-200 hover:bg-white hover:shadow-xs"
               >
-                {brand}
-              </span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 text-center">
+                  {brand.name}
+                </span>
+                <div className="mt-2 flex h-11 w-full items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={brand.logo}
+                    alt={`${brand.name} official logo`}
+                    loading="lazy"
+                    className={`${brand.sizeClass} object-contain select-none`}
+                  />
+                </div>
+              </div>
             ))}
           </div>
         </div>
