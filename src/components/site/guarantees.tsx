@@ -77,28 +77,80 @@ export function Guarantees() {
           })}
         </div>
 
-        {/* Action card */}
-        <div className="mt-8 mx-auto max-w-3xl rounded-2xl border border-brand-accent/30 bg-brand-navy p-5 sm:p-6 text-center text-white">
-          <div className="mx-auto max-w-xl">
-            <h3 className="text-lg sm:text-xl font-bold">
-              Ready for Fast, Guaranteed Plumbing Service?
-            </h3>
-            <p className="mt-1.5 text-xs sm:text-sm text-slate-300">
-              Submit your request or text a photo to unlock your <strong>$75 repair voucher</strong>.
-            </p>
-            <p className="mt-1 text-[11px] text-slate-400">
-              *Valid on repairs $300+. Limit one voucher per customer.
-            </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-3">
-              <Button
-                render={<a href="#estimate" />}
-                nativeButton={false}
-                size="lg"
-                className="bg-brand-accent px-6 font-bold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
-              >
-                Claim $75 Voucher &amp; Free Estimate
-              </Button>
+        {/* Owner-Operator vs. Big-Box Comparison Table */}
+        <div className="mt-10 mx-auto max-w-4xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg">
+          <div className="bg-brand-navy px-6 py-4 sm:px-8 sm:py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <div>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-brand-accent">
+                The Owner-Operator Advantage
+              </span>
+              <h3 className="text-lg sm:text-xl font-extrabold text-white">
+                How JJJ Plumbing Compares to Big-Box Franchise Companies
+              </h3>
             </div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs font-bold text-emerald-300 w-fit">
+              ✓ Zero Commissioned Sales Reps
+            </span>
+          </div>
+
+          <div className="divide-y divide-slate-100 text-xs sm:text-sm">
+            {[
+              {
+                feature: "Who Shows Up at Your Door",
+                jjj: "Licensed Master Plumber & Owner-Operator",
+                bigBox: "Junior Tech Paid on Sales Commission",
+              },
+              {
+                feature: "Pricing Structure",
+                jjj: "100% Upfront Flat-Rate Quote Before Work",
+                bigBox: "Low Bait-and-Switch Fee + Surprise Add-Ons",
+              },
+              {
+                feature: "Service & Diagnostic Fee",
+                jjj: "100% Credited Toward Your Approved Repair",
+                bigBox: "Non-Refundable Dispatch & Trip Charges",
+              },
+              {
+                feature: "High-Ticket Sewer / Repipe Quotes",
+                jjj: "Honest Repair-First Approach + Free 2nd Opinion",
+                bigBox: "High-Pressure $10,000+ Full Replacement Push",
+              },
+            ].map((row) => (
+              <div
+                key={row.feature}
+                className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 px-5 py-3.5 sm:px-8 items-center"
+              >
+                <div className="sm:col-span-4 font-bold text-brand-navy">
+                  {row.feature}
+                </div>
+                <div className="sm:col-span-4 flex items-center gap-2 font-semibold text-emerald-800 bg-emerald-50/80 border border-emerald-200/80 rounded-xl px-3 py-2">
+                  <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-[10px] font-bold text-white">
+                    ✓
+                  </span>
+                  <span>{row.jjj}</span>
+                </div>
+                <div className="sm:col-span-4 flex items-center gap-2 text-slate-500 bg-slate-50 rounded-xl px-3 py-2">
+                  <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-slate-300 text-[10px] font-bold text-slate-700">
+                    ✕
+                  </span>
+                  <span className="line-through decoration-slate-400/70">{row.bigBox}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-slate-50 px-6 py-4 sm:px-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs sm:text-sm font-medium text-slate-600 text-center sm:text-left">
+              Ready for honest, master-plumber diagnostics with zero sales pressure?
+            </p>
+            <Button
+              render={<a href="#estimate" />}
+              nativeButton={false}
+              size="lg"
+              className="w-full sm:w-auto bg-brand-accent px-6 font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer shrink-0"
+            >
+              Get Your Free Upfront Estimate
+            </Button>
           </div>
         </div>
       </div>

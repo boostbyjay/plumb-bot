@@ -103,7 +103,6 @@ export function LeadForm({
     const nextErrors: Partial<Record<keyof FormValues, string>> = {};
     if (!values.name.trim()) nextErrors.name = "Please enter your name.";
     if (!values.phone.trim()) nextErrors.phone = "Please enter a phone number.";
-    if (!values.email.trim()) nextErrors.email = "Please enter your email.";
     if (!values.service) nextErrors.service = "Please select a service or tap an issue chip.";
     if (!values.zip.trim()) nextErrors.zip = "Please enter your address or zip code.";
     setErrors(nextErrors);
@@ -154,6 +153,7 @@ ${siteConfig.license}
 Phone: ${siteConfig.phone}
 Website: https://www.jjjplumbing.com`;
 
+      const customerEmail = values.email.trim();
       const response = await fetch("https://formsubmit.co/ajax/jjjplumbinginc@gmail.com", {
         method: "POST",
         headers: {
@@ -164,12 +164,16 @@ Website: https://www.jjjplumbing.com`;
           _subject: `New Quote Request: ${serviceLabel} ${hasSpecificOffer ? `[${values.couponCode}] ` : ""}- ${values.name}`,
           _template: "table",
           _captcha: "false",
-          _autoresponse: autoresponseMessage,
-          email: values.email,
-          _replyto: values.email,
+          ...(customerEmail
+            ? {
+                _autoresponse: autoresponseMessage,
+                email: customerEmail,
+                _replyto: customerEmail,
+              }
+            : {}),
           "Customer Name": values.name,
           "Phone Number": values.phone,
-          "Email Address": values.email,
+          "Email Address": customerEmail || "Not provided (Text preferred)",
           "Service Needed": serviceLabel,
           "Preferred Arrival Time": urgencyLabel,
           "Special Offer / Coupon": hasSpecificOffer ? matchedCoupon.title : "None",
@@ -410,7 +414,9 @@ Website: https://www.jjjplumbing.com`;
 
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
-          <Label htmlFor={`email-${uid}`} className="text-xs font-semibold">Email Address</Label>
+          <Label htmlFor={`email-${uid}`} className="text-xs font-semibold">
+            Email Address <span className="text-slate-400 font-normal">(Optional)</span>
+          </Label>
           <Input
             id={`email-${uid}`}
             name="email"
@@ -483,6 +489,9 @@ Website: https://www.jjjplumbing.com`;
                   {c.code} — {c.title}
                 </SelectItem>
               ))}
+              <SelectItem value="HERO10">
+                HERO10 — 10% Senior, Military &amp; First Responder
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>

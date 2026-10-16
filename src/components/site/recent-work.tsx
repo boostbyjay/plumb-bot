@@ -321,9 +321,12 @@ export function RecentWork() {
               />
 
               {/* Top tag */}
-              <div className="absolute left-3 top-3 z-10">
+              <div className="absolute inset-x-3 top-3 z-10 flex items-center justify-between gap-2">
                 <span className="rounded-full bg-brand-navy/85 backdrop-blur-sm px-2.5 py-1 text-[11px] font-bold text-brand-accent border border-brand-accent/30 shadow">
                   {job.category}
+                </span>
+                <span className="rounded-full bg-emerald-600/95 backdrop-blur-sm px-2.5 py-1 text-[10px] font-bold text-white shadow">
+                  ✓ {job.turnaround}
                 </span>
               </div>
 
@@ -395,7 +398,7 @@ export function RecentWork() {
             className="inline-flex items-center gap-2 rounded-xl bg-brand-accent px-7 py-3 text-sm font-bold text-brand-navy-dark shadow-md transition-all duration-200 hover:bg-sky-300 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
           >
             <Tag className="size-4" />
-            Claim $75 Voucher &amp; Get Estimate
+            Get a Free Estimate For Your Project
           </a>
         </div>
       </div>
@@ -506,7 +509,7 @@ export function RecentWork() {
                   className="flex-1 bg-brand-accent py-2.5 text-xs sm:text-sm font-bold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
                 >
                   <Tag className="size-4 mr-1.5" />
-                  Claim $75 Voucher For Similar Fix
+                  Get Free Estimate For Similar Fix
                 </Button>
 
                 <Button
@@ -521,7 +524,7 @@ export function RecentWork() {
                 </Button>
               </div>
               <p className="mt-2 text-center text-[11px] text-slate-500">
-                *Valid on repairs $300+. Limit one voucher per customer.
+                Upfront pricing before any work begins • 100% diagnostic fee credited toward repair.
               </p>
             </div>
           </div>

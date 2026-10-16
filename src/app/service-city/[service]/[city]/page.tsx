@@ -201,19 +201,27 @@ export default async function ServiceCityPage({ params }: { params: Promise<{ se
           </div>
         </div>
 
-        {/* Right: Form */}
-        <div className="lg:col-span-3">
+          {/* Right: Form */}
+        <div id="estimate" className="lg:col-span-3 scroll-mt-28">
           <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
             <div className="bg-brand-navy p-8 text-white sm:p-10">
-              <span className="text-sm font-bold uppercase tracking-wide text-brand-accent">
-                Free Estimate
-              </span>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-sm font-bold uppercase tracking-wide text-brand-accent">
+                  Free Estimate
+                </span>
+                <a
+                  href="#specials"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-brand-accent/40 bg-brand-accent/15 px-3 py-1 text-xs font-bold text-brand-accent transition-all duration-200 hover:bg-brand-accent hover:text-brand-navy-dark hover:-translate-y-0.5 cursor-pointer"
+                >
+                  View Web Specials →
+                </a>
+              </div>
               <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl">
                 Get a Fast, No-Obligation Quote
               </h2>
               <p className="mt-4 text-sm text-slate-300">
-                Fill out the form and our {cityName} dispatch team will call you back within 5 minutes
-                during business hours to confirm details and schedule your visit.
+                Fill out the form and our {cityName} dispatch team will text you within 5 minutes
+                to confirm details and schedule your visit.
               </p>
             </div>
             <div className="p-8 sm:p-10">

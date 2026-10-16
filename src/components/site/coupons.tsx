@@ -170,8 +170,28 @@ export function Coupons() {
           })}
         </div>
 
+        {/* Senior, Military & First Responder Discount Banner */}
+        <div className="mt-3.5 flex flex-col sm:flex-row items-center justify-between gap-2.5 rounded-xl border border-brand-blue/25 bg-sky-50/70 px-4 py-3 text-xs">
+          <div className="text-center sm:text-left">
+            <span className="font-extrabold text-brand-navy">
+              🎖️ Senior, Military &amp; First Responder Discount — 10% OFF
+            </span>
+            <p className="text-[11px] text-slate-600 mt-0.5">
+              Thank you for serving our community. Mention code <strong className="font-mono text-brand-navy">HERO10</strong> for 10% off any standard repair (up to $150).
+            </p>
+          </div>
+          <Button
+            type="button"
+            onClick={() => handleClaim("HERO10")}
+            size="sm"
+            className="shrink-0 bg-brand-blue hover:bg-brand-navy text-white text-[11px] font-bold h-8 px-3 rounded-lg transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+          >
+            Claim 10% Off
+          </Button>
+        </div>
+
         {/* Diagnostic reassurance footer in popup */}
-        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-2 rounded-xl bg-slate-100 p-3 text-xs text-slate-700 text-center sm:text-left">
+        <div className="mt-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 rounded-xl bg-slate-100 p-3 text-xs text-slate-700 text-center sm:text-left">
           <span className="flex items-center gap-1.5 font-bold text-emerald-800 text-[11px] sm:text-xs">
             <ShieldCheck className="size-3.5 text-emerald-600 shrink-0" />
             100% Diagnostic Fee Credited Toward Approved Repair

@@ -28,13 +28,13 @@ export default function Home() {
         <Services />
         <SecondOpinionBanner />
         <Financing />
+        <Guarantees />
+        <Estimate />
         <Fixtures />
         <Commercial />
         <About />
-        <Guarantees />
-        <Estimate />
-        <ServiceAreas />
         <Testimonials />
+        <ServiceAreas />
         <Faq />
       </main>
       <Footer />

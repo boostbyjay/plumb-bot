@@ -119,6 +119,34 @@ export function Services() {
             </span>
           </a>
         </div>
+
+        {/* Major Brands Authority Strip */}
+        <div className="mt-14 rounded-2xl border border-slate-200 bg-white px-6 py-7 shadow-sm">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400">
+            Authorized Service, Repair &amp; Installation For Major Brands
+          </p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-10">
+            {[
+              "Noritz",
+              "Navien",
+              "Rinnai",
+              "Bradford White",
+              "Rheem",
+              "Moen",
+              "Kohler",
+              "TOTO",
+              "Delta",
+              "American Standard",
+            ].map((brand) => (
+              <span
+                key={brand}
+                className="text-sm sm:text-base font-extrabold tracking-tight text-slate-500 transition-colors hover:text-brand-navy"
+              >
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
