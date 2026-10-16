@@ -245,6 +245,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`h-full antialiased font-sans`}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if('scrollRestoration' in history){history.scrollRestoration='manual';}if(window.location.hash&&window.location.hash!=='#specials'){history.replaceState(null,'',window.location.pathname+window.location.search);}window.scrollTo(0,0);}catch(e){}`,
+          }}
+        />
         <StructuredData />
         {gaId && (
           <>

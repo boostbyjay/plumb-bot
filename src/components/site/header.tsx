@@ -24,6 +24,7 @@ const NAV_TARGETS = [
   "service-areas",
   "reviews",
   "estimate",
+  "faq",
 ];
 
 export function bounceScroll(target: HTMLElement) {
@@ -77,6 +78,14 @@ export function Header() {
   }
 
   useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    if (window.location.hash && window.location.hash !== "#specials") {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
+
     function handleClick(e: MouseEvent) {
       const link = (e.target as HTMLElement).closest("a[href*='#']");
       if (!link) return;
