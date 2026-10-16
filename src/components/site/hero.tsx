@@ -3,6 +3,7 @@ import { Phone, ShieldCheck, BadgeCheck, DollarSign, Award, Star, Camera, Tag } 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 import { photoBlur } from "@/lib/photo-blur";
+import { QuickQuoteModal } from "@/components/site/quick-quote-modal";
 
 const trustBadges = [
   { icon: ShieldCheck, label: "Licensed & Insured" },
@@ -79,12 +80,12 @@ export function Hero() {
             From emergency leak repairs to sewer replacements, JJJ Plumbing arrives on time with master plumbers, upfront pricing, and guaranteed workmanship.
           </p>
 
-          <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
+          <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-2.5 sm:gap-3 sm:max-w-xl">
             <Button
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
               size="lg"
-              className="h-11 sm:h-12 w-full sm:w-auto bg-brand-accent px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-navy-dark hover:bg-sky-300 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
+              className="col-span-2 sm:col-span-1 h-11 sm:h-12 w-full bg-brand-accent px-4.5 sm:px-5 text-sm sm:text-base font-bold text-brand-navy-dark hover:bg-sky-300 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               <Phone className="size-4.5 shrink-0 mr-1.5" />
               Call {siteConfig.phone}
@@ -95,7 +96,7 @@ export function Hero() {
               nativeButton={false}
               size="lg"
               variant="outline"
-              className="h-11 sm:h-12 w-full sm:w-auto border-brand-accent/60 bg-brand-accent/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
+              className="col-span-2 sm:col-span-1 h-11 sm:h-12 w-full border-brand-accent/60 bg-brand-accent/10 px-4.5 sm:px-5 text-sm sm:text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               <Tag className="size-4 shrink-0 mr-1.5" />
               View Web Specials
@@ -106,11 +107,16 @@ export function Hero() {
               nativeButton={false}
               size="lg"
               variant="outline"
-              className="h-11 sm:h-12 w-full sm:w-auto border-white/30 bg-white/10 px-4.5 sm:px-6 text-sm sm:text-base font-bold text-white hover:bg-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
+              className="col-span-1 h-11 sm:h-12 w-full border-white/30 bg-white/10 px-3 sm:px-5 text-xs sm:text-base font-bold text-white hover:bg-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               <Camera className="size-4 shrink-0 mr-1.5 text-brand-accent" />
-              Text Photo for Quote
+              <span className="sm:hidden">Text Photo</span>
+              <span className="hidden sm:inline">Text Photo for Quote</span>
             </Button>
+
+            <div className="col-span-1">
+              <QuickQuoteModal />
+            </div>
           </div>
 
           <p className="mt-3 text-[11px] sm:text-xs text-slate-300/90 flex flex-wrap items-center gap-x-2.5 gap-y-1">
