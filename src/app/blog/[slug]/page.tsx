@@ -143,7 +143,7 @@ export default async function BlogPostPage({
                     name: siteConfig.legalName,
                     logo: {
                       "@type": "ImageObject",
-                      url: `${siteConfig.siteUrl}/jjj-plumbing-logo-v2.png`,
+                      url: `${siteConfig.siteUrl}/jjj-plumbing-logo-v3.png`,
                     },
                   },
                 },

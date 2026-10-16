@@ -24,7 +24,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Image
-              src="/jjj-plumbing-logo-v2.png"
+              src="/jjj-plumbing-logo-v3.png"
               alt="JJJ Plumbing logo"
               width={1179}
               height={403}

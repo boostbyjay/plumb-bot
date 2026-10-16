@@ -155,7 +155,7 @@ function StructuredData() {
         "@id": `${siteConfig.siteUrl}/#organization`,
         name: siteConfig.legalName,
         image: `${siteConfig.siteUrl}/work/hydrojetting-truck-hero-1920.jpg`,
-        logo: `${siteConfig.siteUrl}/jjj-plumbing-logo-v2.png`,
+        logo: `${siteConfig.siteUrl}/jjj-plumbing-logo-v3.png`,
         url: siteConfig.siteUrl,
         telephone: siteConfig.phone,
         priceRange: "$$",

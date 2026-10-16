@@ -122,7 +122,7 @@ export function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-4 py-1.5 sm:py-2.5">
           <Link href="/" onClick={handleHomeClick} className="flex shrink-0 items-center gap-2 cursor-pointer transition-all duration-200 hover:opacity-90 active:scale-[0.98]">
             <Image
-              src="/jjj-plumbing-logo-v2.png"
+              src="/jjj-plumbing-logo-v3.png"
               alt="JJJ Plumbing logo"
               width={1179}
               height={403}
