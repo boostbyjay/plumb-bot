@@ -154,6 +154,16 @@ Phone: ${siteConfig.phone}
 Website: https://www.jjjplumbing.com`;
 
       const customerEmail = values.email.trim();
+      const pageUrl = typeof window !== "undefined" ? window.location.href : siteConfig.siteUrl;
+      const urlParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+      const gclid = urlParams?.get("gclid") || "";
+      const utmSource = urlParams?.get("utm_source") || "";
+      const trafficSource = gclid
+        ? `Google Ads (gclid: ${gclid})`
+        : utmSource
+        ? `Campaign (${utmSource})`
+        : "Organic / Direct";
+
       const response = await fetch("https://formsubmit.co/ajax/jjjplumbinginc@gmail.com", {
         method: "POST",
         headers: {
@@ -179,6 +189,8 @@ Website: https://www.jjjplumbing.com`;
           "Special Offer / Coupon": hasSpecificOffer ? matchedCoupon.title : "None",
           "Address / Zip Code": values.zip,
           "Issue Description": values.details || "None provided",
+          "Submitted From": pageUrl,
+          "Traffic Source": trafficSource,
         }),
       });
 

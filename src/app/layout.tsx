@@ -65,10 +65,12 @@ export const metadata: Metadata = {
     "camera inspection Los Angeles",
     "plumbing contractor Los Angeles",
     "licensed plumber near me",
-    "24 hour plumber Los Angeles",
     "same day plumber Los Angeles",
     "local plumber San Gabriel Valley",
   ],
+  alternates: {
+    canonical: siteConfig.siteUrl,
+  },
   openGraph: {
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description:
@@ -77,6 +79,21 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `${siteConfig.siteUrl}/work/hydrojetting-truck-hero-1920.jpg`,
+        width: 1920,
+        height: 1080,
+        alt: "JJJ Plumbing Hydro-Jetting & Emergency Service Truck",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    description:
+      "Licensed & insured residential and commercial plumbing across Los Angeles, Orange County, and the San Gabriel Valley. Same-day emergency dispatch available.",
+    images: [`${siteConfig.siteUrl}/work/hydrojetting-truck-hero-1920.jpg`],
   },
 };
 
@@ -112,7 +129,10 @@ function StructuredData() {
       name: siteConfig.legalName,
       telephone: siteConfig.phone,
     },
-    areaServed: serviceAreas.map((city) => `${city}, CA`),
+    areaServed: serviceAreas.map((city) => ({
+      "@type": "City",
+      name: `${city}, CA`,
+    })),
     availableChannel: {
       "@type": "ServiceChannel",
       serviceUrl: siteConfig.siteUrl,
@@ -134,7 +154,8 @@ function StructuredData() {
         "@type": "PlumbingContractor",
         "@id": `${siteConfig.siteUrl}/#organization`,
         name: siteConfig.legalName,
-        image: `${siteConfig.siteUrl}/jjj-plumbing-logo-v2.png`,
+        image: `${siteConfig.siteUrl}/work/hydrojetting-truck-hero-1920.jpg`,
+        logo: `${siteConfig.siteUrl}/jjj-plumbing-logo-v2.png`,
         url: siteConfig.siteUrl,
         telephone: siteConfig.phone,
         priceRange: "$$",
@@ -162,13 +183,8 @@ function StructuredData() {
           },
         ],
         areaServed: serviceAreas.map((city) => ({
-          "@type": "Place",
+          "@type": "City",
           name: `${city}, CA`,
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: 34.0961,
-            longitude: -118.1058,
-          },
         })),
         foundingDate: `${siteConfig.founded}`,
         sameAs: Object.values(siteConfig.social),
@@ -177,7 +193,7 @@ function StructuredData() {
           "@type": "ContactPoint",
           telephone: siteConfig.phone,
           contactType: "customer service",
-          availableLanguage: ["English"],
+          availableLanguage: ["English", "Spanish"],
           hoursAvailable: {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -223,7 +239,7 @@ function StructuredData() {
           },
         ],
         priceRange: "$$",
-        paymentAccepted: ["Cash", "Credit Card"],
+        paymentAccepted: ["Cash", "Credit Card", "Buy Now Pay Later", "Financing"],
         currenciesAccepted: "USD",
       },
       breadcrumbSchema,
@@ -267,6 +283,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col font-sans overflow-x-clip">
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a'):null;if(!a)return;var href=a.getAttribute('href')||'';if(href.indexOf('tel:')===0&&window.gtag){window.gtag('event','click_to_call',{event_category:'lead',event_label:window.location.pathname,value:1});}else if(href.indexOf('sms:')===0&&window.gtag){window.gtag('event','click_to_sms',{event_category:'lead',event_label:window.location.pathname,value:1});}});`,
+          }}
+        />
         {callTrackingNumber && (
           <script
             dangerouslySetInnerHTML={{

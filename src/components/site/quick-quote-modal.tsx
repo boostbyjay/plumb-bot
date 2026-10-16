@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useId } from "react";
+import { useState, useId, useEffect } from "react";
 import { CheckCircle2, ClipboardList, Loader2, Phone, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
@@ -34,7 +34,7 @@ export const POPULAR_PLUMBING_OPTIONS = [
   "Other",
 ] as const;
 
-export function QuickQuoteModal() {
+export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean }) {
   const uid = useId();
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
@@ -42,6 +42,15 @@ export function QuickQuoteModal() {
   const [service, setService] = useState("");
   const [errors, setErrors] = useState<{ name?: string; phone?: string; service?: string }>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  useEffect(() => {
+    if (!hideTrigger) return;
+    function onOpenEvent() {
+      setOpen(true);
+    }
+    window.addEventListener("jjj:open-quick-quote", onOpenEvent);
+    return () => window.removeEventListener("jjj:open-quick-quote", onOpenEvent);
+  }, [hideTrigger]);
 
   function validate() {
     const next: { name?: string; phone?: string; service?: string } = {};
@@ -79,15 +88,22 @@ export function QuickQuoteModal() {
     setStatus("submitting");
 
     try {
+      const pageUrl = typeof window !== "undefined" ? window.location.href : siteConfig.siteUrl;
+      const params = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+      const sourceInfo = params?.get("gclid")
+        ? `Google Ads (gclid: ${params.get("gclid")})`
+        : params?.get("utm_source") || "Direct / Organic Search";
+
       const payload: Record<string, string> = {
-        _subject: `⚡ QUICK HERO LEAD: ${name} — ${service} (${phone})`,
+        _subject: `⚡ QUICK LEAD: ${name} — ${service} (${phone})`,
         _template: "table",
         _captcha: "false",
-        "Form Type": "Hero 30-Second Quick Estimate",
+        "Form Type": "30-Second Quick Estimate Popup",
         "Customer Name": name,
         "Phone Number": phone,
         "Service Requested": service,
-        "Submitted From": typeof window !== "undefined" ? window.location.href : siteConfig.siteUrl,
+        "Traffic Source": sourceInfo,
+        "Submitted From": pageUrl,
       };
 
       const res = await fetch("https://formsubmit.co/ajax/jakecosta44@gmail.com", {
@@ -102,6 +118,13 @@ export function QuickQuoteModal() {
       if (!res.ok) throw new Error("Submission failed");
       setStatus("success");
       fireConfetti();
+      if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead", {
+          event_category: "engagement",
+          event_label: service,
+          value: 1,
+        });
+      }
     } catch {
       setStatus("error");
     }
@@ -120,17 +143,19 @@ export function QuickQuoteModal() {
 
   return (
     <>
-      <Button
-        type="button"
-        onClick={() => setOpen(true)}
-        size="lg"
-        variant="outline"
-        className="h-11 sm:h-12 w-full border-white/30 bg-white/10 px-3 sm:px-5 text-xs sm:text-base font-bold text-white hover:bg-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
-      >
-        <ClipboardList className="size-4 shrink-0 mr-1.5 text-brand-accent" />
-        <span className="sm:hidden">Quick Form</span>
-        <span className="hidden sm:inline">Quick Online Quote</span>
-      </Button>
+      {!hideTrigger && (
+        <Button
+          type="button"
+          onClick={() => setOpen(true)}
+          size="lg"
+          variant="outline"
+          className="h-11 sm:h-12 w-full border-white/30 bg-white/10 px-3 sm:px-5 text-xs sm:text-base font-bold text-white hover:bg-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
+        >
+          <ClipboardList className="size-4 shrink-0 mr-1.5 text-brand-accent" />
+          <span className="sm:hidden">Quick Form</span>
+          <span className="hidden sm:inline">Quick Online Quote</span>
+        </Button>
+      )}
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-md p-5 sm:p-6 bg-white text-slate-900 rounded-2xl shadow-2xl border border-slate-200">

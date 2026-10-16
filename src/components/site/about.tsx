@@ -5,9 +5,9 @@ import { photoBlur } from "@/lib/photo-blur";
 
 const stats = [
   { icon: Award, value: "25 Years", label: "In Business" },
-  { icon: MapPin, value: "50+ Cities", label: "Across LA, OC & the SGV" },
+  { icon: MapPin, value: "75+ Cities", label: "Across LA, OC & the SGV" },
   { icon: Wrench, value: "100%", label: "Satisfaction Guaranteed" },
-  { icon: HardHat, value: "Licensed", label: siteConfig.license },
+  { icon: HardHat, value: "Licensed", label: `${siteConfig.license} • Verify ↗`, href: siteConfig.cslbUrl },
 ];
 
 export function About() {
@@ -44,20 +44,37 @@ export function About() {
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5">
-              {stats.map(({ icon: Icon, value, label }) => (
-                <div
-                  key={label}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
-                >
-                  <Icon className="mx-auto size-7 text-brand-blue" />
-                  <p className="mt-3 text-2xl font-extrabold text-brand-navy">
-                    {value}
-                  </p>
-                  <p className="mt-1 text-xs font-medium text-slate-500">
-                    {label}
-                  </p>
-                </div>
-              ))}
+              {stats.map(({ icon: Icon, value, label, href }) => {
+                const content = (
+                  <>
+                    <Icon className="mx-auto size-7 text-brand-blue" />
+                    <p className="mt-3 text-2xl font-extrabold text-brand-navy">
+                      {value}
+                    </p>
+                    <p className="mt-1 text-xs font-medium text-slate-500">
+                      {label}
+                    </p>
+                  </>
+                );
+                return href ? (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center transition-all hover:border-brand-accent hover:bg-white hover:shadow-md"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div
+                    key={label}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
+                  >
+                    {content}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
