@@ -1,31 +1,22 @@
 "use client";
 
 import { useId, useState, useEffect, type FormEvent } from "react";
-import { CheckCircle2, Loader2, Send, Clock, Sparkles, ShieldCheck, Tag } from "lucide-react";
+import { CheckCircle2, Loader2, Send, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { services, siteConfig } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 
 type Status = "idle" | "submitting" | "success";
 
 export type FormValues = {
   name: string;
   phone: string;
-  email: string;
   service: string;
   zip: string;
   details: string;
-  urgency: string;
   couponCode: string;
 };
 
@@ -34,28 +25,34 @@ type FormErrors = Partial<Record<keyof FormValues | "_form", string>>;
 const initialValues: FormValues = {
   name: "",
   phone: "",
-  email: "",
   service: "",
   zip: "",
   details: "",
-  urgency: "asap",
   couponCode: "",
 };
 
-const quickIssues = [
-  { label: "💧 Hydro-Jet / Drain", service: "drain-cleaning", coupon: "HYDRO149" },
-  { label: "🚨 Emergency Leak", service: "emergency-repairs", coupon: "" },
-  { label: "🚿 Water Heater", service: "water-heaters", coupon: "HEAT150" },
-  { label: "🏗️ Sewer / Line", service: "sewer-lines", coupon: "SEWER-2ND" },
-  { label: "🏢 Commercial", service: "commercial", coupon: "" },
+const serviceChoices = [
+  { value: "Drain Cleaning / Clogged Drain", label: "1. Drain Cleaning / Clogged Drain" },
+  { value: "Hydro-Jetting ($149 Special)", label: "2. Hydro-Jetting ($149 Special)" },
+  { value: "Water Heater Repair or Replace", label: "3. Water Heater Repair or Replace" },
+  { value: "Tankless Water Heater Service", label: "4. Tankless Water Heater Service" },
+  { value: "Sewer Line Repair / Camera Inspection", label: "5. Sewer Line Repair / Camera Inspection" },
+  { value: "Emergency Leak / Burst Pipe Repair", label: "6. Emergency Leak / Burst Pipe Repair" },
+  { value: "Toilet Repair or Installation", label: "7. Toilet Repair or Installation" },
+  { value: "Faucet, Sink, or Garbage Disposal", label: "8. Faucet, Sink, or Garbage Disposal" },
+  { value: "Slab Leak Detection & Repair", label: "9. Slab Leak Detection & Repair" },
+  { value: "Commercial Plumbing / Backflow", label: "10. Commercial Plumbing / Backflow" },
+  { value: "Other Plumbing Service", label: "11. Other Plumbing Service" },
 ];
 
-const urgencyOptions = [
-  { id: "asap", label: "🚨 Emergency ASAP (Under 90 min)", tag: "Fastest" },
-  { id: "today-morning", label: "☀️ Today (8 AM – 12 PM)", tag: "Morning" },
-  { id: "today-afternoon", label: "⛅ Today (12 PM – 5 PM)", tag: "Afternoon" },
-  { id: "flexible", label: "📅 Tomorrow / Flexible", tag: "Scheduled" },
-];
+// Map internal coupon serviceIds to plain-English dropdown values
+const serviceIdMap: Record<string, string> = {
+  "drain-cleaning": "Hydro-Jetting ($149 Special)",
+  "emergency-repairs": "Emergency Leak / Burst Pipe Repair",
+  "water-heaters": "Water Heater Repair or Replace",
+  "sewer-lines": "Sewer Line Repair / Camera Inspection",
+  "commercial": "Commercial Plumbing / Backflow",
+};
 
 export function LeadForm({
   compact = false,
@@ -69,15 +66,18 @@ export function LeadForm({
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
 
-  // Listen to external coupon clicks from the Specials section
+  // Listen to external coupon clicks from the Specials section or Hero
   useEffect(() => {
     function handleSelectCoupon(e: Event) {
       const custom = e as CustomEvent<{ code?: string; serviceId?: string }>;
       if (custom.detail?.code) {
+        const mappedService = custom.detail.serviceId
+          ? serviceIdMap[custom.detail.serviceId] || custom.detail.serviceId
+          : undefined;
         setValues((prev) => ({
           ...prev,
           couponCode: custom.detail.code!,
-          service: custom.detail.serviceId || prev.service,
+          service: mappedService || prev.service,
         }));
       }
     }
@@ -90,21 +90,12 @@ export function LeadForm({
     setErrors((prev) => ({ ...prev, [field]: undefined }));
   }
 
-  function handleQuickIssueClick(serviceId: string, couponCode: string) {
-    setValues((prev) => ({
-      ...prev,
-      service: serviceId,
-      couponCode: couponCode || "",
-    }));
-    setErrors((prev) => ({ ...prev, service: undefined }));
-  }
-
   function validate(): boolean {
     const nextErrors: Partial<Record<keyof FormValues, string>> = {};
     if (!values.name.trim()) nextErrors.name = "Please enter your name.";
-    if (!values.phone.trim()) nextErrors.phone = "Please enter a phone number.";
-    if (!values.service) nextErrors.service = "Please select a service or tap an issue chip.";
-    if (!values.zip.trim()) nextErrors.zip = "Please enter your address or zip code.";
+    if (!values.phone.trim()) nextErrors.phone = "Please enter your phone number.";
+    if (!values.service) nextErrors.service = "Please choose a service from the list.";
+    if (!values.zip.trim()) nextErrors.zip = "Please enter your city or zip code.";
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
   }
@@ -116,44 +107,12 @@ export function LeadForm({
     setStatus("submitting");
 
     try {
-      const serviceLabel =
-        services.find((s) => s.id === values.service)?.title || values.service;
-
-      const urgencyLabel =
-        urgencyOptions.find((u) => u.id === values.urgency)?.label || values.urgency;
-
       const matchedCoupon = siteConfig.coupons.find((c) => c.code === values.couponCode);
       const hasSpecificOffer =
         values.couponCode &&
         values.couponCode !== "JJJ-75OFF" &&
         matchedCoupon;
 
-      const offerLine = hasSpecificOffer
-        ? `\nOFFICIAL COUPON CODE: ${values.couponCode}\nOFFER APPLIED: ${matchedCoupon.title}\n`
-        : "";
-
-      const introSentence = hasSpecificOffer
-        ? `Thank you for contacting JJJ Plumbing! We have received your request and your special offer (${matchedCoupon.title}) has been locked in for your visit.`
-        : `Thank you for contacting JJJ Plumbing! We have received your request and our dispatch team is reviewing your details.`;
-
-      const autoresponseMessage = `${introSentence}
-
-Our dispatch team will text you at ${values.phone} within 5 minutes to confirm your details, arrival window, and upfront pricing.
-${offerLine}
-REQUESTED SERVICE: ${serviceLabel}
-PREFERRED ARRIVAL: ${urgencyLabel}
-SERVICE LOCATION: ${values.zip}
-${values.details ? `DETAILS PROVIDED: ${values.details}\n` : ""}
-GUARANTEE: Your diagnostic fee is 100% credited toward any repair performed.
-
-If this is an active emergency (burst pipe, gas leak, active flooding, or main sewer backup), please call us directly at ${siteConfig.phone} for immediate same-day dispatch.
-
-JJJ Plumbing Inc
-${siteConfig.license}
-Phone: ${siteConfig.phone}
-Website: https://www.jjjplumbing.com`;
-
-      const customerEmail = values.email.trim();
       const pageUrl = typeof window !== "undefined" ? window.location.href : siteConfig.siteUrl;
       const urlParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
       const gclid = urlParams?.get("gclid") || "";
@@ -171,23 +130,14 @@ Website: https://www.jjjplumbing.com`;
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: `New Quote Request: ${serviceLabel} ${hasSpecificOffer ? `[${values.couponCode}] ` : ""}- ${values.name}`,
+          _subject: `New Estimate Request: ${values.service} ${hasSpecificOffer ? `[${values.couponCode}] ` : ""}- ${values.name}`,
           _template: "table",
           _captcha: "false",
-          ...(customerEmail
-            ? {
-                _autoresponse: autoresponseMessage,
-                email: customerEmail,
-                _replyto: customerEmail,
-              }
-            : {}),
           "Customer Name": values.name,
           "Phone Number": values.phone,
-          "Email Address": customerEmail || "Not provided (Text preferred)",
-          "Service Needed": serviceLabel,
-          "Preferred Arrival Time": urgencyLabel,
-          "Special Offer / Coupon": hasSpecificOffer ? matchedCoupon.title : "None",
-          "Address / Zip Code": values.zip,
+          "Service Needed": values.service,
+          "City / Zip Code": values.zip,
+          "Special Offer / Coupon": hasSpecificOffer ? matchedCoupon.title : values.couponCode || "None",
           "Issue Description": values.details || "None provided",
           "Submitted From": pageUrl,
           "Traffic Source": trafficSource,
@@ -225,23 +175,13 @@ Website: https://www.jjjplumbing.com`;
     try {
       const cf = require("canvas-confetti");
       cf({
-        particleCount: 150,
-        spread: 75,
+        particleCount: 120,
+        spread: 70,
         origin: { y: 0.5 },
         colors: ["#0ea5e9", "#facc15", "#ffffff", "#38bdf8"],
         gravity: 0.7,
-        ticks: 250,
+        ticks: 220,
       });
-      setTimeout(() => {
-        cf({
-          particleCount: 80,
-          spread: 50,
-          origin: { y: 0.4 },
-          colors: ["#0ea5e9", "#facc15"],
-          gravity: 0.6,
-          ticks: 200,
-        });
-      }, 200);
     } catch {
       // confetti not available
     }
@@ -253,52 +193,42 @@ Website: https://www.jjjplumbing.com`;
     return (
       <div
         className={cn(
-          "flex flex-col items-center gap-4 rounded-2xl border-2 border-dashed border-emerald-500 bg-emerald-50/70 p-6 sm:p-8 text-center shadow-lg",
+          "flex flex-col items-center gap-4 rounded-2xl border-2 border-dashed border-emerald-500 bg-emerald-50/70 p-6 text-center shadow-lg",
           className,
         )}
       >
-        <div className="flex size-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-          <CheckCircle2 className="size-8" />
+        <div className="flex size-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+          <CheckCircle2 className="size-7" />
         </div>
         <div>
           <span className="inline-block rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
             Request Received
           </span>
-          <h3 className="mt-2 text-2xl font-black text-emerald-950">
+          <h3 className="mt-2 text-xl sm:text-2xl font-black text-emerald-950">
             {showCoupon ? matchedCoupon!.title : "Fast Dispatch Confirmed"}
           </h3>
-          <p className="mt-2 max-w-sm text-sm text-emerald-800">
+          <p className="mt-1.5 max-w-sm text-sm text-emerald-800">
             Our dispatch team will text you at <strong>{values.phone}</strong> within 5 minutes to confirm your visit.
           </p>
         </div>
 
-        {/* Digital Coupon Box - only if specific promo like hydrojetting, never the $75 voucher */}
         {showCoupon && (
-          <div className="w-full max-w-sm rounded-xl border-2 border-dashed border-emerald-400 bg-white p-4 shadow-sm text-center">
+          <div className="w-full max-w-sm rounded-xl border-2 border-dashed border-emerald-400 bg-white p-3.5 shadow-sm text-center">
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
               Your Official Coupon Code
             </p>
-            <div className="mt-1.5 inline-block rounded-lg bg-emerald-100 px-4 py-1.5 font-mono text-xl font-extrabold tracking-widest text-emerald-900 border border-emerald-300">
+            <div className="mt-1 inline-block rounded-lg bg-emerald-100 px-4 py-1 font-mono text-lg font-extrabold tracking-widest text-emerald-900 border border-emerald-300">
               {values.couponCode}
             </div>
-            <p className="mt-2 text-xs text-slate-600">
-              Show this screen to your technician upon arrival. Diagnostic fee 100% credited toward your repair!
-            </p>
           </div>
         )}
 
-        {/* Reassurance badge */}
-        <div className="w-full max-w-sm rounded-xl border border-emerald-200 bg-white/80 p-3 text-xs text-emerald-900 font-medium text-center">
-          ✓ 100% Diagnostic fee credited toward your repair if work is performed.
-        </div>
-
         <div className="w-full pt-1">
-          <p className="text-xs text-slate-500 mb-2">Need immediate emergency dispatch right now?</p>
           <a
             href={siteConfig.phoneHref}
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-navy py-3 px-4 text-sm font-bold text-white hover:bg-brand-navy-light"
           >
-            Call {siteConfig.phone} (Immediate Dispatch)
+            Call {siteConfig.phone} Now
           </a>
         </div>
       </div>
@@ -311,86 +241,27 @@ Website: https://www.jjjplumbing.com`;
     <form
       onSubmit={handleSubmit}
       noValidate
-      className={cn("flex flex-col gap-4", className)}
+      className={cn("flex flex-col gap-3.5", className)}
     >
-      {/* Dynamic Active Offer Banner */}
-      <div className="flex items-center justify-between gap-3 rounded-xl border border-brand-accent/50 bg-gradient-to-r from-sky-50 to-amber-50/60 p-3 text-xs sm:text-sm">
-        <div className="flex items-center gap-2.5 min-w-0">
-          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-brand-accent text-brand-navy-dark text-xs font-black shadow-sm">
-            <Tag className="size-3.5" />
+      {/* Clean 1-line offer badge when a coupon was clicked */}
+      {values.couponCode && (
+        <div className="flex items-center justify-between gap-2 rounded-xl border border-emerald-300 bg-emerald-50 px-3.5 py-2 text-xs sm:text-sm">
+          <span className="flex items-center gap-2 font-bold text-emerald-950">
+            <Tag className="size-4 text-emerald-600 shrink-0" />
+            {activeCoupon ? activeCoupon.title : "$75 Repair Voucher"} Locked In
           </span>
-          <div className="leading-snug min-w-0">
-            <p className="font-extrabold text-brand-navy truncate">
-              {activeCoupon ? activeCoupon.title : "$75 Repair Voucher"}
-            </p>
-            <p className="text-[11px] text-slate-600">
-              Code: <strong className="font-mono text-brand-blue">{values.couponCode}</strong> · {activeCoupon?.savings || "Discount Locked"}
-            </p>
-          </div>
+          <span className="rounded-md bg-emerald-600 px-2 py-0.5 text-[11px] font-bold text-white">
+            Applied ✓
+          </span>
         </div>
-        <span className="shrink-0 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 border border-emerald-200">
-          Applied ✓
-        </span>
-      </div>
+      )}
 
-      {/* 1-Click Quick Issue Selector Chips */}
-      <div>
-        <Label className="text-xs font-semibold text-slate-600 mb-1.5 block">
-          Quick-Select Your Problem:
-        </Label>
-        <div className="flex flex-wrap gap-1.5 sm:gap-2">
-          {quickIssues.map((item) => {
-            const isSelected = values.service === item.service;
-            return (
-              <button
-                key={item.service}
-                type="button"
-                onClick={() => handleQuickIssueClick(item.service, item.coupon)}
-                className={cn(
-                  "rounded-lg px-2.5 py-1 text-xs font-semibold transition-all border",
-                  isSelected
-                    ? "bg-brand-navy text-white border-brand-navy shadow-sm ring-2 ring-brand-accent/50"
-                    : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 hover:text-slate-900"
-                )}
-              >
-                {item.label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Preferred Arrival Window / Urgency */}
-      <div>
-        <Label className="text-xs font-semibold text-slate-600 mb-1.5 flex items-center justify-between">
-          <span>Preferred Arrival Window:</span>
-          <span className="text-[11px] text-emerald-600 font-bold">Same-Day Available</span>
-        </Label>
-        <div className="grid grid-cols-2 gap-2">
-          {urgencyOptions.map((opt) => {
-            const isSelected = values.urgency === opt.id;
-            return (
-              <button
-                key={opt.id}
-                type="button"
-                onClick={() => updateField("urgency", opt.id)}
-                className={cn(
-                  "flex items-center justify-between text-left rounded-xl p-2.5 text-xs font-semibold transition-all border",
-                  isSelected
-                    ? "bg-brand-accent/15 border-brand-accent text-brand-navy-dark ring-2 ring-brand-accent/40 shadow-sm"
-                    : "bg-white border-slate-200 text-slate-700 hover:border-slate-300"
-                )}
-              >
-                <span className="truncate">{opt.label}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="grid gap-3 sm:grid-cols-2">
-        <div className="flex flex-col gap-1.5">
-          <Label htmlFor={`name-${uid}`} className="text-xs font-semibold">Full Name</Label>
+      {/* Row 1: Name & Phone */}
+      <div className="grid gap-3.5 sm:grid-cols-2">
+        <div className="flex flex-col gap-1">
+          <Label htmlFor={`name-${uid}`} className="text-sm font-bold text-slate-800">
+            Your Name
+          </Label>
           <Input
             id={`name-${uid}`}
             name="name"
@@ -399,14 +270,17 @@ Website: https://www.jjjplumbing.com`;
             value={values.name}
             onChange={(e) => updateField("name", e.target.value)}
             aria-invalid={Boolean(errors.name)}
-            className="h-10 text-sm"
+            className="h-11 text-base px-3.5"
           />
           {errors.name && (
-            <p className="text-xs font-medium text-destructive">{errors.name}</p>
+            <p className="text-xs font-semibold text-destructive">{errors.name}</p>
           )}
         </div>
-        <div className="flex flex-col gap-1.5">
-          <Label htmlFor={`phone-${uid}`} className="text-xs font-semibold">Phone Number</Label>
+
+        <div className="flex flex-col gap-1">
+          <Label htmlFor={`phone-${uid}`} className="text-sm font-bold text-slate-800">
+            Phone Number
+          </Label>
           <Input
             id={`phone-${uid}`}
             name="phone"
@@ -416,142 +290,106 @@ Website: https://www.jjjplumbing.com`;
             value={values.phone}
             onChange={(e) => updateField("phone", e.target.value)}
             aria-invalid={Boolean(errors.phone)}
-            className="h-10 text-sm"
+            className="h-11 text-base px-3.5"
           />
           {errors.phone && (
-            <p className="text-xs font-medium text-destructive">{errors.phone}</p>
+            <p className="text-xs font-semibold text-destructive">{errors.phone}</p>
           )}
         </div>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
-        <div className="flex flex-col gap-1.5">
-          <Label htmlFor={`email-${uid}`} className="text-xs font-semibold">
-            Email Address <span className="text-slate-400 font-normal">(Optional)</span>
+      {/* Row 2: Service Needed & City/Zip */}
+      <div className="grid gap-3.5 sm:grid-cols-2">
+        <div className="flex flex-col gap-1">
+          <Label htmlFor={`service-${uid}`} className="text-sm font-bold text-slate-800">
+            Service Needed
           </Label>
-          <Input
-            id={`email-${uid}`}
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="you@example.com"
-            value={values.email}
-            onChange={(e) => updateField("email", e.target.value)}
-            aria-invalid={Boolean(errors.email)}
-            className="h-10 text-sm"
-          />
-          {errors.email && (
-            <p className="text-xs font-medium text-destructive">{errors.email}</p>
-          )}
-        </div>
-        <div className="flex flex-col gap-1.5">
-          <Label htmlFor={`service-${uid}`} className="text-xs font-semibold">Service Needed</Label>
-          <Select
-            value={values.service || null}
-            onValueChange={(value) => updateField("service", (value as string) ?? "")}
+          <select
+            id={`service-${uid}`}
+            name="service"
+            value={values.service}
+            onChange={(e) => updateField("service", e.target.value)}
+            aria-invalid={Boolean(errors.service)}
+            className="h-11 w-full rounded-md border border-input bg-white px-3 text-base text-slate-900 shadow-xs outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-accent/40"
           >
-            <SelectTrigger id={`service-${uid}`} className="w-full h-10 text-sm">
-              <SelectValue placeholder="Select service" />
-            </SelectTrigger>
-            <SelectContent>
-              {services.map((service) => (
-                <SelectItem key={service.id} value={service.id}>
-                  {service.title}
-                </SelectItem>
-              ))}
-              <SelectItem value="other">Something else</SelectItem>
-            </SelectContent>
-          </Select>
+            <option value="" disabled>
+              Tap to choose a service...
+            </option>
+            {serviceChoices.map((s) => (
+              <option key={s.value} value={s.value}>
+                {s.label}
+              </option>
+            ))}
+          </select>
           {errors.service && (
-            <p className="text-xs font-medium text-destructive">{errors.service}</p>
+            <p className="text-xs font-semibold text-destructive">{errors.service}</p>
           )}
         </div>
-      </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
-        <div className="flex flex-col gap-1.5">
-          <Label htmlFor={`zip-${uid}`} className="text-xs font-semibold">Address or Zip Code</Label>
+        <div className="flex flex-col gap-1">
+          <Label htmlFor={`zip-${uid}`} className="text-sm font-bold text-slate-800">
+            City or Zip Code
+          </Label>
           <Input
             id={`zip-${uid}`}
             name="zip"
             autoComplete="postal-code"
-            placeholder="San Gabriel, 91776"
+            placeholder="San Gabriel or 91776"
             value={values.zip}
             onChange={(e) => updateField("zip", e.target.value)}
             aria-invalid={Boolean(errors.zip)}
-            className="h-10 text-sm"
+            className="h-11 text-base px-3.5"
           />
           {errors.zip && (
-            <p className="text-xs font-medium text-destructive">{errors.zip}</p>
+            <p className="text-xs font-semibold text-destructive">{errors.zip}</p>
           )}
-        </div>
-        <div className="flex flex-col gap-1.5">
-          <Label htmlFor={`coupon-${uid}`} className="text-xs font-semibold">Special Offer (Optional)</Label>
-          <Select
-            value={values.couponCode || "none"}
-            onValueChange={(val) => updateField("couponCode", val === "none" ? "" : (val ?? ""))}
-          >
-            <SelectTrigger id={`coupon-${uid}`} className="w-full h-10 text-sm font-semibold">
-              <SelectValue placeholder="No coupon applied" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="none">No coupon applied</SelectItem>
-              {siteConfig.coupons.map((c) => (
-                <SelectItem key={c.code} value={c.code}>
-                  {c.code} — {c.title}
-                </SelectItem>
-              ))}
-              <SelectItem value="HERO10">
-                HERO10 — 10% Senior, Military &amp; First Responder
-              </SelectItem>
-            </SelectContent>
-          </Select>
         </div>
       </div>
 
-      <div className="flex flex-col gap-1.5">
-        <Label htmlFor={`details-${uid}`} className="text-xs font-semibold">Additional Details (Optional)</Label>
-        <Textarea
-          id={`details-${uid}`}
-          name="details"
-          rows={compact ? 2 : 3}
-          value={values.details}
-          onChange={(e) => updateField("details", e.target.value)}
-          placeholder="E.g. Kitchen sink backing up, water heater leaking at base..."
-          className="text-sm"
-        />
-      </div>
+      {/* Row 3: Brief Optional Note */}
+      {!compact && (
+        <div className="flex flex-col gap-1">
+          <Label htmlFor={`details-${uid}`} className="text-sm font-bold text-slate-800">
+            How Can We Help? <span className="font-normal text-slate-500">(Optional)</span>
+          </Label>
+          <Textarea
+            id={`details-${uid}`}
+            name="details"
+            rows={2}
+            value={values.details}
+            onChange={(e) => updateField("details", e.target.value)}
+            placeholder="E.g. Kitchen sink backed up, water heater leaking..."
+            className="text-base min-h-[60px] resize-none px-3.5 py-2"
+          />
+        </div>
+      )}
 
       <Button
         type="submit"
         size="lg"
         disabled={status === "submitting"}
-        className="mt-1 w-full bg-brand-accent text-brand-navy-dark hover:bg-sky-300 font-extrabold h-11 text-sm sm:text-base shadow-sm"
+        className="mt-1 w-full bg-brand-accent text-brand-navy-dark hover:bg-sky-300 font-extrabold h-12 text-base shadow-sm cursor-pointer"
       >
         {status === "submitting" ? (
           <>
-            <Loader2 className="size-4 animate-spin mr-1.5" />
-            Locking In Offer...
+            <Loader2 className="size-5 animate-spin mr-2" />
+            Sending Request...
           </>
         ) : (
           <>
-            <Send className="size-4 mr-1.5" />
-            Lock In Offer &amp; Book Arrival Window
+            <Send className="size-4 mr-2" />
+            Get My Free Estimate
           </>
         )}
       </Button>
+
       {errors._form && (
-        <p className="text-center text-xs text-destructive">{errors._form}</p>
+        <p className="text-center text-xs font-semibold text-destructive">{errors._form}</p>
       )}
-      
-      <div className="text-center space-y-1">
-        <p className="text-[11px] font-semibold text-emerald-700">
-          ✓ Diagnostic fee 100% credited toward your repair if work is performed.
-        </p>
-        <p className="text-[10px] text-muted-foreground leading-normal">
-          No hidden fees. Upfront quote before any wrench is turned. We will text you within 5 minutes.
-        </p>
-      </div>
+
+      <p className="text-center text-xs font-semibold text-emerald-700">
+        ✓ We text you within 5 minutes • Diagnostic fee 100% credited to repair
+      </p>
     </form>
   );
 }
