@@ -46,19 +46,19 @@ export function Coupons() {
   function handleClaim(code: string, serviceId?: string) {
     setOpen(false);
     if (typeof window !== "undefined") {
-      // Dispatch custom event to prefill lead form
+      // Pre-fill both the on-page bottom form and open the instant popup with the offer locked in
       window.dispatchEvent(
         new CustomEvent("jjj:select-coupon", {
           detail: { code, serviceId },
         })
       );
-
-      const el = document.getElementById("estimate");
-      if (el) {
-        setTimeout(() => {
-          bounceScroll(el);
-        }, 150);
-      }
+      setTimeout(() => {
+        window.dispatchEvent(
+          new CustomEvent("jjj:open-quick-quote", {
+            detail: { code, serviceId },
+          })
+        );
+      }, 120);
     }
   }
 

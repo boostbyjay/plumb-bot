@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useId, useEffect } from "react";
-import { CheckCircle2, ClipboardList, Loader2, Phone, ShieldCheck } from "lucide-react";
+import { CheckCircle2, ClipboardList, Loader2, Phone, ShieldCheck, Tag } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,27 +12,28 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 export const POPULAR_PLUMBING_OPTIONS = [
+  "Drain Cleaning / Clogged Drain",
+  "Hydro-Jetting ($149 Special)",
+  "Water Heater Repair or Replace",
+  "Tankless Water Heater Service",
+  "Sewer Line Repair / Camera Inspection",
   "Emergency Leak / Burst Pipe Repair",
-  "Clogged Drain / Drain Cleaning",
-  "Hydro-Jetting Drain Cleaning ($149 Special)",
-  "Water Heater Repair or Replacement",
-  "Tankless Water Heater Installation",
-  "Sewer Line Repair / Trenchless Replacement",
-  "Sewer Video Camera Inspection",
-  "Toilet, Faucet or Shower Valve Repair",
+  "Toilet Repair or Installation",
+  "Faucet, Sink, or Garbage Disposal",
   "Slab Leak Detection & Repair",
-  "Commercial Plumbing / Grease Trap / Backflow",
-  "Other",
+  "Commercial Plumbing / Backflow",
+  "Other Plumbing Service",
 ] as const;
+
+const serviceIdToOption: Record<string, string> = {
+  "drain-cleaning": "Hydro-Jetting ($149 Special)",
+  "emergency-repairs": "Emergency Leak / Burst Pipe Repair",
+  "water-heaters": "Water Heater Repair or Replace",
+  "sewer-lines": "Sewer Line Repair / Camera Inspection",
+  "commercial": "Commercial Plumbing / Backflow",
+};
 
 export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean }) {
   const uid = useId();
@@ -40,12 +41,21 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
+  const [couponCode, setCouponCode] = useState("");
   const [errors, setErrors] = useState<{ name?: string; phone?: string; service?: string }>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   useEffect(() => {
     if (!hideTrigger) return;
-    function onOpenEvent() {
+    function onOpenEvent(e: Event) {
+      const custom = e as CustomEvent<{ code?: string; serviceId?: string }>;
+      if (custom.detail?.code) {
+        setCouponCode(custom.detail.code);
+      }
+      if (custom.detail?.serviceId) {
+        const mapped = serviceIdToOption[custom.detail.serviceId] || custom.detail.serviceId;
+        setService(mapped);
+      }
       setOpen(true);
     }
     window.addEventListener("jjj:open-quick-quote", onOpenEvent);
@@ -62,7 +72,7 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
       next.phone = "Enter a valid 10-digit phone number.";
     }
     if (!service) {
-      next.service = "Please select a plumbing service.";
+      next.service = "Please choose a service from the list.";
     }
     setErrors(next);
     return Object.keys(next).length === 0;
@@ -94,19 +104,22 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
         ? `Google Ads (gclid: ${params.get("gclid")})`
         : params?.get("utm_source") || "Direct / Organic Search";
 
+      const matchedCoupon = siteConfig.coupons.find((c) => c.code === couponCode);
+
       const payload: Record<string, string> = {
-        _subject: `⚡ QUICK LEAD: ${name} — ${service} (${phone})`,
+        _subject: `⚡ QUICK ESTIMATE: ${name} — ${service} ${couponCode ? `[${couponCode}] ` : ""}(${phone})`,
         _template: "table",
         _captcha: "false",
-        "Form Type": "30-Second Quick Estimate Popup",
+        "Form Type": "Instant Estimate Popup",
         "Customer Name": name,
         "Phone Number": phone,
         "Service Requested": service,
+        "Special Offer / Coupon": matchedCoupon ? `${matchedCoupon.title} (${couponCode})` : couponCode || "None",
         "Traffic Source": sourceInfo,
         "Submitted From": pageUrl,
       };
 
-      const res = await fetch("https://formsubmit.co/ajax/jakecosta44@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/jjjplumbinginc@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -137,9 +150,13 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
       setName("");
       setPhone("");
       setService("");
+      setCouponCode("");
       setErrors({});
     }, 250);
   }
+
+  const activeCoupon = siteConfig.coupons.find((c) => c.code === couponCode);
+  const showCouponOnSuccess = Boolean(activeCoupon && couponCode && couponCode !== "JJJ-75OFF");
 
   return (
     <>
@@ -168,16 +185,26 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
                 Request Received
               </span>
               <h3 className="text-2xl font-black text-brand-navy">
-                Fast Dispatch Confirmed
+                {showCouponOnSuccess ? activeCoupon!.title : "Fast Dispatch Confirmed"}
               </h3>
               <p className="max-w-xs text-sm text-slate-600 leading-relaxed">
                 Our dispatch team will text you at <strong className="text-brand-navy">{phone}</strong> within 5 minutes to confirm your visit.
               </p>
+              {showCouponOnSuccess && (
+                <div className="w-full rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50/70 p-3 text-center">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                    Official Coupon Code Locked In
+                  </p>
+                  <p className="mt-1 font-mono text-lg font-extrabold text-emerald-900">
+                    {couponCode}
+                  </p>
+                </div>
+              )}
               <div className="mt-2 flex flex-col sm:flex-row gap-2 w-full">
                 <Button
                   render={<a href={siteConfig.phoneHref} />}
                   nativeButton={false}
-                  className="flex-1 bg-brand-navy text-white font-bold hover:bg-brand-navy-light h-10"
+                  className="flex-1 bg-brand-navy text-white font-bold hover:bg-brand-navy-light h-11"
                 >
                   <Phone className="size-4 mr-1.5" />
                   Call {siteConfig.phone}
@@ -186,7 +213,7 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
                   type="button"
                   variant="outline"
                   onClick={handleResetAndClose}
-                  className="h-10 font-semibold"
+                  className="h-11 font-semibold"
                 >
                   Done
                 </Button>
@@ -195,42 +222,58 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
           ) : (
             <>
               <DialogHeader className="text-left pb-2 border-b border-slate-100">
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 w-fit">
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 px-2.5 py-0.5 text-xs font-bold text-emerald-700 w-fit">
                   <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>5-Minute Text Response</span>
                 </div>
                 <DialogTitle className="text-xl sm:text-2xl font-black text-brand-navy tracking-tight mt-1">
-                  Quick 30-Second Estimate
+                  Request Your Free Estimate
                 </DialogTitle>
-                <p className="text-xs sm:text-sm text-slate-600">
-                  Enter your name, phone, and service below. Our dispatch team will text you within 5 minutes.
+                <p className="text-sm text-slate-600">
+                  Fill out the 3 quick boxes below — we text you within 5 minutes.
                 </p>
               </DialogHeader>
 
-              <form onSubmit={handleSubmit} noValidate className="mt-3 flex flex-col gap-3.5">
-                <div className="flex flex-col gap-1.5">
-                  <Label htmlFor={`qq-name-${uid}`} className="text-xs font-bold text-slate-800">
+              {couponCode && (
+                <div className="mt-2 flex items-center justify-between gap-2 rounded-xl border border-emerald-300 bg-emerald-50 px-3.5 py-2 text-xs sm:text-sm">
+                  <span className="flex items-center gap-2 font-bold text-emerald-950">
+                    <Tag className="size-4 text-emerald-600 shrink-0" />
+                    {activeCoupon
+                      ? activeCoupon.title
+                      : couponCode === "HERO10"
+                      ? "10% Senior, Military & First Responder"
+                      : "$75 Off Any Repair"}
+                  </span>
+                  <span className="rounded-md bg-emerald-600 px-2 py-0.5 text-[11px] font-bold text-white shrink-0">
+                    Applied ✓
+                  </span>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} noValidate className="mt-2.5 flex flex-col gap-3.5">
+                <div className="flex flex-col gap-1">
+                  <Label htmlFor={`qq-name-${uid}`} className="text-sm font-bold text-slate-800">
                     Your Name
                   </Label>
                   <Input
                     id={`qq-name-${uid}`}
                     name="name"
                     autoComplete="name"
-                    placeholder="Jane Doe"
+                    placeholder="Jane Smith"
                     value={name}
                     onChange={(e) => {
                       setName(e.target.value);
                       if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
                     }}
-                    className="h-10 text-sm"
+                    className="h-11 text-base px-3.5"
                   />
                   {errors.name && (
-                    <p className="text-xs font-medium text-destructive">{errors.name}</p>
+                    <p className="text-xs font-semibold text-destructive">{errors.name}</p>
                   )}
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <Label htmlFor={`qq-phone-${uid}`} className="text-xs font-bold text-slate-800">
+                <div className="flex flex-col gap-1">
+                  <Label htmlFor={`qq-phone-${uid}`} className="text-sm font-bold text-slate-800">
                     Phone Number
                   </Label>
                   <Input
@@ -238,43 +281,44 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
                     name="phone"
                     type="tel"
                     autoComplete="tel"
-                    placeholder="(626) 555-0199"
+                    placeholder="(626) 555-0123"
                     value={phone}
                     onChange={(e) => {
                       setPhone(e.target.value);
                       if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
                     }}
-                    className="h-10 text-sm"
+                    className="h-11 text-base px-3.5"
                   />
                   {errors.phone && (
-                    <p className="text-xs font-medium text-destructive">{errors.phone}</p>
+                    <p className="text-xs font-semibold text-destructive">{errors.phone}</p>
                   )}
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <Label htmlFor={`qq-service-${uid}`} className="text-xs font-bold text-slate-800">
+                <div className="flex flex-col gap-1">
+                  <Label htmlFor={`qq-service-${uid}`} className="text-sm font-bold text-slate-800">
                     Service Needed
                   </Label>
-                  <Select
-                    value={service || null}
-                    onValueChange={(val) => {
-                      setService((val as string) ?? "");
+                  <select
+                    id={`qq-service-${uid}`}
+                    name="service"
+                    value={service}
+                    onChange={(e) => {
+                      setService(e.target.value);
                       if (errors.service) setErrors((prev) => ({ ...prev, service: undefined }));
                     }}
+                    className="h-11 w-full rounded-md border border-input bg-white px-3 text-base text-slate-900 shadow-xs outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-accent/40"
                   >
-                    <SelectTrigger id={`qq-service-${uid}`} className="w-full h-10 text-sm">
-                      <SelectValue placeholder="Select plumbing service..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {POPULAR_PLUMBING_OPTIONS.map((option) => (
-                        <SelectItem key={option} value={option}>
-                          {option}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                    <option value="" disabled>
+                      Tap to choose a service...
+                    </option>
+                    {POPULAR_PLUMBING_OPTIONS.map((option, idx) => (
+                      <option key={option} value={option}>
+                        {idx + 1}. {option}
+                      </option>
+                    ))}
+                  </select>
                   {errors.service && (
-                    <p className="text-xs font-medium text-destructive">{errors.service}</p>
+                    <p className="text-xs font-semibold text-destructive">{errors.service}</p>
                   )}
                 </div>
 
@@ -288,21 +332,21 @@ export function QuickQuoteModal({ hideTrigger = false }: { hideTrigger?: boolean
                   type="submit"
                   size="lg"
                   disabled={status === "submitting"}
-                  className="mt-1 h-11 w-full bg-brand-accent font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
+                  className="mt-1 h-12 w-full bg-brand-accent font-extrabold text-base text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
                 >
                   {status === "submitting" ? (
                     <>
-                      <Loader2 className="size-4 animate-spin mr-1.5" />
+                      <Loader2 className="size-5 animate-spin mr-1.5" />
                       Sending...
                     </>
                   ) : (
-                    "Get My Fast Estimate →"
+                    "Get My Free Estimate →"
                   )}
                 </Button>
 
-                <p className="flex items-center justify-center gap-1.5 text-[11px] text-slate-500 text-center">
-                  <ShieldCheck className="size-3.5 text-emerald-600 shrink-0" />
-                  <span>Upfront pricing • Zero obligation • CA LIC #842875</span>
+                <p className="flex items-center justify-center gap-1.5 text-xs text-slate-600 font-medium text-center">
+                  <ShieldCheck className="size-4 text-emerald-600 shrink-0" />
+                  <span>100% Diagnostic credited to repair • CA LIC #842875</span>
                 </p>
               </form>
             </>
