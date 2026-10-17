@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Phone, ShieldCheck, Star } from "lucide-react";
+import { Mail, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
@@ -114,10 +114,19 @@ export function Footer() {
               <li>
                 <a
                   href={siteConfig.phoneHref}
-                  className="flex items-center gap-2 hover:text-brand-accent"
+                  className="flex items-center gap-2 hover:text-brand-accent transition-colors"
                 >
-                  <Phone className="size-4" />
-                  {siteConfig.phone}
+                  <Phone className="size-4 shrink-0 text-brand-accent" />
+                  <span>{siteConfig.phone}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.emailHref}
+                  className="flex items-center gap-2 hover:text-brand-accent transition-colors break-all"
+                >
+                  <Mail className="size-4 shrink-0 text-brand-accent" />
+                  <span>{siteConfig.email}</span>
                 </a>
               </li>
               <li className="flex items-start gap-2">

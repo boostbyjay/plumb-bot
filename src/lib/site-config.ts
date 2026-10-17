@@ -4,6 +4,8 @@ export const siteConfig = {
   tagline: "Fast, Reliable Residential & Commercial Plumbing Services",
   phone: "(626) 506-6951",
   phoneHref: "tel:+16265066951",
+  email: "jjjplumbinginc@gmail.com",
+  emailHref: "mailto:jjjplumbinginc@gmail.com",
   smsHref:
     "sms:+16265066951?body=Hi%20JJJ%20Plumbing,%20here%20is%20a%20photo%20of%20my%20plumbing%20issue%20($75%20voucher):%0A%0AName:%20%0ACity:%20%0ADescribe%20issue:%20",
   voucher: {

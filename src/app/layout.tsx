@@ -158,6 +158,7 @@ function StructuredData() {
         logo: `${siteConfig.siteUrl}/jjj-plumbing-logo-v3.png`,
         url: siteConfig.siteUrl,
         telephone: siteConfig.phone,
+        email: siteConfig.email,
         priceRange: "$$",
         address: {
           "@type": "PostalAddress",
@@ -192,6 +193,7 @@ function StructuredData() {
         contactPoint: {
           "@type": "ContactPoint",
           telephone: siteConfig.phone,
+          email: siteConfig.email,
           contactType: "customer service",
           availableLanguage: ["English", "Spanish"],
           hoursAvailable: {
@@ -217,6 +219,7 @@ function StructuredData() {
         "@id": `${siteConfig.siteUrl}/#localbusiness`,
         name: siteConfig.legalName,
         telephone: siteConfig.phone,
+        email: siteConfig.email,
         address: {
           "@type": "PostalAddress",
           streetAddress: siteConfig.address.streetAddress || undefined,

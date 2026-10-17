@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, MessageSquare } from "lucide-react";
+import { Phone, MessageSquare, Mail } from "lucide-react";
 import { LeadForm } from "@/components/site/lead-form";
 import { siteConfig } from "@/lib/site-config";
 
@@ -27,7 +27,7 @@ export function Estimate() {
 
               <div className="space-y-2.5 pt-3 border-t border-white/10">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                  Prefer to Call or Text Directly?
+                  Prefer to Reach Us Directly?
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5">
                   <a
@@ -56,6 +56,21 @@ export function Estimate() {
                       <span className="mt-0.5 flex items-center gap-1.5 text-base font-extrabold text-white">
                         <MessageSquare className="size-4 shrink-0 text-brand-accent" />
                         Text Us a Photo →
+                      </span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={siteConfig.emailHref}
+                    className="flex items-center justify-between rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 transition-colors hover:bg-white/10"
+                  >
+                    <div>
+                      <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                        Direct Email
+                      </span>
+                      <span className="mt-0.5 flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-200">
+                        <Mail className="size-3.5 shrink-0 text-brand-accent" />
+                        {siteConfig.email}
                       </span>
                     </div>
                   </a>
