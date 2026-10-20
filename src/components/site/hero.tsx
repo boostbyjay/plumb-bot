@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Phone, ShieldCheck, BadgeCheck, DollarSign, Award, Star, Camera, Tag } from "lucide-react";
+import Link from "next/link";
+import { Phone, ShieldCheck, BadgeCheck, DollarSign, Award, Star, Camera, Tag, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 import { photoBlur } from "@/lib/photo-blur";
@@ -36,7 +37,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:py-14 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center flex-1">
         {/* Left Column: Headlines, Trust Pills, Quick Actions */}
         <div className="lg:col-span-7 flex flex-col justify-center min-w-0">
-          {/* Badges: Google Rating + Live Dispatch */}
+          {/* Badges: Google Rating + Live Dispatch + Service Areas */}
           <div className="flex flex-wrap items-center gap-2">
             <a
               href={siteConfig.social.google}
@@ -54,16 +55,24 @@ export function Hero() {
 
             <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
               <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Same-Day Dispatch Available</span>
+              <span>Same-Day 45-Min Dispatch</span>
             </span>
+
+            <Link
+              href="/neighborhoods"
+              className="inline-flex items-center gap-1.5 rounded-full border border-sky-400/40 bg-sky-500/15 px-3 py-1 text-xs font-bold text-sky-200 hover:bg-sky-500/25 transition-all"
+            >
+              <MapPin className="size-3 text-brand-accent shrink-0" />
+              <span>Serving 75+ SoCal Cities</span>
+            </Link>
           </div>
 
           <h1 className="mt-4 sm:mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[2.85rem] xl:text-[3.15rem] break-words text-balance text-white">
-            Licensed Plumbing &amp; Drain Experts — Upfront Pricing, Same-Day Dispatch, 100% Guaranteed.
+            Licensed Plumbing &amp; Drain Experts Across Greater LA, SGV &amp; Orange County.
           </h1>
 
           <p className="mt-3.5 sm:mt-4 max-w-xl text-base text-slate-200 sm:text-lg text-pretty leading-relaxed">
-            From emergency leak repairs to sewer replacements, JJJ Plumbing arrives on time with master plumbers, upfront pricing, and guaranteed workmanship.
+            Fast 45-minute mobile dispatch across 75+ Southern California communities. Master plumbers on every call, upfront pricing, and guaranteed workmanship.
           </p>
 
           {/* Action Buttons */}
@@ -107,6 +116,30 @@ export function Hero() {
             </div>
           </div>
 
+          {/* Immediate Regional Coverage Confirmation Strip */}
+          <div className="mt-4 rounded-xl border border-white/15 bg-white/[0.07] p-2.5 sm:p-3 backdrop-blur-xs sm:max-w-xl">
+            <div className="flex items-center justify-between gap-2 mb-1.5">
+              <span className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wide text-brand-accent">
+                <MapPin className="size-3 text-brand-accent shrink-0" />
+                Direct Mobile Dispatch Across:
+              </span>
+              <Link href="/neighborhoods" className="text-[11px] font-bold text-sky-300 hover:text-white transition-colors shrink-0">
+                75+ Cities Served →
+              </Link>
+            </div>
+            <div className="flex flex-wrap items-center gap-1 text-[11px] text-slate-200">
+              <span className="font-semibold text-white">San Gabriel Valley (HQ)</span>
+              <span className="text-white/40">•</span>
+              <span className="font-semibold text-white">Los Angeles &amp; Westside</span>
+              <span className="text-white/40">•</span>
+              <span className="font-semibold text-white">San Fernando Valley</span>
+              <span className="text-white/40">•</span>
+              <span className="font-semibold text-white">Orange County</span>
+              <span className="text-white/40">•</span>
+              <span className="font-semibold text-white">South Bay</span>
+            </div>
+          </div>
+
           <p className="mt-3.5 text-[11px] sm:text-xs text-slate-300/90 flex flex-wrap items-center gap-x-2.5 gap-y-1">
             <span className="text-emerald-300 font-semibold">✓ Diagnostic fee credited to repair</span>
             <span>•</span>
@@ -140,8 +173,12 @@ export function Hero() {
             <h2 className="text-2xl font-black text-brand-navy tracking-tight">
               Request Free Estimate
             </h2>
-            <p className="text-xs text-slate-600 mb-3.5 leading-relaxed">
-              Upfront pricing before work begins. Master plumbers on duty in LA &amp; SGV.
+            <div className="mt-1.5 flex items-center gap-1.5 text-[11px] font-bold text-emerald-800 bg-emerald-50 rounded-lg p-1.5 border border-emerald-200 mb-2">
+              <MapPin className="size-3.5 text-emerald-600 shrink-0" />
+              <span>Serving All 75+ Cities in LA, SGV &amp; OC • Same-Day Dispatch</span>
+            </div>
+            <p className="text-xs text-slate-600 mb-3 leading-relaxed">
+              Upfront flat pricing approved before work begins. Master plumbers on call.
             </p>
             <LeadForm compact defaultCouponCode="JJJ-75OFF" />
           </div>

@@ -137,6 +137,14 @@ export function Footer() {
               <li className="font-semibold text-brand-accent">
                 {siteConfig.hours.emergency}
               </li>
+              <li className="pt-1">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-brand-accent hover:underline"
+                >
+                  <span>Dispatch Office &amp; Contact Page →</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

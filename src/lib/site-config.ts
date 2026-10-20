@@ -101,11 +101,12 @@ export const siteConfig = {
 export const navLinks = [
   { label: "Specials", href: "/#specials" },
   { label: "Services", href: "/#services" },
+  { label: "Service Areas", href: "/neighborhoods" },
   { label: "Our Work", href: "/#recent-work" },
   { label: "Financing", href: "/#financing" },
-  { label: "Commercial", href: "/#commercial" },
   { label: "About", href: "/#about" },
   { label: "Reviews", href: "/#reviews" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const serviceAreas = [
