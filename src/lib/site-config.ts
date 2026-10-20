@@ -11,8 +11,8 @@ export const siteConfig = {
   voucher: {
     code: "JJJ-75OFF",
     amount: "$75 Off",
-    description: "Unlocked when you submit an estimate form or text in a photo of your issue (valid on repairs $300+, limit once per customer).",
-    disclaimer: "Valid on repairs $300+. Limit one voucher per customer.",
+    description: "Unlocked when you submit an estimate form or text in a photo of your issue (valid on repairs $250+, limit once per customer).",
+    disclaimer: "Valid on repairs $250+. Limit one voucher per customer.",
   },
   cslbUrl: "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=842875",
   bilingual: "Se Habla Español",
@@ -42,8 +42,8 @@ export const siteConfig = {
       serviceId: "emergency-repairs",
       amount: "$75 Off",
       savings: "Instant Discount",
-      description: "Save $75 on any qualifying plumbing repair or replacement of $300 or more. Approved upfront before any work begins.",
-      disclaimer: "Valid on repairs $300+. Limit one coupon per customer. Must mention at time of booking.",
+      description: "Save $75 on any qualifying plumbing repair or replacement of $250 or more. Approved upfront before any work begins.",
+      disclaimer: "Valid on repairs $250+. Limit one coupon per customer. Must mention at time of booking.",
       popular: false,
     },
     {

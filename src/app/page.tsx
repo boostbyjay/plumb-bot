@@ -8,7 +8,6 @@ import { JettingVsSnaking } from "@/components/site/jetting-vs-snaking";
 import { SecondOpinionBanner } from "@/components/site/second-opinion-banner";
 import { Financing } from "@/components/site/financing";
 import { CompetitorComparison } from "@/components/site/competitor-comparison";
-import { Guarantees } from "@/components/site/guarantees";
 import { Estimate } from "@/components/site/estimate";
 import { Fixtures } from "@/components/site/fixtures";
 import { Commercial } from "@/components/site/commercial";
@@ -34,7 +33,6 @@ export default function Home() {
         <SecondOpinionBanner />
         <Financing />
         <CompetitorComparison />
-        <Guarantees />
         <Estimate />
         <Fixtures />
         <Commercial />

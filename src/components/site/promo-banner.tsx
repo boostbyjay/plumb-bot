@@ -12,7 +12,7 @@ export function PromoBanner() {
               <Tag className="size-3.5 text-brand-navy" />
             </span>
             <p className="text-sm font-bold text-brand-navy-dark sm:text-base">
-              Claim $75 Off Any Repair Over $300 — Unlocked via Online Estimate or Photo Text
+              Claim $75 Off Any Repair Over $250 — Unlocked via Online Estimate or Photo Text
             </p>
           </div>
           <Button

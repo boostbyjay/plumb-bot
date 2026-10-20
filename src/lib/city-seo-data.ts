@@ -189,7 +189,7 @@ export const serviceDeepContent: Record<string, ServiceDeepContent> = {
     couponCode: "JJJ-75OFF",
     couponBadge: "Same-Day Emergency Offer",
     couponOffer: "$75 Off Qualifying Repair",
-    couponDesc: "Save $75 on any approved repair of $300 or more, plus 100% of your diagnostic fee is credited toward the fix.",
+    couponDesc: "Save $75 on any approved repair of $250 or more, plus 100% of your diagnostic fee is credited toward the fix.",
     equipmentUsed: [
       "Ultrasonic acoustic slab-leak detection & thermal imaging cameras",
       "Lead-free brass Wilkins pressure reducing valves (PRVs) & Moen Flo smart shutoffs",
