@@ -57,13 +57,18 @@ const serviceIdMap: Record<string, string> = {
 export function LeadForm({
   compact = false,
   className,
+  defaultCouponCode,
 }: {
   compact?: boolean;
   className?: string;
+  defaultCouponCode?: string;
 }) {
   const uid = useId();
   const [status, setStatus] = useState<Status>("idle");
-  const [values, setValues] = useState<FormValues>(initialValues);
+  const [values, setValues] = useState<FormValues>(() => ({
+    ...initialValues,
+    couponCode: defaultCouponCode || "",
+  }));
   const [errors, setErrors] = useState<FormErrors>({});
 
   // Listen to external coupon clicks from the Specials section or Hero

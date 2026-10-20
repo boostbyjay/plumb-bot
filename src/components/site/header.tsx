@@ -15,6 +15,7 @@ import {
 import { navLinks, siteConfig } from "@/lib/site-config";
 
 const NAV_TARGETS = [
+  "specials",
   "services",
   "recent-work",
   "financing",
@@ -96,12 +97,6 @@ export function Header() {
       const hash = href.includes("#") ? href.split("#")[1] : "";
       if (!hash) return;
 
-      if (hash === "specials") {
-        e.preventDefault();
-        setOpen(false);
-        window.dispatchEvent(new CustomEvent("jjj:open-specials"));
-        return;
-      }
       if (hash === "estimate") {
         e.preventDefault();
         setOpen(false);

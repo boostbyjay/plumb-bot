@@ -349,32 +349,42 @@ export type FaqItem = {
 
 export const faqs: FaqItem[] = [
   {
-    question: "Do you charge extra for same-day emergency calls?",
+    question: "How does the diagnostic fee credit work?",
     answer:
-      "We believe in transparent, upfront pricing you agree to before any work begins \u2014 you're always told the cost of your visit ahead of time so there are never hidden surprises on your invoice, even for urgent same-day dispatch.",
+      "Your service diagnostic fee is 100% credited toward the cost of any approved repair, drain cleaning, or replacement. You approve the exact written quote before work begins, and the evaluation fee is deducted directly from your final invoice — you never pay twice.",
   },
   {
-    question: "Are your plumbers licensed and insured?",
-    answer: `Yes. JJJ Plumbing Inc is fully licensed (${siteConfig.license}) and insured, with 25 years of combined experience serving Los Angeles, Orange County, and the San Gabriel Valley. Every technician is background-checked and trained to the highest industry standards.`,
+    question: "Can I get a ballpark estimate from a photo before you dispatch?",
+    answer:
+      "Yes! Simply text a photo or short video of your plumbing problem to (626) 506-6951 with your city. Our dispatch team will review the issue, reply with a ballpark estimate, and automatically lock in your $75 repair voucher.",
   },
   {
-    question: "What areas do you service?",
+    question: "How does JJJ Plumbing compare in price to large corporate franchise plumbers?",
     answer:
-      "We proudly serve Los Angeles, Orange County, and the San Gabriel Valley \u2014 from central LA to the OC. If you're unsure whether we cover your neighborhood, give us a call \u2014 we're happy to check.",
+      "As an independent, master-plumber-operated company with 25 years of local history, we have zero corporate franchise fees, call center bureaucracy, or multi-million dollar TV ad budgets. We deliver higher master-craftsmanship standards with upfront written pricing that is typically 20% to 35% lower than corporate franchise rooters.",
   },
   {
-    question: "How fast can you get to my home or business?",
+    question: "Do you help with insurance documentation for burst pipes or slab leaks?",
     answer:
-      "Same-day dispatch is available for most service areas, and we prioritize true emergencies like burst pipes or active leaks. Our standard service hours are Monday\u2013Saturday, 8:00 AM \u2013 6:00 PM.",
+      "Yes. In the event of emergency water leaks, burst pipes, or foundation slab leaks, we supply your homeowners insurance adjuster with itemized diagnostic invoices, moisture damage documentation, and HD camera footage to help expedite your claim.",
   },
   {
-    question: "Do you offer any guarantees on your work?",
+    question: "What water heater and fixture brands do you install?",
     answer:
-      "Absolutely. We stand behind every job with a 100% satisfaction guarantee. If something isn't right, you let us know and we'll make it right \u2014 that's a promise we've kept for 25 years.",
+      "We stock and install premium residential and commercial brands including Bradford White, Rheem, Navien, Noritz, Rinnai, AO Smith, Moen, Kohler, and Delta. All water heater installations include earthquake strapping, thermal expansion mitigation, and full code compliance.",
   },
   {
-    question: "Can you help with both residential and commercial properties?",
+    question: "Are your plumbers licensed, bonded, and insured in California?",
+    answer: `Yes. JJJ Plumbing Inc holds active California CSLB License #${siteConfig.license.replace("CA LIC #", "")} with full commercial general liability and workers' compensation coverage. Every technician is background-checked, trained, and operates under direct master plumber supervision.`,
+  },
+  {
+    question: "What areas in Southern California do you offer same-day dispatch?",
     answer:
-      "Yes, we handle everything from single-family home repairs to multi-unit property maintenance, grease trap service, and backflow testing for local businesses.",
+      "We provide same-day emergency dispatch across Los Angeles, Orange County, and the San Gabriel Valley — including Alhambra, Pasadena, Glendale, Arcadia, Monterey Park, West Covina, Anaheim, Irvine, and surrounding neighborhoods.",
+  },
+  {
+    question: "What guarantees do you offer on your plumbing repairs?",
+    answer:
+      "We back every job with our ironclad 'Fixed Right or It's Free' guarantee and 100% upfront pricing. If our repair does not solve your plumbing issue, we return and make it right at zero additional cost to you.",
   },
 ];
