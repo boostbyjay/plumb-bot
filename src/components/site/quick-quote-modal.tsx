@@ -15,7 +15,7 @@ import {
 
 export const POPULAR_PLUMBING_OPTIONS = [
   "Drain Cleaning / Clogged Drain",
-  "Hydro-Jetting ($149 Special)",
+  "Hydro-Jetting ($249 Special)",
   "Water Heater Repair or Replace",
   "Tankless Water Heater Service",
   "Sewer Line Repair / Camera Inspection",
@@ -28,7 +28,7 @@ export const POPULAR_PLUMBING_OPTIONS = [
 ] as const;
 
 const serviceIdToOption: Record<string, string> = {
-  "drain-cleaning": "Hydro-Jetting ($149 Special)",
+  "drain-cleaning": "Hydro-Jetting ($249 Special)",
   "emergency-repairs": "Emergency Leak / Burst Pipe Repair",
   "water-heaters": "Water Heater Repair or Replace",
   "sewer-lines": "Sewer Line Repair / Camera Inspection",

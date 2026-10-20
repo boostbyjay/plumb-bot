@@ -253,9 +253,9 @@ export const serviceDeepContent: Record<string, ServiceDeepContent> = {
     shortLabel: "Drain Cleaning & Hydro Jetting",
     heroPhoto: "root-removal-drain-machine",
     heroPhotoAlt: "Heavy tree root mass extracted from a residential sewer drain by JJJ Plumbing",
-    couponCode: "HYDRO149",
+    couponCode: "HYDRO249",
     couponBadge: "Most Popular Drain Special",
-    couponOffer: "$149 Hydro-Jetting Special",
+    couponOffer: "$249 Hydro-Jetting Special",
     couponDesc: "High-pressure hydro-jetting blasts away grease, sludge, and roots—includes a FREE HD video camera inspection.",
     equipmentUsed: [
       "Truck-mounted 4,000 PSI @ 18 GPM commercial hydro-jetting system",
@@ -296,8 +296,8 @@ export const serviceDeepContent: Record<string, ServiceDeepContent> = {
     }),
     buildFaqs: (cityName, profile) => [
       {
-        question: `What is included in your $149 Hydro-Jetting special in ${cityName}?`,
-        answer: `Our $149 residential hydro-jetting special (code HYDRO149) includes high-pressure water jetting through an accessible main cleanout plus a complimentary HD video camera inspection to verify your ${cityName} drain line is completely clear.`,
+        question: `What is included in your $249 Hydro-Jetting special in ${cityName}?`,
+        answer: `Our $249 residential hydro-jetting special (code HYDRO249) includes high-pressure water jetting through an accessible main cleanout plus a complimentary HD video camera inspection to verify your ${cityName} drain line is completely clear.`,
       },
       {
         question: `Is hydro-jetting safe for older cast-iron or clay pipes in ${cityName}?`,

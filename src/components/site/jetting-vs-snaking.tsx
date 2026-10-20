@@ -9,7 +9,7 @@ export function JettingVsSnaking() {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
         new CustomEvent("jjj:select-coupon", {
-          detail: { code: "HYDRO149", serviceId: "drain-cleaning" },
+          detail: { code: "HYDRO249", serviceId: "drain-cleaning" },
         })
       );
       const el = document.getElementById("estimate");
@@ -139,14 +139,14 @@ export function JettingVsSnaking() {
             <div className="mt-8 pt-4 border-t border-dashed border-slate-200">
               <div className="flex items-center justify-between mb-3 text-xs">
                 <span className="font-bold text-emerald-800">Special Offer Available:</span>
-                <span className="font-extrabold text-brand-navy">$149 Web Special (Save $250+)</span>
+                <span className="font-extrabold text-brand-navy">$249 Web Special (Save $200+)</span>
               </div>
               <Button
                 type="button"
                 onClick={handleClaimOffer}
                 className="w-full bg-brand-accent hover:bg-sky-300 text-brand-navy-dark font-black h-11 text-sm rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
               >
-                <span>Claim $149 Hydro-Jetting Special</span>
+                <span>Claim $249 Hydro-Jetting Special</span>
                 <ArrowRight className="size-4 ml-1.5" />
               </Button>
             </div>

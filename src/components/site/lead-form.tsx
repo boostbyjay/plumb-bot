@@ -33,7 +33,7 @@ const initialValues: FormValues = {
 
 const serviceChoices = [
   { value: "Drain Cleaning / Clogged Drain", label: "1. Drain Cleaning / Clogged Drain" },
-  { value: "Hydro-Jetting ($149 Special)", label: "2. Hydro-Jetting ($149 Special)" },
+  { value: "Hydro-Jetting ($249 Special)", label: "2. Hydro-Jetting ($249 Special)" },
   { value: "Water Heater Repair or Replace", label: "3. Water Heater Repair or Replace" },
   { value: "Tankless Water Heater Service", label: "4. Tankless Water Heater Service" },
   { value: "Sewer Line Repair / Camera Inspection", label: "5. Sewer Line Repair / Camera Inspection" },
@@ -47,7 +47,7 @@ const serviceChoices = [
 
 // Map internal coupon serviceIds to plain-English dropdown values
 const serviceIdMap: Record<string, string> = {
-  "drain-cleaning": "Hydro-Jetting ($149 Special)",
+  "drain-cleaning": "Hydro-Jetting ($249 Special)",
   "emergency-repairs": "Emergency Leak / Burst Pipe Repair",
   "water-heaters": "Water Heater Repair or Replace",
   "sewer-lines": "Sewer Line Repair / Camera Inspection",

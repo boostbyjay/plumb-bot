@@ -23,13 +23,13 @@ export const siteConfig = {
   },
   coupons: [
     {
-      id: "hydro-149",
-      code: "HYDRO149",
-      title: "$149 Hydro-Jetting Drain Cleaning",
+      id: "hydro-249",
+      code: "HYDRO249",
+      title: "$249 Hydro-Jetting Drain Cleaning",
       badge: "Heavy-Duty Clearing",
       serviceId: "drain-cleaning",
-      amount: "$149",
-      savings: "Save $250+",
+      amount: "$249",
+      savings: "Save $200+",
       description: "High-pressure hydro-jetting blasts away heavy grease, sludge, tree roots, and stubborn buildup to restore pipes to like-new flow. Free video camera inspection included.",
       disclaimer: "Valid for residential main drain or cleanout access. Normal business hours. Limit one coupon per customer. Cannot be combined with other offers.",
       popular: true,
