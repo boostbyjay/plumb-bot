@@ -405,81 +405,106 @@ export function CoverageMap() {
             </defs>
 
             {/* --- MASTER OVERALL COVERAGE HIGHLIGHT PERIMETER --- */}
-            {/* Soft, illuminated contour outlining entire Southern California coverage zone */}
+            {/* Seamless contour outlining the complete Southern California coverage zone */}
             <path
-              d="M 120 120 C 230 75, 480 85, 770 135 C 830 200, 860 340, 850 440 C 815 495, 680 515, 610 500 C 520 460, 420 455, 335 375 C 240 300, 195 235, 120 120 Z"
-              fill="rgba(56, 189, 248, 0.08)"
+              d="M 100 215 C 90 170, 90 130, 100 90 C 190 92, 280 100, 380 115 C 470 110, 630 105, 790 120 C 810 170, 820 220, 825 275 C 830 350, 830 420, 780 520 C 730 535, 690 530, 640 500 C 590 475, 550 460, 520 460 C 490 465, 475 465, 464 465 C 430 460, 404 430, 410 400 C 415 360, 405 335, 395 315 C 380 295, 370 275, 366 270 C 270 260, 179 255, 100 215 Z"
+              fill="rgba(14, 165, 233, 0.06)"
               stroke="#38BDF8"
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeDasharray="8 6"
-              strokeOpacity="0.75"
+              strokeOpacity="0.8"
               filter="url(#softGlow)"
               className="pointer-events-none"
             />
 
-            {/* --- REGION 1 HIGHLIGHT: San Fernando Valley (NW) --- */}
+            {/* --- REGION 1: San Fernando Valley (NW) --- */}
+            {/* Seamless edge-to-edge coverage joining SGV and LA Westside */}
             <path
-              d="M 120 120 C 180 80, 310 90, 390 120 C 400 170, 360 190, 260 185 C 160 180, 100 150, 120 120 Z"
+              d="M 100 215 C 90 170, 90 130, 100 90 C 190 92, 280 100, 380 115 L 400 195 C 310 200, 210 205, 100 215 Z"
               onClick={() => setActiveRegionId("sfv")}
-              className={`cursor-pointer transition-all duration-300 ${
+              className="cursor-pointer transition-all duration-300 hover:opacity-95"
+              fill={
                 activeRegionId === "sfv"
-                  ? "fill-purple-500/35 stroke-purple-400 stroke-2 filter-[drop-shadow(0_0_8px_rgba(168,85,247,0.6))]"
+                  ? "rgba(168, 85, 247, 0.65)"
                   : activeRegionId === "all"
-                  ? "fill-purple-500/15 stroke-purple-400/40 stroke-1 hover:fill-purple-500/30"
-                  : "fill-purple-500/5 stroke-purple-400/20 stroke-1 hover:fill-purple-500/20"
-              }`}
+                  ? "rgba(147, 51, 234, 0.44)"
+                  : "rgba(147, 51, 234, 0.28)"
+              }
+              stroke="#C084FC"
+              strokeWidth={activeRegionId === "sfv" ? "2.5" : activeRegionId === "all" ? "2" : "1.2"}
+              filter={activeRegionId === "sfv" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- REGION 2 HIGHLIGHT: San Gabriel Valley (NE / Primary Hub) --- */}
+            {/* --- REGION 2: San Gabriel Valley (NE / Primary Dispatch Hub) --- */}
+            {/* Seamlessly tiles with SFV (west), LA Westside (SW), South Bay (south), and OC (SE) */}
             <path
-              d="M 400 130 C 520 105, 710 120, 785 150 C 805 210, 735 240, 620 235 C 500 235, 420 195, 400 130 Z"
+              d="M 400 195 L 380 115 C 470 110, 630 105, 790 120 C 810 170, 820 220, 825 275 C 750 280, 670 280, 585 285 C 550 282, 510 278, 475 275 C 450 245, 420 220, 400 195 Z"
               onClick={() => setActiveRegionId("sgv")}
-              className={`cursor-pointer transition-all duration-300 ${
+              className="cursor-pointer transition-all duration-300 hover:opacity-95"
+              fill={
                 activeRegionId === "sgv"
-                  ? "fill-emerald-500/40 stroke-emerald-400 stroke-[2.5] filter-[drop-shadow(0_0_10px_rgba(16,185,129,0.7))]"
+                  ? "rgba(16, 185, 129, 0.68)"
                   : activeRegionId === "all"
-                  ? "fill-emerald-500/20 stroke-emerald-400/50 stroke-1 hover:fill-emerald-500/35"
-                  : "fill-emerald-500/5 stroke-emerald-400/20 stroke-1 hover:fill-emerald-500/20"
-              }`}
+                  ? "rgba(16, 185, 129, 0.48)"
+                  : "rgba(16, 185, 129, 0.30)"
+              }
+              stroke="#34D399"
+              strokeWidth={activeRegionId === "sgv" ? "3" : activeRegionId === "all" ? "2.5" : "1.5"}
+              filter={activeRegionId === "sgv" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- REGION 3 HIGHLIGHT: Los Angeles & Westside (Central-West) --- */}
+            {/* --- REGION 3: Los Angeles & Westside (Central-West Coast) --- */}
+            {/* Seamlessly meets SFV along crest, SGV at DTLA, South Bay to the south */}
             <path
-              d="M 230 240 C 320 205, 430 215, 495 235 C 490 300, 390 315, 330 305 C 240 295, 210 260, 230 240 Z"
+              d="M 100 215 C 210 205, 310 200, 400 195 C 420 220, 450 245, 475 275 C 445 290, 420 305, 395 315 C 380 295, 370 275, 366 270 C 270 260, 179 255, 100 215 Z"
               onClick={() => setActiveRegionId("la")}
-              className={`cursor-pointer transition-all duration-300 ${
+              className="cursor-pointer transition-all duration-300 hover:opacity-95"
+              fill={
                 activeRegionId === "la"
-                  ? "fill-blue-500/35 stroke-blue-400 stroke-2 filter-[drop-shadow(0_0_8px_rgba(2,132,199,0.6))]"
+                  ? "rgba(2, 132, 199, 0.68)"
                   : activeRegionId === "all"
-                  ? "fill-blue-500/15 stroke-blue-400/40 stroke-1 hover:fill-blue-500/30"
-                  : "fill-blue-500/5 stroke-blue-400/20 stroke-1 hover:fill-blue-500/20"
-              }`}
+                  ? "rgba(2, 132, 199, 0.44)"
+                  : "rgba(2, 132, 199, 0.28)"
+              }
+              stroke="#38BDF8"
+              strokeWidth={activeRegionId === "la" ? "2.5" : activeRegionId === "all" ? "2" : "1.2"}
+              filter={activeRegionId === "la" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- REGION 4 HIGHLIGHT: South Bay & Gateway Cities (SW Coast) --- */}
+            {/* --- REGION 4: South Bay & Gateway Cities (SW Coast) --- */}
+            {/* Contiguous with LA (NW), SGV (NE), and Orange County (east) */}
             <path
-              d="M 330 315 C 440 305, 540 320, 580 340 C 570 415, 490 450, 430 445 C 360 430, 320 370, 330 315 Z"
+              d="M 395 315 C 420 305, 445 290, 475 275 C 510 278, 550 282, 585 285 C 570 335, 550 390, 520 460 C 490 465, 475 465, 464 465 C 430 460, 404 430, 410 400 C 415 360, 405 335, 395 315 Z"
               onClick={() => setActiveRegionId("southbay")}
-              className={`cursor-pointer transition-all duration-300 ${
+              className="cursor-pointer transition-all duration-300 hover:opacity-95"
+              fill={
                 activeRegionId === "southbay"
-                  ? "fill-cyan-500/35 stroke-cyan-400 stroke-2 filter-[drop-shadow(0_0_8px_rgba(6,182,212,0.6))]"
+                  ? "rgba(6, 182, 212, 0.68)"
                   : activeRegionId === "all"
-                  ? "fill-cyan-500/15 stroke-cyan-400/40 stroke-1 hover:fill-cyan-500/30"
-                  : "fill-cyan-500/5 stroke-cyan-400/20 stroke-1 hover:fill-cyan-500/20"
-              }`}
+                  ? "rgba(6, 182, 212, 0.44)"
+                  : "rgba(6, 182, 212, 0.28)"
+              }
+              stroke="#22D3EE"
+              strokeWidth={activeRegionId === "southbay" ? "2.5" : activeRegionId === "all" ? "2" : "1.2"}
+              filter={activeRegionId === "southbay" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- REGION 5 HIGHLIGHT: Orange County (SE) --- */}
+            {/* --- REGION 5: Orange County (SE) --- */}
+            {/* Contiguous with SGV (north) and South Bay (west) down through coastal OC */}
             <path
-              d="M 570 325 C 680 300, 800 320, 840 380 C 855 450, 780 495, 680 500 C 600 480, 560 410, 570 325 Z"
+              d="M 585 285 C 670 280, 750 280, 825 275 C 830 350, 830 420, 780 520 C 730 535, 690 530, 640 500 C 590 475, 550 460, 520 460 C 550 390, 570 335, 585 285 Z"
               onClick={() => setActiveRegionId("oc")}
-              className={`cursor-pointer transition-all duration-300 ${
+              className="cursor-pointer transition-all duration-300 hover:opacity-95"
+              fill={
                 activeRegionId === "oc"
-                  ? "fill-amber-500/35 stroke-amber-400 stroke-2 filter-[drop-shadow(0_0_8px_rgba(245,158,11,0.6))]"
+                  ? "rgba(245, 158, 11, 0.68)"
                   : activeRegionId === "all"
-                  ? "fill-amber-500/15 stroke-amber-400/40 stroke-1 hover:fill-amber-500/30"
-                  : "fill-amber-500/5 stroke-amber-400/20 stroke-1 hover:fill-amber-500/20"
-              }`}
+                  ? "rgba(245, 158, 11, 0.44)"
+                  : "rgba(245, 158, 11, 0.28)"
+              }
+              stroke="#FBBF24"
+              strokeWidth={activeRegionId === "oc" ? "2.5" : activeRegionId === "all" ? "2" : "1.2"}
+              filter={activeRegionId === "oc" ? "url(#softGlow)" : undefined}
             />
 
             {/* --- ANCHOR CITY BEACONS & LABELS --- */}
@@ -491,48 +516,48 @@ export function CoverageMap() {
             </text>
 
             {/* Pasadena Dot */}
-            <circle cx="490" cy="155" r="3" fill="#6EE7B7" opacity="0.9" />
+            <circle cx="490" cy="155" r="3.5" fill="#6EE7B7" opacity="0.9" />
             <text x="490" y="148" textAnchor="middle" fill="#E2E8F0" fontSize="9" opacity="0.85" className="pointer-events-none">
               Pasadena
             </text>
 
             {/* DTLA Dot */}
-            <circle cx="470" cy="250" r="3.5" fill="#38BDF8" opacity="0.95" />
-            <text x="470" y="265" textAnchor="middle" fill="#E2E8F0" fontSize="9.5" fontWeight="600" className="pointer-events-none">
+            <circle cx="460" cy="250" r="3.5" fill="#38BDF8" opacity="0.95" />
+            <text x="460" y="265" textAnchor="middle" fill="#E2E8F0" fontSize="9.5" fontWeight="600" className="pointer-events-none">
               Downtown LA
             </text>
 
             {/* Santa Monica Dot */}
-            <circle cx="245" cy="260" r="3" fill="#38BDF8" opacity="0.9" />
-            <text x="245" y="275" textAnchor="middle" fill="#BAE6FD" fontSize="9" opacity="0.85" className="pointer-events-none">
+            <circle cx="366" cy="270" r="3.5" fill="#38BDF8" opacity="0.9" />
+            <text x="366" y="285" textAnchor="middle" fill="#BAE6FD" fontSize="9" opacity="0.85" className="pointer-events-none">
               Santa Monica
             </text>
 
             {/* Glendale Dot */}
-            <circle cx="360" cy="155" r="3" fill="#C084FC" opacity="0.9" />
-            <text x="360" y="147" textAnchor="middle" fill="#E9D5FF" fontSize="9" opacity="0.85" className="pointer-events-none">
+            <circle cx="410" cy="170" r="3" fill="#C084FC" opacity="0.9" />
+            <text x="410" y="162" textAnchor="middle" fill="#E9D5FF" fontSize="9" opacity="0.85" className="pointer-events-none">
               Glendale
             </text>
 
             {/* Long Beach Dot */}
-            <circle cx="490" cy="410" r="3.5" fill="#22D3EE" opacity="0.95" />
-            <text x="490" y="426" textAnchor="middle" fill="#CFFAFE" fontSize="9" fontWeight="600" className="pointer-events-none">
+            <circle cx="475" cy="430" r="3.5" fill="#22D3EE" opacity="0.95" />
+            <text x="475" y="446" textAnchor="middle" fill="#CFFAFE" fontSize="9" fontWeight="600" className="pointer-events-none">
               Long Beach
             </text>
 
             {/* Anaheim Dot */}
-            <circle cx="630" cy="335" r="3.5" fill="#FBBF24" opacity="0.95" />
-            <text x="630" y="327" textAnchor="middle" fill="#FEF3C7" fontSize="9.5" fontWeight="600" className="pointer-events-none">
+            <circle cx="630" cy="340" r="3.5" fill="#FBBF24" opacity="0.95" />
+            <text x="630" y="332" textAnchor="middle" fill="#FEF3C7" fontSize="9.5" fontWeight="600" className="pointer-events-none">
               Anaheim
             </text>
 
             {/* Irvine Dot */}
-            <circle cx="740" cy="440" r="3" fill="#F59E0B" opacity="0.9" />
-            <text x="740" y="455" textAnchor="middle" fill="#FDE68A" fontSize="9" opacity="0.85" className="pointer-events-none">
+            <circle cx="720" cy="420" r="3.5" fill="#F59E0B" opacity="0.9" />
+            <text x="720" y="435" textAnchor="middle" fill="#FDE68A" fontSize="9" opacity="0.85" className="pointer-events-none">
               Irvine
             </text>
 
-            {/* --- COMPACT SLEEK PIN BADGES (REPLACED BIG AREA BOXES) --- */}
+            {/* --- COMPACT SLEEK PIN BADGES --- */}
 
             {/* Pin 1: San Fernando Valley (NW) */}
             <g
@@ -540,27 +565,27 @@ export function CoverageMap() {
               className="cursor-pointer transition-transform duration-200 hover:scale-105"
             >
               <rect
-                x="150"
-                y="90"
-                width="170"
+                x="160"
+                y="125"
+                width="165"
                 height="26"
                 rx="13"
                 fill="#0A192F"
-                fillOpacity="0.92"
+                fillOpacity="0.94"
                 stroke={activeRegionId === "sfv" ? "#C084FC" : "#7E22CE"}
                 strokeWidth={activeRegionId === "sfv" ? "2" : "1.2"}
                 filter="url(#softGlow)"
               />
-              <circle cx="163" cy="103" r="3.5" fill="#A855F7" />
-              <text x="218" y="107" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
+              <circle cx="173" cy="138" r="3.5" fill="#A855F7" />
+              <text x="224" y="142" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
                 SF Valley
               </text>
-              <rect x="268" y="94" width="46" height="18" rx="9" fill="#581C87" />
-              <text x="291" y="106.5" textAnchor="middle" fill="#F3E8FF" fontSize="9" fontWeight="bold">
+              <rect x="272" y="129" width="44" height="18" rx="9" fill="#581C87" />
+              <text x="294" y="141.5" textAnchor="middle" fill="#F3E8FF" fontSize="9" fontWeight="bold">
                 40–55m
               </text>
               {/* Pin pointer triangle */}
-              <polygon points="230,116 235,123 240,116" fill="#0A192F" />
+              <polygon points="238,151 243,158 248,151" fill="#0A192F" />
             </g>
 
             {/* Pin 2: San Gabriel Valley (NE - Primary Dispatch Hub) */}
@@ -569,27 +594,27 @@ export function CoverageMap() {
               className="cursor-pointer transition-transform duration-200 hover:scale-105"
             >
               <rect
-                x="540"
-                y="105"
+                x="520"
+                y="120"
                 width="190"
                 height="28"
                 rx="14"
                 fill="#0A192F"
-                fillOpacity="0.95"
+                fillOpacity="0.96"
                 stroke={activeRegionId === "sgv" ? "#34D399" : "#059669"}
                 strokeWidth={activeRegionId === "sgv" ? "2.5" : "1.5"}
                 filter="url(#softGlow)"
               />
-              <circle cx="555" cy="119" r="4" fill="#10B981" />
-              <text x="618" y="123" textAnchor="middle" fill="#FFFFFF" fontSize="11.5" fontWeight="800">
-                ★ SGV (Central Hub)
+              <circle cx="534" cy="134" r="4" fill="#10B981" />
+              <text x="592" y="138.5" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
+                San Gabriel Valley
               </text>
-              <rect x="678" y="109" width="46" height="20" rx="10" fill="#065F46" />
-              <text x="701" y="123" textAnchor="middle" fill="#D1FAE5" fontSize="9.5" fontWeight="bold">
+              <rect x="654" y="124" width="46" height="20" rx="10" fill="#064E3B" />
+              <text x="677" y="137.5" textAnchor="middle" fill="#6EE7B7" fontSize="9.5" fontWeight="900">
                 25–40m
               </text>
               {/* Pin pointer triangle */}
-              <polygon points="630,133 635,142 640,133" fill="#0A192F" />
+              <polygon points="610,148 615,156 620,148" fill="#0A192F" />
             </g>
 
             {/* Pin 3: Los Angeles & Westside (Center-West) */}
@@ -598,27 +623,27 @@ export function CoverageMap() {
               className="cursor-pointer transition-transform duration-200 hover:scale-105"
             >
               <rect
-                x="260"
+                x="220"
                 y="215"
-                width="175"
+                width="165"
                 height="26"
                 rx="13"
                 fill="#0A192F"
-                fillOpacity="0.92"
+                fillOpacity="0.94"
                 stroke={activeRegionId === "la" ? "#38BDF8" : "#0369A1"}
                 strokeWidth={activeRegionId === "la" ? "2" : "1.2"}
                 filter="url(#softGlow)"
               />
-              <circle cx="273" cy="228" r="3.5" fill="#0284C7" />
-              <text x="328" y="232" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
+              <circle cx="233" cy="228" r="3.5" fill="#0284C7" />
+              <text x="284" y="232" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
                 LA &amp; Westside
               </text>
-              <rect x="382" y="219" width="46" height="18" rx="9" fill="#075985" />
-              <text x="405" y="231.5" textAnchor="middle" fill="#E0F2FE" fontSize="9" fontWeight="bold">
+              <rect x="332" y="219" width="44" height="18" rx="9" fill="#075985" />
+              <text x="354" y="231.5" textAnchor="middle" fill="#E0F2FE" fontSize="9" fontWeight="bold">
                 35–50m
               </text>
               {/* Pin pointer triangle */}
-              <polygon points="345,241 350,248 355,241" fill="#0A192F" />
+              <polygon points="298,241 303,248 308,241" fill="#0A192F" />
             </g>
 
             {/* Pin 4: South Bay & Gateway Cities (SW Coast) */}
@@ -627,27 +652,27 @@ export function CoverageMap() {
               className="cursor-pointer transition-transform duration-200 hover:scale-105"
             >
               <rect
-                x="330"
-                y="340"
-                width="175"
+                x="410"
+                y="345"
+                width="165"
                 height="26"
                 rx="13"
                 fill="#0A192F"
-                fillOpacity="0.92"
+                fillOpacity="0.94"
                 stroke={activeRegionId === "southbay" ? "#22D3EE" : "#0891B2"}
                 strokeWidth={activeRegionId === "southbay" ? "2" : "1.2"}
                 filter="url(#softGlow)"
               />
-              <circle cx="343" cy="353" r="3.5" fill="#06B6D4" />
-              <text x="398" y="357" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
+              <circle cx="423" cy="358" r="3.5" fill="#06B6D4" />
+              <text x="472" y="362" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
                 South Bay Coast
               </text>
-              <rect x="452" y="344" width="46" height="18" rx="9" fill="#155E75" />
-              <text x="475" y="356.5" textAnchor="middle" fill="#CFFAFE" fontSize="9" fontWeight="bold">
+              <rect x="522" y="349" width="44" height="18" rx="9" fill="#155E75" />
+              <text x="544" y="361.5" textAnchor="middle" fill="#CFFAFE" fontSize="9" fontWeight="bold">
                 35–50m
               </text>
               {/* Pin pointer triangle */}
-              <polygon points="415,366 420,373 425,366" fill="#0A192F" />
+              <polygon points="488,371 493,378 498,371" fill="#0A192F" />
             </g>
 
             {/* Pin 5: Orange County (SE) */}
@@ -656,27 +681,27 @@ export function CoverageMap() {
               className="cursor-pointer transition-transform duration-200 hover:scale-105"
             >
               <rect
-                x="650"
+                x="640"
                 y="360"
-                width="170"
+                width="165"
                 height="26"
                 rx="13"
                 fill="#0A192F"
-                fillOpacity="0.92"
+                fillOpacity="0.94"
                 stroke={activeRegionId === "oc" ? "#FBBF24" : "#B45309"}
                 strokeWidth={activeRegionId === "oc" ? "2" : "1.2"}
                 filter="url(#softGlow)"
               />
-              <circle cx="663" cy="373" r="3.5" fill="#F59E0B" />
-              <text x="716" y="377" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
+              <circle cx="653" cy="373" r="3.5" fill="#F59E0B" />
+              <text x="702" y="377" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
                 Orange County
               </text>
-              <rect x="767" y="364" width="46" height="18" rx="9" fill="#78350F" />
-              <text x="790" y="376.5" textAnchor="middle" fill="#FEF3C7" fontSize="9" fontWeight="bold">
+              <rect x="752" y="364" width="44" height="18" rx="9" fill="#78350F" />
+              <text x="774" y="376.5" textAnchor="middle" fill="#FEF3C7" fontSize="9" fontWeight="bold">
                 35–55m
               </text>
               {/* Pin pointer triangle */}
-              <polygon points="730,386 735,393 740,386" fill="#0A192F" />
+              <polygon points="718,386 723,393 728,386" fill="#0A192F" />
             </g>
           </svg>
 
