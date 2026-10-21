@@ -78,19 +78,19 @@ export function About() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center lg:items-end gap-3.5">
-            {/* Master Plumber & Service Truck Card - Compact & Balanced */}
-            <div className="relative w-full max-w-lg aspect-[16/10] max-h-[240px] sm:max-h-[260px] overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-md">
+          <div className="flex flex-col items-center lg:items-end gap-4">
+            {/* Master Plumber & Service Truck Card - Natural 4:3 Frame */}
+            <div className="relative w-full max-w-lg aspect-[4/3] max-h-[380px] overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-md">
               <Image
                 src="/work/master-plumber-truck.jpg"
                 alt="JJJ Plumbing master technician and owner-operator with company truck"
                 fill
-                sizes="(max-width: 1024px) 100vw, 480px"
+                sizes="(max-width: 1024px) 100vw, 500px"
                 placeholder="blur"
                 blurDataURL={photoBlur["master-plumber-truck"]}
                 className="object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-3 sm:p-4 flex items-end justify-between">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent px-4 py-3 flex items-center justify-between">
                 <div>
                   <p className="text-xs sm:text-sm font-extrabold text-white flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-emerald-400" />
@@ -106,8 +106,8 @@ export function About() {
               </div>
             </div>
 
-            {/* Supporting Equipment Photos - Compact Row */}
-            <div className="grid grid-cols-2 gap-3 w-full max-w-lg">
+            {/* Supporting Equipment Photos */}
+            <div className="grid grid-cols-2 gap-3.5 w-full max-w-lg">
               <div className="relative h-28 sm:h-32 w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-2xs">
                 <Image
                   src="/work/hydrojetting-truck-rig-1024.jpg"

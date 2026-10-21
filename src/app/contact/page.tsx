@@ -225,8 +225,8 @@ export default function ContactPage() {
         <div className="mt-14 grid gap-10 lg:grid-cols-12 items-start">
           {/* Left Column: Official Business Credentials & Emergency Guide */}
           <div className="lg:col-span-5 space-y-6">
-            {/* Real Master Plumber & Service Truck Photo Card - Compact */}
-            <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-sm aspect-[16/10] max-h-[200px] sm:max-h-[220px]">
+            {/* Real Master Plumber & Service Truck Photo Card */}
+            <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-md aspect-[4/3] max-h-[290px]">
               <Image
                 src="/work/master-plumber-truck.jpg"
                 alt="JJJ Plumbing licensed master technician on call with company service truck"
@@ -236,7 +236,7 @@ export default function ContactPage() {
                 blurDataURL={photoBlur["master-plumber-truck"]}
                 className="object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-3 flex items-end justify-between">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent px-4 py-2.5 flex items-center justify-between">
                 <div>
                   <p className="text-xs sm:text-sm font-extrabold text-white flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -246,7 +246,7 @@ export default function ContactPage() {
                     Owner-operated • 25 Years Serving SoCal
                   </p>
                 </div>
-                <span className="rounded-full bg-emerald-500/20 border border-emerald-400/40 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
+                <span className="rounded-full bg-emerald-500/20 border border-emerald-400/40 px-2.5 py-0.5 text-[10px] font-bold text-emerald-300">
                   CSLB #842875
                 </span>
               </div>
