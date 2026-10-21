@@ -120,30 +120,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* Top Mobile & Desktop Live Dispatch Announcement Bar */}
-      <div className="bg-brand-navy-dark border-b border-white/10 py-1.5 px-3 sm:px-4 text-xs text-slate-200">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4">
-          <div className="flex items-center gap-1.5 sm:gap-2 truncate">
-            <span className="flex size-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-            <span className="font-extrabold text-white text-[10.5px] sm:text-xs shrink-0 flex items-center gap-1">
-              <MapPin className="size-3 text-brand-accent shrink-0 inline" />
-              <span>Now Dispatching:</span>
-            </span>
-            <span className="truncate text-[10.5px] sm:text-xs text-slate-300">
-              San Gabriel Valley • Los Angeles • San Fernando Valley • Orange County • South Bay
-            </span>
-          </div>
-          <div className="hidden sm:flex items-center gap-2.5 shrink-0 text-xs">
-            <span className="text-emerald-400 font-bold text-[11px]">✓ 45-Min Mobile Response</span>
-            <span className="text-white/20">•</span>
-            <Link href="/neighborhoods" className="text-brand-accent hover:underline font-bold text-[11px] flex items-center gap-0.5">
-              <span>75+ Cities</span>
-              <span>→</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-
       <div className="border-b border-slate-800 bg-brand-navy text-white shadow-lg">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-4 py-1.5 sm:py-2.5">
           <Link href="/" onClick={handleHomeClick} className="flex shrink-0 items-center gap-2 cursor-pointer transition-all duration-200 hover:opacity-90 active:scale-[0.98]">
@@ -187,7 +163,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="h-9 xl:h-9.5 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 xl:px-3.5 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
+                className="h-9 xl:h-9.5 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/[0.06] px-2.5 xl:px-3.5 text-xs xl:text-sm font-bold tracking-tight text-slate-100 shadow-sm transition-all duration-200 hover:border-brand-accent/70 hover:bg-brand-accent/15 hover:text-brand-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0"
               >
                 {link.label}
               </a>
@@ -254,6 +230,17 @@ export function Header() {
                 >
                   <House className="size-4 text-brand-accent" />
                   Home
+                </Link>
+                <Link
+                  href="/neighborhoods"
+                  className="flex items-center justify-between rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-base font-bold text-slate-100 hover:border-brand-accent hover:bg-brand-accent/15 hover:text-brand-accent cursor-pointer"
+                  onClick={() => setOpen(false)}
+                >
+                  <span className="flex items-center gap-2">
+                    <MapPin className="size-4 text-brand-accent" />
+                    Service Areas
+                  </span>
+                  <span className="text-xs text-brand-accent font-bold">75+ Cities →</span>
                 </Link>
                 {navLinks.map((link) => (
                   <a

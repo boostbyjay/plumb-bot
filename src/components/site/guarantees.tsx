@@ -26,9 +26,9 @@ const guarantees = [
   {
     icon: Award,
     title: "Free 2nd Opinions",
-    badge: "Sewer & Repiping",
+    badge: "Repiping & Major Jobs",
     description:
-      "Got an expensive quote from another company? We provide a 100% free second opinion and camera review to protect you from unnecessary work.",
+      "Got an expensive quote from another company? We provide a 100% free second opinion on copper repiping, slab leaks, water heaters, and sewer repairs to protect you from overpriced work.",
   },
 ];
 
@@ -111,7 +111,7 @@ export function Guarantees() {
                 bigBox: "Non-Refundable Dispatch & Trip Charges",
               },
               {
-                feature: "High-Ticket Sewer / Repipe Quotes",
+                feature: "Copper, Sewer & Major Repipe Quotes",
                 jjj: "Honest Repair-First Approach + Free 2nd Opinion",
                 bigBox: "High-Pressure $10,000+ Full Replacement Push",
               },

@@ -387,10 +387,10 @@ export const serviceDeepContent: Record<string, ServiceDeepContent> = {
     shortLabel: "Sewer Line Repair & Trenchless",
     heroPhoto: "sewer-cast-iron-wye",
     heroPhotoAlt: "Heavy-duty cast iron and trenchless sewer line installation by JJJ Plumbing",
-    couponCode: "SEWER-2ND",
+    couponCode: "FREE-2ND",
     couponBadge: "Free 2nd Opinion",
-    couponOffer: "Free Sewer Camera & 2nd Opinion",
-    couponDesc: "Got a high sewer replacement quote from another company? We'll inspect your line on camera and give a written 2nd opinion 100% FREE.",
+    couponOffer: "Free 2nd Opinion on Major Jobs",
+    couponDesc: "Got an expensive quote from another company for repiping, copper repairs, or sewer work? We'll inspect your system and give an honest written 2nd opinion 100% FREE.",
     equipmentUsed: [
       "Trenchless CIPP (Cured-In-Place Pipe) structural epoxy sewer lining",
       "Pneumatic pipe bursting & SDR-17 HDPE fusion-welded sewer pipe",
@@ -430,8 +430,8 @@ export const serviceDeepContent: Record<string, ServiceDeepContent> = {
     }),
     buildFaqs: (cityName, profile) => [
       {
-        question: `Is your sewer second opinion really 100% free in ${cityName}?`,
-        answer: `Yes! If another plumbing company gave you a written estimate or told you that your ${cityName} sewer line needs replacement, we will run our HD sewer camera and provide an honest master-plumber second opinion at zero cost (code SEWER-2ND).`,
+        question: `Is your second opinion really 100% free in ${cityName}?`,
+        answer: `Yes! If another plumbing company gave you an expensive quote for sewer replacement, copper pipe fixing, slab leak repair, or whole-home repiping in ${cityName}, we will inspect your system and provide an honest master-plumber second opinion at zero cost (code FREE-2ND).`,
       },
       {
         question: `Can you fix my ${cityName} sewer line without digging up my driveway or yard?`,

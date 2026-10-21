@@ -16,25 +16,25 @@ export function SecondOpinionBanner() {
               </div>
 
               <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold text-brand-navy">
-                Got a High Quote from Another Rooter Company?
+                Got a High Quote from Another Plumbing Company?
               </h3>
 
               <p className="mt-2 text-sm sm:text-base text-slate-700 leading-relaxed">
-                Don&apos;t risk thousands on unnecessary excavation. JJJ Plumbing provides a <strong>100% Free Second Opinion &amp; Sewer Camera Inspection</strong> on all major sewer repairs, trenchless lining, and whole-home repiping. We routinely save Los Angeles homeowners $1,000 to $3,500 with honest, master-plumber diagnostics.
+                Don&apos;t risk thousands on overpriced bids or unnecessary work. JJJ Plumbing provides a <strong>100% Free Second Opinion</strong> on any major plumbing project—including copper pipe repairs, whole-home repiping, slab leaks, water heater replacements, and sewer lines (free camera review included). We routinely save Southern California homeowners $1,000 to $3,500 with honest, master-plumber diagnostics.
               </p>
 
               <div className="mt-4 flex flex-wrap gap-y-2 gap-x-5 text-xs sm:text-sm text-slate-600 font-medium">
                 <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
                   <CheckCircle2 className="size-4 text-emerald-600" />
-                  Free Video Camera Verification
+                  Copper Pipe Fixing &amp; Repiping
                 </span>
                 <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
                   <CheckCircle2 className="size-4 text-emerald-600" />
-                  Zero High-Pressure Sales Tactics
+                  Slab Leaks, Water Heaters &amp; Sewers
                 </span>
                 <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
                   <CheckCircle2 className="size-4 text-emerald-600" />
-                  Trenchless &amp; Non-Invasive Options
+                  Zero High-Pressure Sales Quotas
                 </span>
               </div>
             </div>

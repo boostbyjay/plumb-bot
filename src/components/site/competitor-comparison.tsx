@@ -41,12 +41,12 @@ const rows: ComparisonRow[] = [
     handymenType: "negative",
   },
   {
-    feature: "Sewer & Repipe 2nd Opinions",
-    jjj: "100% Free Video Review",
-    jjjSub: "Protecting homeowners from unnecessary $10,000+ trenching",
-    socalChains: "$250+ fee with high-pressure sales quotas to push full yard excavation",
+    feature: "Major Plumbing 2nd Opinions",
+    jjj: "100% Free Diagnostic Review",
+    jjjSub: "Free review on copper repiping, slab leaks, water heaters & sewer jobs",
+    socalChains: "$250+ fee with high-pressure sales quotas to push full yard excavation or whole-home repiping",
     socalChainsType: "negative",
-    handymen: "Cannot perform commercial trenchless CIPP lining or HD camera inspections",
+    handymen: "Cannot perform commercial trenchless CIPP lining or electronic leak detection",
     handymenType: "negative",
   },
   {

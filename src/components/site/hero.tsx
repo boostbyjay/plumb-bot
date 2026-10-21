@@ -11,7 +11,7 @@ const trustBadges = [
   { icon: ShieldCheck, label: "Licensed & Insured" },
   { icon: BadgeCheck, label: "Fixed Right or Free" },
   { icon: DollarSign, label: "Diagnostic Fee Credited" },
-  { icon: Award, label: "Free 2nd Opinion on Sewers" },
+  { icon: Award, label: "Free 2nd Opinion on Major Repairs" },
 ];
 
 export function Hero() {
