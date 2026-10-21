@@ -38,7 +38,8 @@ export function bounceScroll(target: HTMLElement) {
     ? target.getBoundingClientRect().top + start - headerOffset
     : target.getBoundingClientRect().top + start - (window.innerHeight - target.offsetHeight) / 2;
   const distance = end - start;
-  const duration = 850;
+  // Reduced scrolling speed by 25% (extended duration from 850ms to 1135ms for a smoother, gentler glide)
+  const duration = 1135;
   const startTime = performance.now();
 
   function easeOutBack(t: number) {
