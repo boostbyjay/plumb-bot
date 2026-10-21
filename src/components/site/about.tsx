@@ -79,7 +79,7 @@ export function About() {
           </div>
 
           <div className="grid gap-4 sm:gap-5">
-            <div className="relative h-64 sm:h-80 w-full overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-md">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[14/11] max-h-[440px] overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-md">
               <Image
                 src="/work/master-plumber-truck.jpg"
                 alt="JJJ Plumbing master technician and owner-operator with company truck"
@@ -87,7 +87,7 @@ export function About() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 placeholder="blur"
                 blurDataURL={photoBlur["master-plumber-truck"]}
-                className="object-cover object-[center_28%]"
+                className="object-cover object-top"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-4 sm:p-5 flex items-end justify-between">
                 <div>
