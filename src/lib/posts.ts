@@ -17,6 +17,25 @@ function readSlugs(): string[] {
     .map((file) => file.replace(/\.md$/, ""));
 }
 
+function normalizeDate(raw: unknown): string {
+  if (raw instanceof Date) {
+    return raw.toISOString().slice(0, 10);
+  }
+  if (typeof raw === "string") {
+    if (raw.includes("T")) {
+      return raw.slice(0, 10);
+    }
+    const match = raw.match(/^\d{4}-\d{2}-\d{2}/);
+    if (match) return match[0];
+    const parsed = new Date(raw);
+    if (!isNaN(parsed.getTime())) {
+      return parsed.toISOString().slice(0, 10);
+    }
+    return raw;
+  }
+  return new Date().toISOString().slice(0, 10);
+}
+
 function readRawPost(slug: string): { data: Record<string, unknown>; content: string } {
   const fullPath = path.join(BLOG_DIR, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -34,7 +53,7 @@ export function getAllPostsMeta(): PostMeta[] {
       excerpt: (data.excerpt as string) || "",
       category: (data.category as string) || "Plumbing 101",
       tags: (data.tags as string[]) || [],
-      date: (data.date as string) || new Date().toISOString().slice(0, 10),
+      date: normalizeDate(data.date),
       readTime: readingTime(content).text,
     };
   });
@@ -67,7 +86,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     excerpt: (data.excerpt as string) || "",
     category: (data.category as string) || "Plumbing 101",
     tags: (data.tags as string[]) || [],
-    date: (data.date as string) || new Date().toISOString().slice(0, 10),
+    date: normalizeDate(data.date),
     readTime: readingTime(content).text,
     contentHtml,
   };
