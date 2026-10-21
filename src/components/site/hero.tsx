@@ -128,7 +128,7 @@ export function Hero() {
               </Link>
             </div>
             <div className="flex flex-wrap items-center gap-1 text-[11px] text-slate-200">
-              <span className="font-semibold text-white">San Gabriel Valley (HQ)</span>
+              <span className="font-semibold text-white">San Gabriel Valley</span>
               <span className="text-white/40">•</span>
               <span className="font-semibold text-white">Los Angeles &amp; Westside</span>
               <span className="text-white/40">•</span>

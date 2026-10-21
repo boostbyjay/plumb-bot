@@ -15,7 +15,7 @@ export const neighborhoods: Neighborhood[] = [
     "city": "San Gabriel",
     "region": "San Gabriel Valley",
     "focus": "Master plumbing, hydro jetting & water heaters",
-    "description": "As our home dispatch headquarters, San Gabriel residents receive rapid same-day response for 4,000 PSI hydro jetting, tankless water heater upgrades, and non-invasive camera diagnostics.",
+    "description": "San Gabriel residents receive rapid same-day response for 4,000 PSI hydro jetting, tankless water heater upgrades, and non-invasive camera diagnostics from our licensed master plumbers.",
     "geo": {
       "lat": 34.0961,
       "lng": -118.1058

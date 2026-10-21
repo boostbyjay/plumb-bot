@@ -106,7 +106,7 @@ export function getCityProfile(cityName: string): CityProfile {
       soilAndTrees: "expansive clay-loam valley soil and established parkway trees",
       waterProfile: "hard municipal water that accelerates calcium scale buildup inside water heaters and fixture cartridges",
       commonChallenge: "slab leaks beneath concrete foundations, main sewer root blockages, and commercial grease trap backups",
-      dispatchHub: "our nearby San Gabriel headquarters (minutes away via I-10 & I-605)",
+      dispatchHub: "our local San Gabriel Valley dispatch team (minutes away via I-10 & I-605)",
     };
   }
   if (westsideLuxury.has(cityName)) {

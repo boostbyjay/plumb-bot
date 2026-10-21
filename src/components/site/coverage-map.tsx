@@ -115,6 +115,7 @@ const POPULAR_ZIPS: Record<string, { city: string; region: string; time: string 
   "91722": { city: "Covina", region: "San Gabriel Valley", time: "30–45 Min" },
   "91740": { city: "Glendora", region: "San Gabriel Valley", time: "35–45 Min" },
   "90601": { city: "Whittier", region: "San Gabriel Valley", time: "30–45 Min" },
+  "90265": { city: "Malibu", region: "Los Angeles & Westside", time: "40–55 Min" },
   "90210": { city: "Beverly Hills", region: "Los Angeles & Westside", time: "35–50 Min" },
   "90401": { city: "Santa Monica", region: "Los Angeles & Westside", time: "40–55 Min" },
   "90026": { city: "Echo Park / Silver Lake", region: "Los Angeles", time: "30–45 Min" },
@@ -393,11 +394,9 @@ export function CoverageMap() {
             aria-label="JJJ Plumbing Service Zones Overlay"
           >
             <defs>
-              <radialGradient id="hubPulseGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#10B981" stopOpacity="0.9" />
-                <stop offset="60%" stopColor="#10B981" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
-              </radialGradient>
+              <filter id="cityLabelShadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="1.2" stdDeviation="1.5" floodColor="#000000" floodOpacity="0.95" />
+              </filter>
               <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="6" result="blur" />
                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
@@ -405,10 +404,9 @@ export function CoverageMap() {
             </defs>
 
             {/* --- MASTER OVERALL COVERAGE HIGHLIGHT PERIMETER --- */}
-            {/* Seamless contour outlining the complete Southern California coverage zone */}
             <path
-              d="M 100 215 C 90 170, 90 130, 100 90 C 190 92, 280 100, 380 115 C 470 110, 630 105, 790 120 C 810 170, 820 220, 825 275 C 830 350, 830 420, 780 520 C 730 535, 690 530, 640 500 C 590 475, 550 460, 520 460 C 490 465, 475 465, 464 465 C 430 460, 404 430, 410 400 C 415 360, 405 335, 395 315 C 380 295, 370 275, 366 270 C 270 260, 179 255, 100 215 Z"
-              fill="rgba(14, 165, 233, 0.06)"
+              d="M 90 220 C 80 160, 90 120, 100 85 C 190 90, 280 100, 380 115 C 470 110, 630 105, 790 120 C 810 170, 820 220, 825 275 C 830 350, 830 420, 780 520 C 730 535, 690 530, 640 500 C 590 475, 550 460, 520 460 C 490 465, 475 465, 464 465 C 430 460, 400 435, 405 395 C 410 360, 405 335, 395 315 C 380 295, 365 285, 345 280 C 270 280, 170 275, 90 260 C 85 240, 88 230, 90 220 Z"
+              fill="rgba(14, 165, 233, 0.05)"
               stroke="#38BDF8"
               strokeWidth="2.5"
               strokeDasharray="8 6"
@@ -418,9 +416,8 @@ export function CoverageMap() {
             />
 
             {/* --- REGION 1: San Fernando Valley (NW) --- */}
-            {/* Seamless edge-to-edge coverage joining SGV and LA Westside */}
             <path
-              d="M 100 215 C 90 170, 90 130, 100 90 C 190 92, 280 100, 380 115 L 400 195 C 310 200, 210 205, 100 215 Z"
+              d="M 90 220 C 80 160, 90 120, 100 85 C 190 90, 280 100, 380 115 L 400 195 C 300 205, 200 212, 90 220 Z"
               onClick={() => setActiveRegionId("sfv")}
               className="cursor-pointer transition-all duration-300 hover:opacity-95"
               fill={
@@ -435,8 +432,7 @@ export function CoverageMap() {
               filter={activeRegionId === "sfv" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- REGION 2: San Gabriel Valley (NE / Primary Dispatch Hub) --- */}
-            {/* Seamlessly tiles with SFV (west), LA Westside (SW), South Bay (south), and OC (SE) */}
+            {/* --- REGION 2: San Gabriel Valley (NE) --- */}
             <path
               d="M 400 195 L 380 115 C 470 110, 630 105, 790 120 C 810 170, 820 220, 825 275 C 750 280, 670 280, 585 285 C 550 282, 510 278, 475 275 C 450 245, 420 220, 400 195 Z"
               onClick={() => setActiveRegionId("sgv")}
@@ -453,10 +449,9 @@ export function CoverageMap() {
               filter={activeRegionId === "sgv" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- REGION 3: Los Angeles & Westside (Central-West Coast) --- */}
-            {/* Seamlessly meets SFV along crest, SGV at DTLA, South Bay to the south */}
+            {/* --- REGION 3: Los Angeles & Westside (embracing Malibu) --- */}
             <path
-              d="M 100 215 C 210 205, 310 200, 400 195 C 420 220, 450 245, 475 275 C 445 290, 420 305, 395 315 C 380 295, 370 275, 366 270 C 270 260, 179 255, 100 215 Z"
+              d="M 90 220 C 200 212, 300 205, 400 195 C 420 220, 450 245, 475 275 C 445 290, 420 305, 395 315 C 380 295, 365 285, 345 280 C 270 280, 170 275, 90 260 C 85 240, 88 230, 90 220 Z"
               onClick={() => setActiveRegionId("la")}
               className="cursor-pointer transition-all duration-300 hover:opacity-95"
               fill={
@@ -471,10 +466,9 @@ export function CoverageMap() {
               filter={activeRegionId === "la" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- REGION 4: South Bay & Gateway Cities (SW Coast) --- */}
-            {/* Contiguous with LA (NW), SGV (NE), and Orange County (east) */}
+            {/* --- REGION 4: South Bay & Gateway Cities --- */}
             <path
-              d="M 395 315 C 420 305, 445 290, 475 275 C 510 278, 550 282, 585 285 C 570 335, 550 390, 520 460 C 490 465, 475 465, 464 465 C 430 460, 404 430, 410 400 C 415 360, 405 335, 395 315 Z"
+              d="M 395 315 C 420 305, 445 290, 475 275 C 510 278, 550 282, 585 285 C 570 335, 550 390, 520 460 C 490 465, 475 465, 464 465 C 430 460, 400 435, 405 395 C 410 360, 405 335, 395 315 Z"
               onClick={() => setActiveRegionId("southbay")}
               className="cursor-pointer transition-all duration-300 hover:opacity-95"
               fill={
@@ -489,8 +483,7 @@ export function CoverageMap() {
               filter={activeRegionId === "southbay" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- REGION 5: Orange County (SE) --- */}
-            {/* Contiguous with SGV (north) and South Bay (west) down through coastal OC */}
+            {/* --- REGION 5: Orange County --- */}
             <path
               d="M 585 285 C 670 280, 750 280, 825 275 C 830 350, 830 420, 780 520 C 730 535, 690 530, 640 500 C 590 475, 550 460, 520 460 C 550 390, 570 335, 585 285 Z"
               onClick={() => setActiveRegionId("oc")}
@@ -507,201 +500,282 @@ export function CoverageMap() {
               filter={activeRegionId === "oc" ? "url(#softGlow)" : undefined}
             />
 
-            {/* --- ANCHOR CITY BEACONS & LABELS --- */}
-            {/* San Gabriel Valley Primary HQ Beacon */}
-            <circle cx="530" cy="190" r="14" fill="url(#hubPulseGlow)" className="animate-pulse" />
-            <circle cx="530" cy="190" r="4.5" fill="#10B981" stroke="#FFFFFF" strokeWidth="1.5" />
-            <text x="530" y="208" textAnchor="middle" fill="#A7F3D0" fontSize="10" fontWeight="bold" className="pointer-events-none drop-shadow">
-              San Gabriel (HQ)
+            {/* Subtle Region Watermark Titles */}
+            <text x="220" y="112" textAnchor="middle" fill="#E9D5FF" fontSize="11" fontWeight="900" letterSpacing="2" opacity="0.55" className="pointer-events-none select-none">
+              SAN FERNANDO VALLEY
+            </text>
+            <text x="640" y="132" textAnchor="middle" fill="#A7F3D0" fontSize="12" fontWeight="900" letterSpacing="2.5" opacity="0.6" className="pointer-events-none select-none">
+              SAN GABRIEL VALLEY
+            </text>
+            <text x="210" y="270" textAnchor="middle" fill="#BAE6FD" fontSize="10.5" fontWeight="900" letterSpacing="2" opacity="0.55" className="pointer-events-none select-none">
+              WESTSIDE / LA
+            </text>
+            <text x="460" y="348" textAnchor="middle" fill="#CFFAFE" fontSize="10" fontWeight="900" letterSpacing="1.8" opacity="0.5" className="pointer-events-none select-none">
+              SOUTH BAY &amp; GATEWAY
+            </text>
+            <text x="740" y="370" textAnchor="middle" fill="#FEF3C7" fontSize="12" fontWeight="900" letterSpacing="2" opacity="0.55" className="pointer-events-none select-none">
+              ORANGE COUNTY
             </text>
 
-            {/* Pasadena Dot */}
-            <circle cx="490" cy="155" r="3.5" fill="#6EE7B7" opacity="0.9" />
-            <text x="490" y="148" textAnchor="middle" fill="#E2E8F0" fontSize="9" opacity="0.85" className="pointer-events-none">
-              Pasadena
-            </text>
-
-            {/* DTLA Dot */}
-            <circle cx="460" cy="250" r="3.5" fill="#38BDF8" opacity="0.95" />
-            <text x="460" y="265" textAnchor="middle" fill="#E2E8F0" fontSize="9.5" fontWeight="600" className="pointer-events-none">
-              Downtown LA
-            </text>
-
-            {/* Santa Monica Dot */}
-            <circle cx="366" cy="270" r="3.5" fill="#38BDF8" opacity="0.9" />
-            <text x="366" y="285" textAnchor="middle" fill="#BAE6FD" fontSize="9" opacity="0.85" className="pointer-events-none">
-              Santa Monica
-            </text>
-
-            {/* Glendale Dot */}
-            <circle cx="410" cy="170" r="3" fill="#C084FC" opacity="0.9" />
-            <text x="410" y="162" textAnchor="middle" fill="#E9D5FF" fontSize="9" opacity="0.85" className="pointer-events-none">
-              Glendale
-            </text>
-
-            {/* Long Beach Dot */}
-            <circle cx="475" cy="430" r="3.5" fill="#22D3EE" opacity="0.95" />
-            <text x="475" y="446" textAnchor="middle" fill="#CFFAFE" fontSize="9" fontWeight="600" className="pointer-events-none">
-              Long Beach
-            </text>
-
-            {/* Anaheim Dot */}
-            <circle cx="630" cy="340" r="3.5" fill="#FBBF24" opacity="0.95" />
-            <text x="630" y="332" textAnchor="middle" fill="#FEF3C7" fontSize="9.5" fontWeight="600" className="pointer-events-none">
-              Anaheim
-            </text>
-
-            {/* Irvine Dot */}
-            <circle cx="720" cy="420" r="3.5" fill="#F59E0B" opacity="0.9" />
-            <text x="720" y="435" textAnchor="middle" fill="#FDE68A" fontSize="9" opacity="0.85" className="pointer-events-none">
-              Irvine
-            </text>
-
-            {/* --- COMPACT SLEEK PIN BADGES --- */}
-
-            {/* Pin 1: San Fernando Valley (NW) */}
-            <g
-              onClick={() => setActiveRegionId("sfv")}
-              className="cursor-pointer transition-transform duration-200 hover:scale-105"
-            >
-              <rect
-                x="160"
-                y="125"
-                width="165"
-                height="26"
-                rx="13"
-                fill="#0A192F"
-                fillOpacity="0.94"
-                stroke={activeRegionId === "sfv" ? "#C084FC" : "#7E22CE"}
-                strokeWidth={activeRegionId === "sfv" ? "2" : "1.2"}
-                filter="url(#softGlow)"
-              />
-              <circle cx="173" cy="138" r="3.5" fill="#A855F7" />
-              <text x="224" y="142" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
-                SF Valley
+            {/* --- 1. SAN FERNANDO VALLEY CITIES --- */}
+            <g id="sfv-cities">
+              <circle cx="160" cy="170" r="3" fill="#C084FC" stroke="#FFF" strokeWidth="1" />
+              <text x="160" y="162" textAnchor="middle" fill="#F3E8FF" fontSize="9" fontWeight="600" filter="url(#cityLabelShadow)">
+                Woodland Hills
               </text>
-              <rect x="272" y="129" width="44" height="18" rx="9" fill="#581C87" />
-              <text x="294" y="141.5" textAnchor="middle" fill="#F3E8FF" fontSize="9" fontWeight="bold">
-                40–55m
+
+              <circle cx="230" cy="172" r="3" fill="#C084FC" stroke="#FFF" strokeWidth="1" />
+              <text x="230" y="164" textAnchor="middle" fill="#F3E8FF" fontSize="9" fontWeight="600" filter="url(#cityLabelShadow)">
+                Encino
               </text>
-              {/* Pin pointer triangle */}
-              <polygon points="238,151 243,158 248,151" fill="#0A192F" />
+
+              <circle cx="280" cy="138" r="3" fill="#C084FC" stroke="#FFF" strokeWidth="1" />
+              <text x="280" y="130" textAnchor="middle" fill="#F3E8FF" fontSize="9" fontWeight="600" filter="url(#cityLabelShadow)">
+                Van Nuys
+              </text>
+
+              <circle cx="295" cy="176" r="3.5" fill="#C084FC" stroke="#FFF" strokeWidth="1.2" />
+              <text x="295" y="189" textAnchor="middle" fill="#F3E8FF" fontSize="9.5" fontWeight="700" filter="url(#cityLabelShadow)">
+                Sherman Oaks
+              </text>
+
+              <circle cx="355" cy="175" r="3" fill="#C084FC" stroke="#FFF" strokeWidth="1" />
+              <text x="355" y="166" textAnchor="middle" fill="#F3E8FF" fontSize="9" fontWeight="600" filter="url(#cityLabelShadow)">
+                Studio City
+              </text>
+
+              <circle cx="385" cy="148" r="3.5" fill="#C084FC" stroke="#FFF" strokeWidth="1.2" />
+              <text x="385" y="139" textAnchor="middle" fill="#FFFFFF" fontSize="9.5" fontWeight="700" filter="url(#cityLabelShadow)">
+                Burbank
+              </text>
+
+              <circle cx="425" cy="168" r="3.5" fill="#C084FC" stroke="#FFF" strokeWidth="1.2" />
+              <text x="425" y="159" textAnchor="middle" fill="#FFFFFF" fontSize="9.5" fontWeight="700" filter="url(#cityLabelShadow)">
+                Glendale
+              </text>
             </g>
 
-            {/* Pin 2: San Gabriel Valley (NE - Primary Dispatch Hub) */}
-            <g
-              onClick={() => setActiveRegionId("sgv")}
-              className="cursor-pointer transition-transform duration-200 hover:scale-105"
-            >
-              <rect
-                x="520"
-                y="120"
-                width="190"
-                height="28"
-                rx="14"
-                fill="#0A192F"
-                fillOpacity="0.96"
-                stroke={activeRegionId === "sgv" ? "#34D399" : "#059669"}
-                strokeWidth={activeRegionId === "sgv" ? "2.5" : "1.5"}
-                filter="url(#softGlow)"
-              />
-              <circle cx="534" cy="134" r="4" fill="#10B981" />
-              <text x="592" y="138.5" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
-                San Gabriel Valley
+            {/* --- 2. LOS ANGELES & WESTSIDE CITIES --- */}
+            <g id="la-cities">
+              <circle cx="150" cy="248" r="4.5" fill="#38BDF8" stroke="#FFF" strokeWidth="1.8" />
+              <text x="150" y="238" textAnchor="middle" fill="#FFFFFF" fontSize="10.5" fontWeight="900" filter="url(#cityLabelShadow)">
+                Malibu
               </text>
-              <rect x="654" y="124" width="46" height="20" rx="10" fill="#064E3B" />
-              <text x="677" y="137.5" textAnchor="middle" fill="#6EE7B7" fontSize="9.5" fontWeight="900">
-                25–40m
+
+              <circle cx="285" cy="260" r="3" fill="#38BDF8" stroke="#FFF" strokeWidth="1" />
+              <text x="285" y="252" textAnchor="middle" fill="#BAE6FD" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Pacific Palisades
               </text>
-              {/* Pin pointer triangle */}
-              <polygon points="610,148 615,156 620,148" fill="#0A192F" />
+
+              <circle cx="345" cy="272" r="4" fill="#38BDF8" stroke="#FFF" strokeWidth="1.5" />
+              <text x="345" y="286" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Santa Monica
+              </text>
+
+              <circle cx="380" cy="225" r="4.5" fill="#38BDF8" stroke="#FFF" strokeWidth="1.8" />
+              <text x="380" y="215" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="900" filter="url(#cityLabelShadow)">
+                Beverly Hills
+              </text>
+
+              <circle cx="428" cy="216" r="3" fill="#38BDF8" stroke="#FFF" strokeWidth="1" />
+              <text x="428" y="208" textAnchor="middle" fill="#BAE6FD" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                West Hollywood
+              </text>
+
+              <circle cx="435" cy="195" r="3" fill="#38BDF8" stroke="#FFF" strokeWidth="1" />
+              <text x="435" y="187" textAnchor="middle" fill="#BAE6FD" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Hollywood
+              </text>
+
+              <circle cx="395" cy="280" r="3" fill="#38BDF8" stroke="#FFF" strokeWidth="1" />
+              <text x="395" y="293" textAnchor="middle" fill="#BAE6FD" fontSize="9" fontWeight="600" filter="url(#cityLabelShadow)">
+                Culver City
+              </text>
+
+              <circle cx="465" cy="250" r="4.5" fill="#38BDF8" stroke="#FFF" strokeWidth="1.8" />
+              <text x="465" y="264" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="900" filter="url(#cityLabelShadow)">
+                Downtown LA
+              </text>
+
+              <circle cx="458" cy="222" r="3" fill="#38BDF8" stroke="#FFF" strokeWidth="1" />
+              <text x="458" y="233" textAnchor="middle" fill="#BAE6FD" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Silver Lake
+              </text>
+
+              <circle cx="425" cy="308" r="3" fill="#38BDF8" stroke="#FFF" strokeWidth="1" />
+              <text x="425" y="320" textAnchor="middle" fill="#BAE6FD" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Inglewood
+              </text>
             </g>
 
-            {/* Pin 3: Los Angeles & Westside (Center-West) */}
-            <g
-              onClick={() => setActiveRegionId("la")}
-              className="cursor-pointer transition-transform duration-200 hover:scale-105"
-            >
-              <rect
-                x="220"
-                y="215"
-                width="165"
-                height="26"
-                rx="13"
-                fill="#0A192F"
-                fillOpacity="0.94"
-                stroke={activeRegionId === "la" ? "#38BDF8" : "#0369A1"}
-                strokeWidth={activeRegionId === "la" ? "2" : "1.2"}
-                filter="url(#softGlow)"
-              />
-              <circle cx="233" cy="228" r="3.5" fill="#0284C7" />
-              <text x="284" y="232" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
-                LA &amp; Westside
+            {/* --- 3. SAN GABRIEL VALLEY CITIES (Zero HQ label) --- */}
+            <g id="sgv-cities">
+              <circle cx="490" cy="155" r="4" fill="#10B981" stroke="#FFF" strokeWidth="1.5" />
+              <text x="490" y="145" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Pasadena
               </text>
-              <rect x="332" y="219" width="44" height="18" rx="9" fill="#075985" />
-              <text x="354" y="231.5" textAnchor="middle" fill="#E0F2FE" fontSize="9" fontWeight="bold">
-                35–50m
+
+              <circle cx="485" cy="178" r="3" fill="#10B981" stroke="#FFF" strokeWidth="1" />
+              <text x="485" y="170" textAnchor="middle" fill="#A7F3D0" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                S. Pasadena
               </text>
-              {/* Pin pointer triangle */}
-              <polygon points="298,241 303,248 308,241" fill="#0A192F" />
+
+              {/* San Gabriel - Standard clean city label with zero HQ text */}
+              <circle cx="530" cy="190" r="4" fill="#10B981" stroke="#FFF" strokeWidth="1.5" />
+              <text x="530" y="203" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold" filter="url(#cityLabelShadow)">
+                San Gabriel
+              </text>
+
+              <circle cx="495" cy="215" r="3" fill="#10B981" stroke="#FFF" strokeWidth="1" />
+              <text x="495" y="226" textAnchor="middle" fill="#A7F3D0" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Alhambra
+              </text>
+
+              <circle cx="515" cy="240" r="3" fill="#10B981" stroke="#FFF" strokeWidth="1" />
+              <text x="515" y="252" textAnchor="middle" fill="#A7F3D0" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Monterey Park
+              </text>
+
+              <circle cx="565" cy="160" r="3.5" fill="#10B981" stroke="#FFF" strokeWidth="1.2" />
+              <text x="565" y="150" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Arcadia
+              </text>
+
+              <circle cx="610" cy="155" r="3" fill="#10B981" stroke="#FFF" strokeWidth="1" />
+              <text x="610" y="145" textAnchor="middle" fill="#A7F3D0" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Monrovia
+              </text>
+
+              <circle cx="558" cy="180" r="3" fill="#10B981" stroke="#FFF" strokeWidth="1" />
+              <text x="558" y="172" textAnchor="middle" fill="#A7F3D0" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Temple City
+              </text>
+
+              <circle cx="585" cy="202" r="3.5" fill="#10B981" stroke="#FFF" strokeWidth="1.2" />
+              <text x="585" y="214" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                El Monte
+              </text>
+
+              <circle cx="645" cy="210" r="3.5" fill="#10B981" stroke="#FFF" strokeWidth="1.2" />
+              <text x="645" y="222" textAnchor="middle" fill="#FFFFFF" fontSize="9.5" fontWeight="bold" filter="url(#cityLabelShadow)">
+                West Covina
+              </text>
+
+              <circle cx="665" cy="185" r="3" fill="#10B981" stroke="#FFF" strokeWidth="1" />
+              <text x="665" y="176" textAnchor="middle" fill="#A7F3D0" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Covina
+              </text>
+
+              <circle cx="700" cy="165" r="3.5" fill="#10B981" stroke="#FFF" strokeWidth="1.2" />
+              <text x="700" y="155" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Glendora
+              </text>
+
+              <circle cx="570" cy="265" r="3.5" fill="#10B981" stroke="#FFF" strokeWidth="1.2" />
+              <text x="570" y="277" textAnchor="middle" fill="#FFFFFF" fontSize="9.5" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Whittier
+              </text>
             </g>
 
-            {/* Pin 4: South Bay & Gateway Cities (SW Coast) */}
-            <g
-              onClick={() => setActiveRegionId("southbay")}
-              className="cursor-pointer transition-transform duration-200 hover:scale-105"
-            >
-              <rect
-                x="410"
-                y="345"
-                width="165"
-                height="26"
-                rx="13"
-                fill="#0A192F"
-                fillOpacity="0.94"
-                stroke={activeRegionId === "southbay" ? "#22D3EE" : "#0891B2"}
-                strokeWidth={activeRegionId === "southbay" ? "2" : "1.2"}
-                filter="url(#softGlow)"
-              />
-              <circle cx="423" cy="358" r="3.5" fill="#06B6D4" />
-              <text x="472" y="362" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
-                South Bay Coast
+            {/* --- 4. SOUTH BAY & GATEWAY CITIES --- */}
+            <g id="southbay-cities">
+              <circle cx="380" cy="335" r="3.5" fill="#22D3EE" stroke="#FFF" strokeWidth="1.2" />
+              <text x="380" y="325" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Manhattan Beach
               </text>
-              <rect x="522" y="349" width="44" height="18" rx="9" fill="#155E75" />
-              <text x="544" y="361.5" textAnchor="middle" fill="#CFFAFE" fontSize="9" fontWeight="bold">
-                35–50m
+
+              <circle cx="390" cy="370" r="3.5" fill="#22D3EE" stroke="#FFF" strokeWidth="1.2" />
+              <text x="390" y="382" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Redondo Beach
               </text>
-              {/* Pin pointer triangle */}
-              <polygon points="488,371 493,378 498,371" fill="#0A192F" />
+
+              <circle cx="435" cy="385" r="4" fill="#22D3EE" stroke="#FFF" strokeWidth="1.5" />
+              <text x="435" y="398" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Torrance
+              </text>
+
+              <circle cx="410" cy="440" r="3" fill="#22D3EE" stroke="#FFF" strokeWidth="1" />
+              <text x="410" y="452" textAnchor="middle" fill="#CFFAFE" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Palos Verdes
+              </text>
+
+              <circle cx="515" cy="290" r="3.5" fill="#22D3EE" stroke="#FFF" strokeWidth="1.2" />
+              <text x="515" y="302" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Downey
+              </text>
+
+              <circle cx="550" cy="315" r="3" fill="#22D3EE" stroke="#FFF" strokeWidth="1" />
+              <text x="550" y="327" textAnchor="middle" fill="#CFFAFE" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Norwalk
+              </text>
+
+              <circle cx="540" cy="358" r="3" fill="#22D3EE" stroke="#FFF" strokeWidth="1" />
+              <text x="540" y="370" textAnchor="middle" fill="#CFFAFE" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Cerritos
+              </text>
+
+              <circle cx="498" cy="382" r="3" fill="#22D3EE" stroke="#FFF" strokeWidth="1" />
+              <text x="498" y="373" textAnchor="middle" fill="#CFFAFE" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Lakewood
+              </text>
+
+              <circle cx="475" cy="430" r="4.5" fill="#22D3EE" stroke="#FFF" strokeWidth="1.8" />
+              <text x="475" y="443" textAnchor="middle" fill="#FFFFFF" fontSize="10.5" fontWeight="900" filter="url(#cityLabelShadow)">
+                Long Beach
+              </text>
             </g>
 
-            {/* Pin 5: Orange County (SE) */}
-            <g
-              onClick={() => setActiveRegionId("oc")}
-              className="cursor-pointer transition-transform duration-200 hover:scale-105"
-            >
-              <rect
-                x="640"
-                y="360"
-                width="165"
-                height="26"
-                rx="13"
-                fill="#0A192F"
-                fillOpacity="0.94"
-                stroke={activeRegionId === "oc" ? "#FBBF24" : "#B45309"}
-                strokeWidth={activeRegionId === "oc" ? "2" : "1.2"}
-                filter="url(#softGlow)"
-              />
-              <circle cx="653" cy="373" r="3.5" fill="#F59E0B" />
-              <text x="702" y="377" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="bold">
-                Orange County
+            {/* --- 5. ORANGE COUNTY CITIES --- */}
+            <g id="oc-cities">
+              <circle cx="625" cy="305" r="3.5" fill="#FBBF24" stroke="#FFF" strokeWidth="1.2" />
+              <text x="625" y="295" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Fullerton
               </text>
-              <rect x="752" y="364" width="44" height="18" rx="9" fill="#78350F" />
-              <text x="774" y="376.5" textAnchor="middle" fill="#FEF3C7" fontSize="9" fontWeight="bold">
-                35–55m
+
+              <circle cx="655" cy="278" r="3" fill="#FBBF24" stroke="#FFF" strokeWidth="1" />
+              <text x="655" y="268" textAnchor="middle" fill="#FEF3C7" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Brea
               </text>
-              {/* Pin pointer triangle */}
-              <polygon points="718,386 723,393 728,386" fill="#0A192F" />
+
+              <circle cx="630" cy="340" r="4.5" fill="#FBBF24" stroke="#FFF" strokeWidth="1.8" />
+              <text x="630" y="353" textAnchor="middle" fill="#FFFFFF" fontSize="10.5" fontWeight="900" filter="url(#cityLabelShadow)">
+                Anaheim
+              </text>
+
+              <circle cx="675" cy="345" r="3.5" fill="#FBBF24" stroke="#FFF" strokeWidth="1.2" />
+              <text x="675" y="335" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Orange
+              </text>
+
+              <circle cx="605" cy="375" r="3" fill="#FBBF24" stroke="#FFF" strokeWidth="1" />
+              <text x="605" y="387" textAnchor="middle" fill="#FEF3C7" fontSize="8.5" fontWeight="600" filter="url(#cityLabelShadow)">
+                Garden Grove
+              </text>
+
+              <circle cx="665" cy="385" r="3.5" fill="#FBBF24" stroke="#FFF" strokeWidth="1.2" />
+              <text x="665" y="398" textAnchor="middle" fill="#FFFFFF" fontSize="9.5" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Santa Ana
+              </text>
+
+              <circle cx="645" cy="435" r="3.5" fill="#FBBF24" stroke="#FFF" strokeWidth="1.2" />
+              <text x="645" y="425" textAnchor="middle" fill="#FFFFFF" fontSize="9" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Costa Mesa
+              </text>
+
+              <circle cx="575" cy="455" r="4" fill="#FBBF24" stroke="#FFF" strokeWidth="1.5" />
+              <text x="575" y="468" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Huntington Beach
+              </text>
+
+              <circle cx="655" cy="475" r="4" fill="#FBBF24" stroke="#FFF" strokeWidth="1.5" />
+              <text x="655" y="488" textAnchor="middle" fill="#FFFFFF" fontSize="10" fontWeight="bold" filter="url(#cityLabelShadow)">
+                Newport Beach
+              </text>
+
+              <circle cx="725" cy="425" r="4.5" fill="#FBBF24" stroke="#FFF" strokeWidth="1.8" />
+              <text x="725" y="438" textAnchor="middle" fill="#FFFFFF" fontSize="10.5" fontWeight="900" filter="url(#cityLabelShadow)">
+                Irvine
+              </text>
             </g>
           </svg>
 
