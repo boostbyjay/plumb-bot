@@ -75,7 +75,7 @@ export const siteConfig = {
   yearsInBusiness: 25,
   founded: 2001,
   hours: {
-    standard: "Mon\u2013Sat, 8:00 AM \u2013 6:00 PM",
+    standard: "Mon\u2013Sat, 8:00 AM \u2013 8:00 PM",
     emergency: "Same-Day Emergency Service Available",
   },
   region: "Los Angeles, Orange County & the San Gabriel Valley",

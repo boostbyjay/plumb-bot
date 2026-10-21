@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { LeadForm } from "@/components/site/lead-form";
+import { CoverageMap } from "@/components/site/coverage-map";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 
 const dispatchRegions = [
   {
-    name: "San Gabriel Valley (HQ)",
+    name: "San Gabriel Valley",
     time: "25–40 Min",
     cities: "San Gabriel, Pasadena, Alhambra, Arcadia, El Monte, West Covina, Covina, Glendora, Whittier, San Marino",
   },
@@ -87,7 +88,7 @@ export default function ContactPage() {
           "Saturday",
         ],
         opens: "08:00",
-        closes: "18:00",
+        closes: "20:00",
       },
     ],
     contactPoint: {
@@ -255,21 +256,14 @@ export default function ContactPage() {
                 <div className="flex items-start justify-between gap-3">
                   <span className="font-semibold text-slate-500">Liability Insurance:</span>
                   <span className="font-bold text-brand-navy text-right">
-                    $2,000,000 Commercial Policy + Bonded
-                  </span>
-                </div>
-
-                <div className="flex items-start justify-between gap-3">
-                  <span className="font-semibold text-slate-500">Dispatch Headquarters:</span>
-                  <span className="font-bold text-brand-navy text-right">
-                    San Gabriel, CA 91776
+                    $5,000,000 Commercial Policy + Bonded
                   </span>
                 </div>
 
                 <div className="flex items-start justify-between gap-3">
                   <span className="font-semibold text-slate-500">Operating Hours:</span>
                   <div className="text-right">
-                    <p className="font-bold text-brand-navy">Mon–Sat: 8:00 AM – 6:00 PM</p>
+                    <p className="font-bold text-brand-navy">Mon–Sat: 8:00 AM – 8:00 PM</p>
                     <p className="text-[11px] font-semibold text-emerald-700">24/7 Emergency Dispatch Available</p>
                   </div>
                 </div>
@@ -355,25 +349,28 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Regional Dispatch Hubs & Response Times Strip */}
-        <div className="mt-16">
-          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b-2 border-brand-navy/10 pb-3">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-blue">
-                Live Coverage Map
-              </span>
-              <h2 className="mt-1 text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">
-                Average Arrival Times by Region
-              </h2>
+        {/* Actual Live Interactive Coverage Map & Regional Dispatch */}
+        <div className="mt-16 space-y-8">
+          <CoverageMap />
+
+          <div>
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b-2 border-brand-navy/10 pb-3">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-blue">
+                  Dispatch Overview
+                </span>
+                <h3 className="mt-1 text-xl sm:text-2xl font-extrabold text-brand-navy tracking-tight">
+                  Regional Response Time Estimates
+                </h3>
+              </div>
+              <Link
+                href="/neighborhoods"
+                className="text-xs sm:text-sm font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1 shrink-0"
+              >
+                <span>Explore All 75+ Service Cities</span>
+                <ArrowRight className="size-3.5" />
+              </Link>
             </div>
-            <Link
-              href="/neighborhoods"
-              className="text-xs sm:text-sm font-bold text-brand-blue hover:text-brand-navy flex items-center gap-1 shrink-0"
-            >
-              <span>Explore All 75+ Service Cities</span>
-              <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {dispatchRegions.map((region) => (
@@ -403,5 +400,6 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
