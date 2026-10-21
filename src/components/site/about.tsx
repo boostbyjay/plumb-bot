@@ -78,53 +78,50 @@ export function About() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center lg:items-end gap-4">
-            {/* Master Plumber & Service Truck Card - Natural 4:3 Frame */}
-            <div className="relative w-full max-w-lg aspect-[4/3] max-h-[380px] overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-md">
+          <div className="grid gap-4 sm:gap-5">
+            <div className="relative h-64 sm:h-80 w-full overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-md">
               <Image
                 src="/work/master-plumber-truck.jpg"
                 alt="JJJ Plumbing master technician and owner-operator with company truck"
                 fill
-                sizes="(max-width: 1024px) 100vw, 500px"
+                sizes="(max-width: 1024px) 100vw, 40vw"
                 placeholder="blur"
                 blurDataURL={photoBlur["master-plumber-truck"]}
                 className="object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent px-4 py-3 flex items-center justify-between">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-4 sm:p-5 flex items-end justify-between">
                 <div>
-                  <p className="text-xs sm:text-sm font-extrabold text-white flex items-center gap-1.5">
+                  <p className="text-sm sm:text-base font-extrabold text-white flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-emerald-400" />
                     Master Plumber &amp; Owner-Operator
                   </p>
-                  <p className="text-[11px] text-slate-300 font-medium">
+                  <p className="text-xs text-slate-300 font-medium">
                     Owner on-site for major repairs across LA, OC &amp; SGV
                   </p>
                 </div>
-                <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-brand-navy/90 border border-brand-accent/40 px-2.5 py-0.5 text-[11px] font-bold text-brand-accent shadow-xs">
+                <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-brand-navy/90 border border-brand-accent/40 px-3 py-1 text-xs font-bold text-brand-accent shadow-xs">
                   CSLB #842875
                 </span>
               </div>
             </div>
-
-            {/* Supporting Equipment Photos */}
-            <div className="grid grid-cols-2 gap-3.5 w-full max-w-lg">
-              <div className="relative h-28 sm:h-32 w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-2xs">
+            <div className="grid grid-cols-2 gap-4 sm:gap-5">
+              <div className="relative h-40 w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 sm:h-48 shadow-2xs">
                 <Image
                   src="/work/hydrojetting-truck-rig-1024.jpg"
                   alt="JJJ Plumbing truck-mounted hydro jetter rated 4000 PSI at 18 GPM"
                   fill
-                  sizes="(max-width: 1024px) 50vw, 240px"
+                  sizes="(max-width: 1024px) 50vw, 20vw"
                   placeholder="blur"
                   blurDataURL={photoBlur["hydrojetting-truck-rig"]}
                   className="object-cover object-[center_42%]"
                 />
               </div>
-              <div className="relative h-28 sm:h-32 w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-2xs">
+              <div className="relative h-40 w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 sm:h-48 shadow-2xs">
                 <Image
                   src="/work/sewer-camera-inspection-640.jpg"
                   alt="Sewer camera inspection equipment staged at a main line cleanout"
                   fill
-                  sizes="(max-width: 1024px) 50vw, 240px"
+                  sizes="(max-width: 1024px) 50vw, 20vw"
                   placeholder="blur"
                   blurDataURL={photoBlur["sewer-camera-inspection"]}
                   className="object-cover"

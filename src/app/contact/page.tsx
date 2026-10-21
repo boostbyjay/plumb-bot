@@ -226,7 +226,7 @@ export default function ContactPage() {
           {/* Left Column: Official Business Credentials & Emergency Guide */}
           <div className="lg:col-span-5 space-y-6">
             {/* Real Master Plumber & Service Truck Photo Card */}
-            <div className="relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-slate-900 shadow-md aspect-[4/3] max-h-[290px]">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-slate-200 bg-slate-900 shadow-md aspect-[16/11] max-h-[280px]">
               <Image
                 src="/work/master-plumber-truck.jpg"
                 alt="JJJ Plumbing licensed master technician on call with company service truck"
@@ -236,7 +236,7 @@ export default function ContactPage() {
                 blurDataURL={photoBlur["master-plumber-truck"]}
                 className="object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent px-4 py-2.5 flex items-center justify-between">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-4 flex items-end justify-between">
                 <div>
                   <p className="text-xs sm:text-sm font-extrabold text-white flex items-center gap-1.5">
                     <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
