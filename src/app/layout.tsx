@@ -266,7 +266,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{if('scrollRestoration' in history){history.scrollRestoration='manual';}if(window.location.hash&&window.location.hash!=='#specials'){history.replaceState(null,'',window.location.pathname+window.location.search);}window.scrollTo(0,0);}catch(e){}`,
+            __html: `try{if('scrollRestoration' in history){history.scrollRestoration='manual';}}catch(e){}`,
           }}
         />
         <StructuredData />

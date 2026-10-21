@@ -113,6 +113,7 @@ export default function NeighborhoodsIndexPage() {
                     <Link
                       key={hood.slug}
                       href={`/neighborhoods/${hood.slug}`}
+                      prefetch={false}
                       className="group flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-accent hover:shadow-md"
                     >
                       <div>

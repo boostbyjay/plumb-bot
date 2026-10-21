@@ -60,6 +60,7 @@ export function ServiceAreas() {
                 <Link
                   key={city}
                   href={`/service-city/${selectedService}/${slug}`}
+                  prefetch={false}
                   className="group flex items-center justify-between gap-1.5 rounded-lg border border-transparent bg-white/80 px-3 py-2 text-xs sm:text-sm font-medium text-slate-700 shadow-2xs transition-all hover:border-brand-accent/60 hover:bg-white hover:text-brand-navy hover:shadow-sm"
                 >
                   <span className="flex items-center gap-1.5 truncate">
@@ -87,6 +88,7 @@ export function ServiceAreas() {
                     <Link
                       key={city}
                       href={`/service-city/${selectedService}/${slug}`}
+                      prefetch={false}
                       className="group flex items-center justify-between gap-1.5 rounded-lg border border-transparent bg-white/80 px-3 py-2 text-xs sm:text-sm font-medium text-slate-700 shadow-2xs transition-all hover:border-brand-accent/60 hover:bg-white hover:text-brand-navy hover:shadow-sm"
                     >
                       <span className="flex items-center gap-1.5 truncate">
