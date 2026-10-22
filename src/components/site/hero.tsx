@@ -4,7 +4,6 @@ import { Phone, ShieldCheck, BadgeCheck, DollarSign, Award, Star, Camera, Tag, M
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 import { photoBlur } from "@/lib/photo-blur";
-import { QuickQuoteModal } from "@/components/site/quick-quote-modal";
 import { LeadForm } from "@/components/site/lead-form";
 
 const trustBadges = [
@@ -75,27 +74,16 @@ export function Hero() {
             Fast 45-minute mobile dispatch across 75+ Southern California communities. Master plumbers on every call, upfront pricing, and guaranteed workmanship.
           </p>
 
-          {/* Action Buttons */}
-          <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-2.5 sm:gap-3 sm:max-w-xl">
+          {/* Action Buttons: Symmetrical 2-Button Grid */}
+          <div className="mt-5 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 sm:max-w-xl">
             <Button
               render={<a href={siteConfig.phoneHref} />}
               nativeButton={false}
               size="lg"
-              className="col-span-2 sm:col-span-1 h-11 sm:h-12 w-full bg-brand-accent px-4.5 sm:px-5 text-sm sm:text-base font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
+              className="h-11 sm:h-12 w-full bg-brand-accent px-4 sm:px-5 text-sm sm:text-base font-extrabold text-brand-navy-dark hover:bg-sky-300 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               <Phone className="size-4.5 shrink-0 mr-1.5" />
               Call {siteConfig.phone}
-            </Button>
-
-            <Button
-              render={<a href="#specials" data-specials-trigger="true" />}
-              nativeButton={false}
-              size="lg"
-              variant="outline"
-              className="col-span-2 sm:col-span-1 h-11 sm:h-12 w-full border-brand-accent/60 bg-brand-accent/10 px-4.5 sm:px-5 text-sm sm:text-base font-bold text-brand-accent hover:bg-brand-accent hover:text-brand-navy-dark transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
-            >
-              <Tag className="size-4 shrink-0 mr-1.5" />
-              View Web Specials
             </Button>
 
             <Button
@@ -103,40 +91,55 @@ export function Hero() {
               nativeButton={false}
               size="lg"
               variant="outline"
-              className="col-span-1 lg:col-span-2 xl:col-span-1 h-11 sm:h-12 w-full border-white/30 bg-white/10 px-3 sm:px-5 text-xs sm:text-base font-bold text-white hover:bg-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
+              className="h-11 sm:h-12 w-full border-white/30 bg-white/10 px-4 sm:px-5 text-sm sm:text-base font-bold text-white hover:bg-white/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               <Camera className="size-4 shrink-0 mr-1.5 text-brand-accent" />
-              <span className="sm:hidden">Text Photo</span>
-              <span className="hidden sm:inline">Text Photo for Quote</span>
+              Text Photo for Quote
             </Button>
-
-            {/* Mobile-only Quick Quote modal button */}
-            <div className="col-span-1 lg:hidden">
-              <QuickQuoteModal />
-            </div>
           </div>
 
-          {/* Immediate Regional Coverage Confirmation Strip */}
-          <div className="mt-4 rounded-xl border border-white/15 bg-white/[0.07] p-2.5 sm:p-3 backdrop-blur-xs sm:max-w-xl">
-            <div className="flex items-center justify-between gap-2 mb-1.5">
-              <span className="flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wide text-brand-accent">
-                <MapPin className="size-3 text-brand-accent shrink-0" />
-                Direct Mobile Dispatch Across:
+          {/* Unified Specials & Regional Dispatch Card */}
+          <div className="mt-3.5 rounded-2xl border border-white/15 bg-white/[0.06] p-3 sm:p-3.5 backdrop-blur-xs sm:max-w-xl shadow-lg">
+            {/* Web Specials Ribbon */}
+            <a
+              href="#specials"
+              data-specials-trigger="true"
+              className="flex items-center justify-between rounded-xl border border-amber-400/35 bg-amber-500/10 px-3 py-2 text-xs font-semibold text-amber-200 hover:bg-amber-500/20 hover:border-amber-400/60 transition-all group cursor-pointer"
+            >
+              <span className="flex items-center gap-2">
+                <Tag className="size-3.5 text-amber-400 shrink-0" />
+                <span><strong className="text-white font-extrabold">Save $75 Off</strong> Any Service Today</span>
               </span>
-              <Link href="/neighborhoods" className="text-[11px] font-bold text-sky-300 hover:text-white transition-colors shrink-0">
-                75+ Cities Served →
-              </Link>
-            </div>
-            <div className="flex flex-wrap items-center gap-1 text-[11px] text-slate-200">
-              <span className="font-semibold text-white">San Gabriel Valley</span>
-              <span className="text-white/40">•</span>
-              <span className="font-semibold text-white">Los Angeles &amp; Westside</span>
-              <span className="text-white/40">•</span>
-              <span className="font-semibold text-white">San Fernando Valley</span>
-              <span className="text-white/40">•</span>
-              <span className="font-semibold text-white">Orange County</span>
-              <span className="text-white/40">•</span>
-              <span className="font-semibold text-white">South Bay</span>
+              <span className="text-[11px] font-bold text-amber-300 group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
+                View Web Specials →
+              </span>
+            </a>
+
+            {/* Direct Mobile Dispatch Coverage */}
+            <div className="mt-2.5 pt-2.5 border-t border-white/10">
+              <div className="flex items-center justify-between gap-2 mb-1">
+                <span className="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wide text-brand-accent">
+                  <MapPin className="size-3 text-brand-accent shrink-0" />
+                  Direct Mobile Dispatch Across:
+                </span>
+                <Link
+                  href="/neighborhoods"
+                  className="text-[11px] font-bold text-sky-300 hover:text-white transition-colors shrink-0"
+                >
+                  75+ Cities Served →
+                </Link>
+              </div>
+              <div className="flex flex-wrap items-center gap-1 text-[11px] text-slate-200">
+                <span className="font-semibold text-white">San Gabriel Valley</span>
+                <span className="text-white/40">•</span>
+                <span className="font-semibold text-white">Los Angeles &amp; Westside</span>
+                <span className="text-white/40">•</span>
+                <span className="font-semibold text-white">San Fernando Valley</span>
+                <span className="text-white/40">•</span>
+                <span className="font-semibold text-white">Orange County</span>
+                <span className="text-white/40">•</span>
+                <span className="font-semibold text-white">South Bay</span>
+              </div>
             </div>
           </div>
 
