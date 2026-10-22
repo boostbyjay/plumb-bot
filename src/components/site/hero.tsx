@@ -9,8 +9,8 @@ import { LeadForm } from "@/components/site/lead-form";
 const trustBadges = [
   { icon: ShieldCheck, label: "Licensed & Insured" },
   { icon: BadgeCheck, label: "Fixed Right or Free" },
-  { icon: DollarSign, label: "Diagnostic Fee Credited" },
-  { icon: Award, label: "Free 2nd Opinion on Major Repairs" },
+  { icon: DollarSign, label: "Diagnostic Credited to Repair" },
+  { icon: Award, label: `${siteConfig.yearsInBusiness}+ Years Experience` },
 ];
 
 export function Hero() {
@@ -36,7 +36,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:py-14 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center flex-1">
         {/* Left Column: Headlines, Trust Pills, Quick Actions */}
         <div className="lg:col-span-7 flex flex-col justify-center min-w-0">
-          {/* Badges: Google Rating + Live Dispatch + Service Areas */}
+          {/* Badges: Google Rating + Live Dispatch */}
           <div className="flex flex-wrap items-center gap-2">
             <a
               href={siteConfig.social.google}
@@ -56,22 +56,14 @@ export function Hero() {
               <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Same-Day 45-Min Dispatch</span>
             </span>
-
-            <Link
-              href="/neighborhoods"
-              className="inline-flex items-center gap-1.5 rounded-full border border-sky-400/40 bg-sky-500/15 px-3 py-1 text-xs font-bold text-sky-200 hover:bg-sky-500/25 transition-all"
-            >
-              <MapPin className="size-3 text-brand-accent shrink-0" />
-              <span>Serving 75+ SoCal Cities</span>
-            </Link>
           </div>
 
           <h1 className="mt-4 sm:mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[2.85rem] xl:text-[3.15rem] break-words text-balance text-white">
             Licensed Plumbing &amp; Drain Experts Across Greater LA, SGV &amp; Orange County.
           </h1>
 
-          <p className="mt-3.5 sm:mt-4 max-w-xl text-base text-slate-200 sm:text-lg text-pretty leading-relaxed">
-            Fast 45-minute mobile dispatch across 75+ Southern California communities. Master plumbers on every call, upfront pricing, and guaranteed workmanship.
+          <p className="mt-3 sm:mt-3.5 max-w-xl text-base text-slate-200 sm:text-lg text-pretty leading-relaxed">
+            Same-day emergency repairs, drain clearing &amp; water heaters with guaranteed upfront pricing.
           </p>
 
           {/* Action Buttons: Symmetrical 2-Button Grid */}
@@ -164,15 +156,15 @@ export function Hero() {
             </div>
           </div>
 
-          <p className="mt-3.5 text-[11px] sm:text-xs text-slate-300/90 flex flex-wrap items-center gap-x-2.5 gap-y-1">
-            <span className="text-emerald-300 font-semibold">✓ Diagnostic fee credited to repair</span>
+          <p className="mt-3 text-[11px] sm:text-xs text-slate-300/90 flex flex-wrap items-center gap-x-2.5 gap-y-1">
+            <span className="text-emerald-300 font-semibold">✓ 100% Upfront Flat Pricing</span>
             <span>•</span>
-            <span className="text-brand-accent font-semibold">✓ 0% APR financing</span>
+            <span className="text-brand-accent font-semibold">✓ 0% APR Financing Available</span>
             <span>•</span>
             <span className="text-amber-300 font-semibold">✓ {siteConfig.bilingual}</span>
           </p>
 
-          <dl className="mt-4 sm:mt-5 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="mt-3.5 sm:mt-4 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-2 lg:grid-cols-4">
             {trustBadges.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2 min-w-0">
                 <Icon className="size-4 shrink-0 text-brand-accent" />
@@ -197,12 +189,8 @@ export function Hero() {
             <h2 className="text-2xl font-black text-brand-navy tracking-tight">
               Request Free Estimate
             </h2>
-            <div className="mt-1.5 flex items-center gap-1.5 text-[11px] font-bold text-emerald-800 bg-emerald-50 rounded-lg p-1.5 border border-emerald-200 mb-2">
-              <MapPin className="size-3.5 text-emerald-600 shrink-0" />
-              <span>Serving All 75+ Cities in LA, SGV &amp; OC • Same-Day Dispatch</span>
-            </div>
-            <p className="text-xs text-slate-600 mb-3 leading-relaxed">
-              Upfront flat pricing approved before work begins. Master plumbers on call.
+            <p className="text-xs text-slate-600 my-2 leading-relaxed">
+              Upfront flat pricing approved before work begins. Master plumbers on call across LA, SGV &amp; OC.
             </p>
             <LeadForm compact defaultCouponCode="JJJ-75OFF" />
           </div>
