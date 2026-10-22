@@ -100,19 +100,40 @@ export function Hero() {
 
           {/* Unified Specials & Regional Dispatch Card */}
           <div className="mt-3.5 rounded-2xl border border-white/15 bg-white/[0.06] p-3 sm:p-3.5 backdrop-blur-xs sm:max-w-xl shadow-lg">
-            {/* Web Specials Ribbon */}
+            {/* All Active Web Specials Showcase Banner */}
             <a
               href="#specials"
               data-specials-trigger="true"
-              className="flex items-center justify-between rounded-xl border border-amber-400/35 bg-amber-500/10 px-3 py-2 text-xs font-semibold text-amber-200 hover:bg-amber-500/20 hover:border-amber-400/60 transition-all group cursor-pointer"
+              className="block rounded-xl border border-amber-400/35 bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-sky-500/10 p-2.5 sm:p-3 hover:border-amber-400/60 hover:bg-amber-500/20 transition-all group cursor-pointer"
             >
-              <span className="flex items-center gap-2">
-                <Tag className="size-3.5 text-amber-400 shrink-0" />
-                <span><strong className="text-white font-extrabold">Save $75 Off</strong> Any Service Today</span>
-              </span>
-              <span className="text-[11px] font-bold text-amber-300 group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
-                View Web Specials →
-              </span>
+              <div className="flex items-center justify-between gap-2">
+                <span className="flex items-center gap-1.5 text-xs font-bold text-amber-200">
+                  <Tag className="size-3.5 text-amber-400 shrink-0" />
+                  <span className="font-extrabold text-white">Active Web Specials &amp; Coupons</span>
+                  <span className="rounded-full bg-amber-400/20 border border-amber-400/30 px-1.5 py-0.2 text-[10px] font-extrabold text-amber-300">
+                    4 Deals
+                  </span>
+                </span>
+                <span className="text-[11px] font-bold text-amber-300 group-hover:translate-x-0.5 transition-transform shrink-0 flex items-center gap-0.5">
+                  View All Deals →
+                </span>
+              </div>
+
+              {/* All 4 Active Specials at a glance */}
+              <div className="mt-2 flex flex-wrap items-center gap-1.5 text-[11px]">
+                <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 font-medium text-slate-100 border border-white/10">
+                  <strong className="text-amber-300 font-extrabold">$75 Off</strong> Any Repair
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 font-medium text-slate-100 border border-white/10">
+                  <strong className="text-amber-300 font-extrabold">$150 Off</strong> Water Heaters
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 font-medium text-slate-100 border border-white/10">
+                  <strong className="text-amber-300 font-extrabold">$249</strong> Hydro-Jetting
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 font-medium text-slate-100 border border-white/10">
+                  <strong className="text-amber-300 font-extrabold">Free</strong> 2nd Opinion
+                </span>
+              </div>
             </a>
 
             {/* Direct Mobile Dispatch Coverage */}

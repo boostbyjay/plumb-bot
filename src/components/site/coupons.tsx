@@ -22,7 +22,7 @@ export function Coupons() {
     }
 
     function handleClick(e: MouseEvent) {
-      const link = (e.target as HTMLElement).closest("button[data-specials-trigger]");
+      const link = (e.target as HTMLElement).closest("[data-specials-trigger]");
       if (link) {
         e.preventDefault();
         setOpen(true);
